@@ -1,38 +1,39 @@
 import { createElement } from "./helpFunctions.js";
 import { interfaceElements } from "../dictionaries/interface.js";
-import { YearVersion } from "./YearVersion.js";
-import { Year } from "./Year.js";
 
 export class InterfacePopup {
   constructor(version, visualization) {
+    this.version = version;
     this.show = this.show.bind(this);
     this.hideOverlay = this.hideOverlay.bind(this);
     this.stopPropagation = this.stopPropagation.bind(this);
     this.switchParameter = this.switchParameter.bind(this);
-    this.show(version, visualization);
+    this.show(this.version, visualization);
   }
 
   show(version, visualization) {
     this.overlay = createElement("div", "overlay");
     const popup = createElement("div", "popup");
     // Options
-    this.createOptionsLine(
-      "country",
-      visualization.object.country,
-      interfaceElements.countries,
-      popup,
-      version,
-      visualization,
-    );
-    this.createOptionsLine(
-      "language",
-      visualization.object.language,
-      interfaceElements.languages,
-      popup,
-      version,
-      visualization,
-    );
-    // Links
+    if (version.country) {
+      this.createOptionsLine(
+        "country",
+        version.country,
+        interfaceElements.countries,
+        popup,
+        visualization,
+      );
+    }
+    if (version.language) {
+      this.createOptionsLine(
+        "language",
+        version.language,
+        interfaceElements.languages,
+        popup,
+        visualization,
+      );
+    }
+    // Additional links line
     const line = createElement("div", "options-line");
     for (let link of interfaceElements.links) {
       const block = createElement("a", "option");
@@ -54,7 +55,6 @@ export class InterfacePopup {
     setParameter,
     optionsGroup,
     block,
-    version,
     visualization,
   ) {
     const line = createElement("div", "options-line");
@@ -72,7 +72,7 @@ export class InterfacePopup {
           event,
           datasetKey,
           block.dataset[`${parameter}`],
-          version,
+          this.version,
           visualization,
         );
       });
@@ -81,7 +81,7 @@ export class InterfacePopup {
     block.append(line);
   }
 
-  switchParameter(event, key, parameter, version, visualization) {
+  switchParameter(event, parameterKey, setParameter, version, visualization) {
     const block = event.target;
     const optionsLine = block.parentElement;
     for (let element of optionsLine.children) {
@@ -90,18 +90,18 @@ export class InterfacePopup {
     block.classList.add("option_active");
 
     let indicator;
-    switch (key) {
+    switch (parameterKey) {
       case "country":
-        version.localize(parameter);
-        localStorage.setItem("country", parameter);
+        version.localize(setParameter);
+        localStorage.setItem("country", setParameter);
         indicator = document.querySelector(".country");
-        indicator.innerHTML = interfaceElements.countries[parameter];
+        indicator.innerHTML = interfaceElements.countries[setParameter];
         break;
       case "language":
-        version.translate(parameter);
-        localStorage.setItem("language", parameter);
+        version.translate(setParameter);
+        localStorage.setItem("language", setParameter);
         indicator = document.querySelector(".language");
-        indicator.innerHTML = interfaceElements.languages[parameter];
+        indicator.innerHTML = interfaceElements.languages[setParameter];
         break;
     }
     visualization.render(version);
@@ -113,7 +113,6 @@ export class InterfacePopup {
 
   hideOverlay() {
     this.overlay.classList.add("overlay_fade");
-
     this.overlay.addEventListener("transitionend", () => {
       this.overlay.remove();
     });

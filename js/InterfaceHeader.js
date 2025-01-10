@@ -5,12 +5,11 @@ import { InterfacePopup } from "./InterfacePopup.js";
 export class InterfaceHeader {
   constructor(version, visualization, block) {
     const place = document.querySelector(`.${block}`);
-    // Interface
+    // Year headline
     const headline = createElement("h1", "headline");
     headline.innerHTML = `${version.year.yearNum}`;
     place.append(headline);
-    // Top right corner
-    const tr = createElement("div", "top-right");
+    // Country and language indicators
     if (version.country) {
       this.countryBlock = createElement("sup", "parameter");
       this.countryBlock.classList.add("country");
@@ -25,13 +24,11 @@ export class InterfaceHeader {
         interfaceElements.languages[version.language];
       headline.append(this.languageBlock);
     }
+    // Burger menu
     const button = createElement("div", "button");
-    tr.append(button);
-    if (version && visualization) {
-      button.addEventListener("click", (event) => {
-        new InterfacePopup(version, visualization);
-      });
-    }
-    place.append(tr);
+    place.append(button);
+    button.addEventListener("click", (event) => {
+      new InterfacePopup(version, visualization);
+    });
   }
 }

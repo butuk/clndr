@@ -1,0 +1,37 @@
+$tablet-size: 800px;
+$mobile-size: 640px;
+$headline-font: 2rem;
+
+@supports (font-variation-settings: normal) {
+  :root { font-family: InterVariable, sans-serif; }
+}
+
+:root {
+  --extra-back-color: #FFFFFF;
+  --back-color: #FFFFFF;
+  --main-color: #262626;
+  --additionl-color: #aaa;
+  --accent-color: crimson;
+  --invert-accent: red;
+
+  font-family: Inter, sans-serif;
+  font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+  font-weight: normal;
+  font-size: clamp(.8rem, 1.5vw + .25rem, 2rem);
+  color: var(--main-color);
+
+  %small-font {
+    font-size: .4rem;
+    @media screen and (max-width: $mobile-size) {
+      font-size: .8rem;
+    }
+  }
+}
+
+@mixin flex-block($justify: center, $align: center, $width: auto, $height: auto) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  width: $width;
+  height: $height;
+}

@@ -3,7 +3,8 @@ import { createElement, intToRoman } from "./helpFunctions.js";
 
 export class YearVisualization {
   constructor(object, block) {
-    this.mobileSize = 640;
+    this.block = block;
+    this.controlNumber = 27; // Cell's smallest side size
     const today = new Date();
     this.currentMonth = today.getMonth() + 1;
     this.currentDate = today.getDate();
@@ -24,32 +25,41 @@ export class YearVisualization {
       this.removeCalendarEventListeners.bind(this);
     this.addCalendarEventListeners = this.addCalendarEventListeners.bind(this);
     this.zoomCalendarFromPoint = this.zoomCalendarFromPoint.bind(this);
+    this.createCellSlide = this.createCellSlide.bind(this);
 
-    this.render(object, block); // Pass the block only while creating the object
-    // Behaviour on scrolling
+    this.render(object);
+    /*window.addEventListener("resize", () => {
+      this.render(object);
+    });*/
     this.addCalendarEventListeners();
     return this;
   }
 
-  render(object, block) {
+  render(object) {
     this.object = object;
-    if (block) {
-      this.block = block;
-      this.content = document.querySelector(`.${this.block}`);
-      this.slider = createElement("section", "slider");
-      this.slides = createElement("div", "slides");
+
+    //If cell slider was open, change it
+    if (this.cellSliderOpen) {
+      this.createCellSlider();
     }
+
+    this.content = document.querySelector(`.${this.block}`);
+    this.slider = createElement("section", "slider");
+    this.slides = createElement("div", "slides");
+
     const oldVisualization = document.querySelectorAll(".slide");
     for (let slide of oldVisualization) {
       if (slide) {
         slide.remove();
       }
     }
+
+    //Calendar visualization
     for (let i = 0; i < 3; i++) {
       const slide = createElement("div", "slide");
       //Creating table header
       let step = 1;
-      if (window.innerWidth < this.mobileSize) {
+      if (window.innerWidth / 32 < this.controlNumber) {
         step = 2;
       }
       for (let columnNum = 2; columnNum <= 32; columnNum += step) {
@@ -67,8 +77,16 @@ export class YearVisualization {
     }
     this.slider.append(this.slides);
     this.content.append(this.slider);
+
+    //Check screen and visualization proportion and set condition of mobile behavior
+    const cell = document.querySelector(".cell");
+    const cellWidth = cell.getBoundingClientRect().width;
+    const cellHeight = cell.getBoundingClientRect().height;
+    console.log(cellWidth, cellHeight, Math.min(cellWidth, cellHeight));
+    this.condition = Math.min(cellWidth, cellHeight) < this.controlNumber;
+
     //Center the visualization
-    this.centerVisualization(this.object.year.yearNum, block);
+    this.centerVisualization(this.object.year.yearNum, this.block);
     return this;
   }
 
@@ -163,13 +181,13 @@ export class YearVisualization {
     document.addEventListener("touchstart", this.handleTouchGrabCalendar);
 
     // Days on hover
-    if (window.innerWidth > this.mobileSize) {
+    if (!this.condition) {
       this.slides.addEventListener("mouseover", this.handleDayHover);
       this.slides.addEventListener("mouseout", this.handleDayMouseOut);
     }
 
     // Click on mobile
-    if (window.innerWidth < this.mobileSize) {
+    if (this.condition) {
       document.addEventListener("click", this.handleCalendarClick);
     }
 
@@ -357,8 +375,7 @@ export class YearVisualization {
       (this.slider.getBoundingClientRect().top + dayHeight / 2) /
       screenHeight /
       2
-    ).toFixed(4);
-    console.log(persentFromTop);
+    ).toFixed(5);
     const yNeeded =
       (this.slider.getBoundingClientRect().top +
         screenCenterY -
@@ -371,11 +388,12 @@ export class YearVisualization {
   }
 
   createCellSlider(initialDay) {
+    if (initialDay) {
+      this.cellSliderStart = initialDay;
+    }
+    this.cellSliderOpen = true;
     let cellSlider = document.querySelector(".cell-slider");
-    let closeBut = document.querySelector(".close-cell-slider");
-    let dayInfo;
-    let cellSlides;
-
+    let closeBut = document.querySelector(".close-button");
     if (cellSlider) {
       cellSlider.remove();
     }
@@ -383,26 +401,19 @@ export class YearVisualization {
       closeBut.remove();
     }
 
-    closeBut = createElement("div", "close-cell-slider");
+    closeBut = createElement("div", "close-button");
 
-    dayInfo = this.yearMap.get(
-      `${this.yearNum}-${initialDay.month}-${initialDay.date}`,
+    const dayInfo = this.yearMap.get(
+      `${this.yearNum}-${this.cellSliderStart.month}-${this.cellSliderStart.date}`,
     );
     cellSlider = createElement("section", "cell-slider");
-    cellSlides = createElement("div", "cell-slides");
+    const cellSlides = createElement("div", "cell-slides");
+    // Temporary solution: create 3 slides with the same day
     for (let i = 0; i < 3; i++) {
-      const day = createElement("div", "day");
-      if (!dayInfo.working) {
-        day.style.background = "var(--accent-color)";
-      }
-      const weekday = createElement("div", "cell-text_small");
-      weekday.innerHTML = `${dayInfo.weekdayNameLong}`;
-      const date = createElement("div", "cell-text");
-      date.innerHTML = `${dayInfo.date}.${dayInfo.month}`;
-      day.append(weekday);
-      day.append(date);
+      const day = this.createCellSlide(dayInfo);
       cellSlides.append(day);
     }
+    //---------
     cellSlider.append(cellSlides);
     document.body.append(closeBut);
     document.body.append(cellSlider);
@@ -412,7 +423,27 @@ export class YearVisualization {
     );
   }
 
+  createCellSlide(dayInfo) {
+    const dayElement = createElement("div", "day");
+    const weekday = createElement("div", "cell-text_small");
+    const date = createElement("div", "cell-text");
+    dayElement.append(weekday);
+    dayElement.append(date);
+    if (dayInfo.working) {
+      dayElement.classList.add("day_working");
+    } else {
+      dayElement.classList.add("day_special");
+    }
+    if (dayInfo.weekdayNameLong) {
+      weekday.innerHTML = `${dayInfo.weekdayNameLong}`;
+    }
+    date.innerHTML = `${dayInfo.date}.${dayInfo.month}`;
+    return dayElement;
+  }
+
   removeCellSlider(event, cellSlider) {
+    //Temporary solution: without calendar slider animation
+    this.cellSliderOpen = false;
     cellSlider.classList.add("cell-slider-closed");
     cellSlider.addEventListener("transitionend", () => {
       cellSlider.style.opacity = "";

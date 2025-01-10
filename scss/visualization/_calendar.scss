@@ -1,37 +1,25 @@
-$mobile-size: 640px;
-$tablet-size: 800px;
-
-%transition {
-  transition:
-    height .2s ease-in-out,
-    width .2s ease-in-out;
-}
+@import "../settings";
 
 .content {
-  user-select: none;
   position: absolute;
   bottom: 0;
   width: 100%;
 }
 
 .slider {
+  @include flex-block(center, center, 100vw, 80vh);
   position: relative;
-  width: 100vw;
-  height: 80vh;
+  overflow: hidden;
   @media screen and (max-width: $tablet-size) {
     height: 75vh;
   }
   @media screen and (max-width: $mobile-size) {
     height: 70vh;
   }
-  overflow: hidden;
-  display: flex;
-  }
+}
 
 .slides {
-  width: 300%;
-  height: 100%;
-  display: flex;
+  @include flex-block(center, center, 300%, 100%);
   position: absolute;
   left: -100%;
 }
@@ -47,22 +35,16 @@ $tablet-size: 800px;
 }
 
 .cell {
-  display: flex;
+  @include flex-block();
   position: relative;
-  justify-content: center;
-  height: auto;
+  overflow: visible;
   @media screen and (max-width: $mobile-size) {
     //pointer-events: none;
   }
-  overflow: visible;
 }
 
 .hr {
-  display: flex;
-  height: 100%;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
+  @include flex-block(center, center, 100%, 100%);
   position: relative;
   overflow: visible;
 }

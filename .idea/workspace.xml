@@ -6,13 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="42e530b2-336a-427f-8d11-645dfdc78493" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/icons/close.svg" beforeDir="false" afterPath="$PROJECT_DIR$/icons/close.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/icons/pattern.svg" beforeDir="false" afterPath="$PROJECT_DIR$/icons/pattern.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/InterfaceHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/InterfaceHeader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/YearVersion.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/YearVersion.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/InterfacePopup.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/InterfacePopup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/YearVisualization.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/YearVisualization.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/_calendar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/visualization/_calendar.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scss/_interface.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/_interface.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/_root.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/_root.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/_root.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/_common.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/visualization/_calendar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/visualization/_calendar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/visualization/_day.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/visualization/_day.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles.scss" afterDir="false" />
@@ -48,25 +50,25 @@
     <option name="showLibraryContents" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Node.js.Year.js.executor": "Debug",
-    "Node.js.script.js.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "day-click",
-    "last_opened_file_path": "/Users/butuk/Dropbox/Work/CLNDR 2.0 — 24-12-01/clndr",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "/Users/butuk/Dropbox/Work/CLNDR 2.0 — 24-12-01/clndr/node_modules/prettier",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "editor.preferences.gutterIcons",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Node.js.Year.js.executor&quot;: &quot;Debug&quot;,
+    &quot;Node.js.script.js.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;day-click&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/butuk/Dropbox/Work/CLNDR 2.0 — 24-12-01/clndr&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/butuk/Dropbox/Work/CLNDR 2.0 — 24-12-01/clndr/node_modules/prettier&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.gutterIcons&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/icons" />
@@ -109,6 +111,8 @@
       <workItem from="1736117892095" duration="316000" />
       <workItem from="1736118216327" duration="749000" />
       <workItem from="1736164723139" duration="43880000" />
+      <workItem from="1736429265890" duration="14203000" />
+      <workItem from="1736496187986" duration="1089000" />
     </task>
     <servers />
   </component>

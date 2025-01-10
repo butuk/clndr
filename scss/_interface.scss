@@ -1,101 +1,4 @@
-$mobile-size: 640px;
-$tablet-size: 800px;
-$headline-font: 2rem;
-
-%opacity {
-  transition:
-    opacity .2s ease-in-out;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-.headline {
-  padding-left: .5rem;
-  color: var(--accent-color);
-  @media screen and (max-width: $mobile-size) {
-    font-size: $headline-font;
-  }
-}
-
-.top-right {
-  display: flex;
-  align-items: center;
-}
-
-.parameter {
-  @extend %small-font;
-  color: var(--additionl-color);
-  margin-left: .5em;
-
-}
-
-.button {
-  background: url('./icons/burger.svg') no-repeat center;
-  &:hover{
-    background: url('./icons/burger_hover.svg') no-repeat center;
-  }
-  display: flex;
-  justify-content: center;
-  width: 2rem;
-  height: 1.5rem;
-  margin: .75rem;
-  @media screen and (max-width: $mobile-size) {
-    width: 2.5rem;
-    height: 3rem;
-    margin: 1rem;
-  }
-  border-radius: 3px;
-  z-index: 999;
-
-  font-size: clamp(1.2rem, 1.5vw, 2.5rem);
-  &:hover {
-    border-color: var(--accent-color);
-    cursor: pointer;
-  }
-}
-
-.overlay {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  background: url('./icons/pattern.svg') repeat;
-  background-size: auto;
-  z-index: 10000;
-  &:hover {
-    cursor: pointer;
-  }
-  animation: appear .1s ease-in-out;
-  &_fade {
-    @extend %opacity;
-    opacity: 0;
-  }
-}
-
-.popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: min(3%, 3rem) 8% min(4%, 4rem);
-  @media screen and (max-width: $mobile-size) {
-    padding: 3rem .25rem;
-  }
-  color: var(--main-color);
-  background-color: var(--extra-back-color);
-  border-radius: 2px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-between;
-  &:hover {
-    cursor: default;
-  }
-}
+@import "settings";
 
 @keyframes appear {
   0% {
@@ -106,34 +9,107 @@ header {
   }
 }
 
-.options-line {
-  padding: 1.5rem;
-  display: flex;
-}
-
-.option {
-  text-decoration: none;
-  color: var(--main-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 .1rem;
-  width: 3.5rem;
-  min-height: 40px;
-  min-width: 60px;
-  padding: .5rem 1rem;
-  border-radius: 3rem;
-
-  &:hover{
+header {
+  position: absolute;
+  top: 0;
+  z-index: 997;
+  @include flex-block(space-between, center, 100%);
+  .headline {
+    padding-left: .5rem;
     color: var(--accent-color);
-    cursor: pointer;
+    @media screen and (max-width: $mobile-size) {
+      font-size: $headline-font;
+    }
   }
-  &_active {
-    color: var(--accent-color);
-    border: .1rem solid var(--accent-color);
+
+  .parameter {
+    @extend %small-font;
+    color: var(--additionl-color);
+    margin-left: .5em;
+  }
+
+  .button {
+    background: url('./icons/burger.svg') no-repeat center;
+    @include flex-block(center, center, 2rem, 2rem);
+    margin: .25rem;
+    @media screen and (max-width: $mobile-size) {
+      width: 2.5rem;
+      height: 3rem;
+      margin: 1rem;
+    }
 
     &:hover{
-      cursor: default;
+      background: url('./icons/burger_hover.svg') no-repeat center;
+      cursor: pointer;
     }
   }
 }
+
+.overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: url('./icons/pattern.svg') repeat;
+  z-index: 10000;
+  animation: appear .2s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &_fade {
+    transition: opacity .2s ease-in-out;
+    opacity: 0;
+  }
+
+  .popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: min(3%, 3rem) 8% min(4%, 4rem);
+    @media screen and (max-width: $mobile-size) {
+      padding: 3rem .25rem;
+    }
+    background-color: var(--extra-back-color);
+    color: var(--main-color);
+    border-radius: 2px;
+    @include flex-block(center, space-between);
+    flex-direction: column;
+
+    &:hover {
+      cursor: default;
+    }
+
+    .options-line {
+      padding: 1.5rem;
+      @include flex-block();
+
+      .option {
+        @include flex-block(center, center, 3.5rem);
+        color: var(--main-color);
+        margin: 0 .1rem;
+        min-height: 40px;
+        min-width: 60px;
+        padding: .5rem 1rem;
+        border-radius: 3rem;
+
+        &:hover{
+          color: var(--accent-color);
+          cursor: pointer;
+        }
+
+        &_active {
+          color: var(--accent-color);
+          border: .1rem solid var(--accent-color);
+
+          &:hover{
+            cursor: default;
+          }
+        }
+      }
+    }
+  }
+}
+
+

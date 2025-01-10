@@ -1,31 +1,3 @@
-:root {
-  --extra-back-color: #FFFFFF;
-  --back-color: #FFFFFF;
-  --main-color: #262626;
-  --additionl-color: #aaa;
-  --accent-color: crimson;
-  --invert-accent: red;
-  font-family: Inter, sans-serif;
-  font-feature-settings: "liga" 1, "calt" 1; /* fix for Chrome */
-  font-weight: normal;
-  font-size: clamp(0.8rem, 1.5vw + 0.25rem, 2rem);
-  color: var(--main-color);
-  cursor: grab;
-}
-:root .day_hover .cell-text, :root .parameter {
-  font-size: 0.4rem;
-}
-@media screen and (max-width: 640px) {
-  :root .day_hover .cell-text, :root .parameter {
-    font-size: 0.8rem;
-  }
-}
-
-@supports (font-variation-settings: normal) {
-  :root {
-    font-family: InterVariable, sans-serif;
-  }
-}
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -58,10 +30,13 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
+html {
+  cursor: grab;
+}
+
 body {
   background: var(--extra-back-color);
   line-height: 1;
-  cursor: grab;
 }
 
 ol, ul {
@@ -90,100 +65,31 @@ table {
   user-select: none;
 }
 
-.overlay_fade {
-  transition: opacity 0.2s ease-in-out;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-.headline {
-  padding-left: 0.5rem;
-  color: var(--accent-color);
-}
-@media screen and (max-width: 640px) {
-  .headline {
-    font-size: 2rem;
+@supports (font-variation-settings: normal) {
+  :root {
+    font-family: InterVariable, sans-serif;
   }
 }
-
-.top-right {
-  display: flex;
-  align-items: center;
-}
-
-.parameter {
-  color: var(--additionl-color);
-  margin-left: 0.5em;
-}
-
-.button {
-  background: url("./icons/burger.svg") no-repeat center;
-  display: flex;
-  justify-content: center;
-  width: 2rem;
-  height: 1.5rem;
-  margin: 0.75rem;
-  border-radius: 3px;
-  z-index: 999;
-  font-size: clamp(1.2rem, 1.5vw, 2.5rem);
-}
-.button:hover {
-  background: url("./icons/burger_hover.svg") no-repeat center;
-}
-@media screen and (max-width: 640px) {
-  .button {
-    width: 2.5rem;
-    height: 3rem;
-    margin: 1rem;
-  }
-}
-.button:hover {
-  border-color: var(--accent-color);
-  cursor: pointer;
-}
-
-.overlay {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  background: url("./icons/pattern.svg") repeat;
-  background-size: auto;
-  z-index: 10000;
-  animation: appear 0.1s ease-in-out;
-}
-.overlay:hover {
-  cursor: pointer;
-}
-.overlay_fade {
-  opacity: 0;
-}
-
-.popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: min(3%, 3rem) 8% min(4%, 4rem);
+:root {
+  --extra-back-color: #FFFFFF;
+  --back-color: #FFFFFF;
+  --main-color: #262626;
+  --additionl-color: #aaa;
+  --accent-color: crimson;
+  --invert-accent: red;
+  font-family: Inter, sans-serif;
+  font-feature-settings: "liga" 1, "calt" 1; /* fix for Chrome */
+  font-weight: normal;
+  font-size: clamp(0.8rem, 1.5vw + 0.25rem, 2rem);
   color: var(--main-color);
-  background-color: var(--extra-back-color);
-  border-radius: 2px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-between;
+}
+:root .day_hover .cell-text, :root header .parameter {
+  font-size: 0.4rem;
 }
 @media screen and (max-width: 640px) {
-  .popup {
-    padding: 3rem 0.25rem;
+  :root .day_hover .cell-text, :root header .parameter {
+    font-size: 0.8rem;
   }
-}
-.popup:hover {
-  cursor: default;
 }
 
 @keyframes appear {
@@ -194,53 +100,163 @@ header {
     opacity: 100;
   }
 }
-.options-line {
-  padding: 1.5rem;
+header {
+  position: absolute;
+  top: 0;
+  z-index: 997;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+header .headline {
+  padding-left: 0.5rem;
+  color: var(--accent-color);
+}
+@media screen and (max-width: 640px) {
+  header .headline {
+    font-size: 2rem;
+  }
+}
+header .parameter {
+  color: var(--additionl-color);
+  margin-left: 0.5em;
+}
+header .button {
+  background: url("./icons/burger.svg") no-repeat center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  margin: 0.25rem;
+}
+@media screen and (max-width: 640px) {
+  header .button {
+    width: 2.5rem;
+    height: 3rem;
+    margin: 1rem;
+  }
+}
+header .button:hover {
+  background: url("./icons/burger_hover.svg") no-repeat center;
+  cursor: pointer;
 }
 
-.option {
-  text-decoration: none;
+.overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: url("./icons/pattern.svg") repeat;
+  z-index: 10000;
+  animation: appear 0.2s ease-in-out;
+}
+.overlay:hover {
+  cursor: pointer;
+}
+.overlay_fade {
+  transition: opacity 0.2s ease-in-out;
+  opacity: 0;
+}
+.overlay .popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: min(3%, 3rem) 8% min(4%, 4rem);
+  background-color: var(--extra-back-color);
   color: var(--main-color);
+  border-radius: 2px;
   display: flex;
-  align-items: center;
   justify-content: center;
-  margin: 0 0.1rem;
+  align-items: space-between;
+  width: auto;
+  height: auto;
+  flex-direction: column;
+}
+@media screen and (max-width: 640px) {
+  .overlay .popup {
+    padding: 3rem 0.25rem;
+  }
+}
+.overlay .popup:hover {
+  cursor: default;
+}
+.overlay .popup .options-line {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+}
+.overlay .popup .options-line .option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 3.5rem;
+  height: auto;
+  color: var(--main-color);
+  margin: 0 0.1rem;
   min-height: 40px;
   min-width: 60px;
   padding: 0.5rem 1rem;
   border-radius: 3rem;
 }
-.option:hover {
+.overlay .popup .options-line .option:hover {
   color: var(--accent-color);
   cursor: pointer;
 }
-.option_active {
+.overlay .popup .options-line .option_active {
   color: var(--accent-color);
   border: 0.1rem solid var(--accent-color);
 }
-.option_active:hover {
+.overlay .popup .options-line .option_active:hover {
   cursor: default;
 }
 
-.day_hover, .special-day, .working-day {
-  transition: height 0.2s ease-in-out, width 0.2s ease-in-out;
+@supports (font-variation-settings: normal) {
+  :root {
+    font-family: InterVariable, sans-serif;
+  }
+}
+:root {
+  --extra-back-color: #FFFFFF;
+  --back-color: #FFFFFF;
+  --main-color: #262626;
+  --additionl-color: #aaa;
+  --accent-color: crimson;
+  --invert-accent: red;
+  font-family: Inter, sans-serif;
+  font-feature-settings: "liga" 1, "calt" 1; /* fix for Chrome */
+  font-weight: normal;
+  font-size: clamp(0.8rem, 1.5vw + 0.25rem, 2rem);
+  color: var(--main-color);
+}
+:root .day_hover .cell-text, :root header .parameter {
+  font-size: 0.4rem;
+}
+@media screen and (max-width: 640px) {
+  :root .day_hover .cell-text, :root header .parameter {
+    font-size: 0.8rem;
+  }
 }
 
 .content {
-  user-select: none;
   position: absolute;
   bottom: 0;
   width: 100%;
 }
 
 .slider {
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100vw;
   height: 80vh;
+  position: relative;
   overflow: hidden;
-  display: flex;
 }
 @media screen and (max-width: 800px) {
   .slider {
@@ -254,9 +270,11 @@ header {
 }
 
 .slides {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 300%;
   height: 100%;
-  display: flex;
   position: absolute;
   left: -100%;
 }
@@ -273,29 +291,61 @@ header {
 
 .cell {
   display: flex;
-  position: relative;
   justify-content: center;
+  align-items: center;
+  width: auto;
   height: auto;
+  position: relative;
   overflow: visible;
 }
 .hr {
   display: flex;
-  height: 100%;
-  width: 100%;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
   position: relative;
   overflow: visible;
 }
 
+@supports (font-variation-settings: normal) {
+  :root {
+    font-family: InterVariable, sans-serif;
+  }
+}
+:root {
+  --extra-back-color: #FFFFFF;
+  --back-color: #FFFFFF;
+  --main-color: #262626;
+  --additionl-color: #aaa;
+  --accent-color: crimson;
+  --invert-accent: red;
+  font-family: Inter, sans-serif;
+  font-feature-settings: "liga" 1, "calt" 1; /* fix for Chrome */
+  font-weight: normal;
+  font-size: clamp(0.8rem, 1.5vw + 0.25rem, 2rem);
+  color: var(--main-color);
+}
+:root .day_hover .cell-text, :root header .parameter {
+  font-size: 0.4rem;
+}
+@media screen and (max-width: 640px) {
+  :root .day_hover .cell-text, :root header .parameter {
+    font-size: 0.8rem;
+  }
+}
+
+.day_hover, .special-day, .working-day {
+  transition: height 0.2s ease-in-out, width 0.2s ease-in-out;
+}
+
 .working-day {
   display: flex;
-  align-content: center;
   justify-content: center;
-  align-self: center;
-  justify-self: center;
-  margin-left: auto;
-  margin-right: auto;
+  align-items: center;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
   overflow: hidden;
   aspect-ratio: 1/1;
   border-radius: 50%;
@@ -321,12 +371,11 @@ header {
 
 .special-day {
   display: flex;
-  align-content: center;
   justify-content: center;
-  align-self: center;
-  justify-self: center;
-  margin-left: auto;
-  margin-right: auto;
+  align-items: center;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
   overflow: hidden;
   aspect-ratio: 1/1;
   border-radius: 50%;
@@ -353,7 +402,6 @@ header {
 .current-date {
   outline: 0.075em solid var(--main-color);
   outline-offset: 0.5em;
-  border-radius: 50%;
   -webkit-border-radius: 50%;
 }
 @media screen and (max-width: 640px) {
@@ -372,58 +420,76 @@ header {
   align-self: center;
   color: var(--back-color);
   text-align: center;
-  line-height: 1.2;
+  line-height: 1.3;
   pointer-events: none;
 }
 
-.close-cell-slider {
+.close-button {
   background: url("./icons/close.svg") no-repeat center;
   width: 100%;
   height: 10vh;
   margin: 0 auto;
+  top: 7vh;
   position: absolute;
   z-index: 998;
+}
+@media screen and (orientation: landscape) {
+  .close-button {
+    top: 0;
+  }
 }
 
 .cell-slider {
   display: flex;
-  align-content: center;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 90vh;
   position: absolute;
   left: 0;
   top: 0;
-  width: 100vw;
-  height: 100vh;
   overflow: hidden;
   opacity: 1;
 }
 .cell-slider-closed {
   opacity: 0;
-  scale: 10%;
+  scale: 5%;
   transform-origin: center;
   transition: scale 0.2s ease-in-out, opacity 0.2s ease-in-out;
 }
 .cell-slider .cell-slides {
-  position: absolute;
-  left: -100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 300%;
   height: 100%;
-  display: flex;
-  flex-direction: row;
+  position: absolute;
+  left: -100%;
 }
 .cell-slider .cell-slides .day {
-  width: 30%;
-  aspect-ratio: 1/1;
-  height: auto;
-  background: var(--main-color);
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: auto;
+  height: auto;
+  aspect-ratio: 1/1;
   border-radius: 50%;
+  background: var(--main-color);
+  flex-direction: column;
+}
+@media screen and (orientation: portrait) {
+  .cell-slider .cell-slides .day {
+    height: auto;
+    width: 30%;
+  }
+}
+@media screen and (orientation: landscape) {
+  .cell-slider .cell-slides .day {
+    position: relative;
+    top: 10%;
+    height: 80%;
+    width: auto;
+  }
 }
 .cell-slider .cell-slides .day .cell-text_small {
   font-size: 2rem;
@@ -433,6 +499,12 @@ header {
 .cell-slider .cell-slides .day .cell-text {
   font-size: 8rem;
   color: var(--back-color);
+}
+.cell-slider .cell-slides .day_working {
+  background: var(--main-color);
+}
+.cell-slider .cell-slides .day_special {
+  background: var(--accent-color);
 }
 
 /*# sourceMappingURL=styles.css.map */
