@@ -1,4 +1,6 @@
-@import "scss/common";
-@import "scss/interface";
+@import "scss/defaults";
 @import "scss/visualization/calendar";
 @import "scss/visualization/day-sequence";
+@import "scss/interface/header";
+@import "scss/interface/popup";
+@import "scss/interface/zoomout";

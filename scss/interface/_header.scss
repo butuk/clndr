@@ -1,0 +1,35 @@
+header {
+  position: absolute;
+  top: 0;
+  z-index: 997;
+  @include flex-block(space-between, center, 100%);
+  .headline {
+    padding-left: .5rem;
+    color: var(--accent-color);
+    @media screen and (max-width: $mobile-size) {
+      font-size: $headline-font;
+    }
+  }
+
+  .parameter {
+    @extend %small-font;
+    color: var(--additionl-color);
+    margin-left: .5em;
+  }
+
+  .button {
+    background: url('./icons/burger.svg') no-repeat center;
+    @include flex-block(center, center, 2rem, 2rem);
+    margin: .25rem;
+    @media screen and (max-width: $mobile-size) {
+      width: 2.5rem;
+      height: 3rem;
+      margin: 1rem;
+    }
+
+    &:hover{
+      background: url('./icons/burger_hover.svg') no-repeat center;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.close-button {
+  background: url("./icons/close.svg") no-repeat center;
+  width: 100%;
+  height: 10vh;
+  margin: 0 auto;
+  top: 7vh;
+  @media screen and (orientation: landscape) {
+    top: 0;
+
+  }
+  position: absolute;
+  z-index: 998;
+}

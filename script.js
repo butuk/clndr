@@ -2,6 +2,7 @@ import { Year } from "./js/Year.js";
 import { YearVersion } from "./js/YearVersion.js";
 import { YearVisualization } from "./js/YearVisualization.js";
 import { InterfaceHeader } from "./js/InterfaceHeader.js";
+import { DaysSequenceVisualization } from "./js/DaysSequenceVisualization.js";
 
 //Year
 const currentDate = new Date();
@@ -23,12 +24,11 @@ year = savedYear ? savedYear : currentYear;
 language = savedLanguage ? savedLanguage : "eng";
 country = savedCountry ? savedCountry : "poland";
 
-// Calendar visualization
+// Calendar
 const newYear = new Year(2025);
-
 const version = new YearVersion(newYear, country, language);
-
 const visualization = new YearVisualization(version, "content");
+// new DaysSequenceVisualization(version);
 
 // Interface
 new InterfaceHeader(version, visualization, "header");

@@ -19,12 +19,11 @@ export class YearVersion {
 
   setYear(year) {
     this.year = year;
-    this.yearNum = year.yearNum;
     return this;
   }
 
   translate(language) {
-    this.language = language;
+    this.language = language ? language : null;
     document.documentElement.setAttribute("lang", language);
     for (let day of this.year.days) {
       const month = day.month;

@@ -20,12 +20,10 @@ export class YearVisualization {
     this.handleTouchEnd = this.handleTouchEnd.bind(this);
     this.handleTouchGrabCalendar = this.handleTouchGrabCalendar.bind(this);
     this.handleCalendarClick = this.handleCalendarClick.bind(this);
-    //this.createCellSlider = this.createCellSlider.bind(this);
     this.removeCalendarEventListeners =
       this.removeCalendarEventListeners.bind(this);
     this.addCalendarEventListeners = this.addCalendarEventListeners.bind(this);
     this.zoomCalendarFromPoint = this.zoomCalendarFromPoint.bind(this);
-    //this.createCellSlide = this.createCellSlide.bind(this);
 
     this.render(object);
     /*window.addEventListener("resize", () => {
@@ -37,12 +35,15 @@ export class YearVisualization {
 
   render(object) {
     this.object = object;
-
     this.content = document.querySelector(`.${this.block}`);
-    this.slider = createElement("section", "slider");
-    this.slides = createElement("div", "slides");
+    this.slider = document.querySelector(".calendar-slider")
+      ? document.querySelector(".calendar-slider")
+      : createElement("section", "calendar-slider");
+    this.slides = document.querySelector(".calendar-slides")
+      ? document.querySelector(".calendar-slides")
+      : createElement("div", "calendar-slides");
 
-    const oldVisualization = document.querySelectorAll(".slide");
+    const oldVisualization = document.querySelectorAll(".calendar-slide");
     for (let slide of oldVisualization) {
       if (slide) {
         slide.remove();
@@ -51,7 +52,7 @@ export class YearVisualization {
 
     //Calendar visualization
     for (let i = 0; i < 3; i++) {
-      const slide = createElement("div", "slide");
+      const slide = createElement("div", "calendar-slide");
       //Creating table header
       let step = 1;
       if (window.innerWidth / 32 < this.controlNumber) {
@@ -74,10 +75,9 @@ export class YearVisualization {
     this.content.append(this.slider);
 
     //Check screen and visualization proportion and set condition of mobile behavior
-    const cell = document.querySelector(".cell");
+    const cell = document.querySelector(".calendar-cell");
     const cellWidth = cell.getBoundingClientRect().width;
     const cellHeight = cell.getBoundingClientRect().height;
-    //console.log(cellWidth, cellHeight, Math.min(cellWidth, cellHeight));
     this.condition = Math.min(cellWidth, cellHeight) < this.controlNumber;
 
     //Center the visualization
@@ -86,7 +86,7 @@ export class YearVisualization {
   }
 
   renderTheDay(day, where) {
-    const cell = createElement("div", "cell");
+    const cell = createElement("div", "calendar-cell");
     cell.style.gridRow = day.month + 2;
     cell.style.gridColumn = day.date + 1;
     cell.style.top = `${this.delta * day.date}%`;
@@ -101,7 +101,7 @@ export class YearVisualization {
     cell.dataset.month = day.month;
     cell.dataset.date = day.date;
 
-    //cell.dataset.color = window.getComputedStyle(dayMark).color;
+    //calendar-cell.dataset.color = window.getComputedStyle(dayMark).color;
     if (day.weekdayNameShort) {
       cell.dataset.weekday = day.weekdayNameShort;
     }
@@ -118,7 +118,7 @@ export class YearVisualization {
   }
 
   renderColumnHR(columnNum, where) {
-    const hr = createElement("div", "hr");
+    const hr = createElement("div", "calendar-cell-hr");
     hr.style.gridRow = "1";
     hr.style.gridColumn = `${columnNum}`;
     hr.textContent = `${columnNum - 1}`;
@@ -128,7 +128,7 @@ export class YearVisualization {
   }
 
   renderRowHR(rowNum, where) {
-    const monthName = createElement("div", "hr");
+    const monthName = createElement("div", "calendar-cell-hr");
     monthName.style.gridColumn = "1";
     monthName.style.gridRow = `${rowNum + 3}`;
     if (this.object.language) {
@@ -171,7 +171,7 @@ export class YearVisualization {
       passive: false,
     });
 
-    // Grabbing the slides
+    // Grabbing the calendar-slides
     document.addEventListener("mousedown", this.handleMouseGrab);
     document.addEventListener("touchstart", this.handleTouchGrabCalendar);
 
@@ -182,9 +182,9 @@ export class YearVisualization {
     }
 
     // Click on mobile
-    if (this.condition) {
+    /*if (this.condition) {
       document.addEventListener("click", this.handleCalendarClick);
-    }
+    }*/
 
     return this;
   }
@@ -199,7 +199,7 @@ export class YearVisualization {
   }
 
   handleWheelEvent(event) {
-    const slides = document.querySelector(".slides");
+    const slides = document.querySelector(".calendar-slides");
     const window = document.documentElement.clientWidth;
     const deltaY = event.deltaY;
     const deltaX = event.deltaX;
@@ -230,7 +230,7 @@ export class YearVisualization {
   }
 
   handleTouchGrabCalendar(event) {
-    const slides = document.querySelector(".slides");
+    const slides = document.querySelector(".calendar-slides");
     this.isDragging = true;
 
     const clientX = event.touches[0].clientX;
@@ -242,7 +242,7 @@ export class YearVisualization {
   }
 
   handleMouseGrab(event) {
-    const slides = document.querySelector(".slides");
+    const slides = document.querySelector(".calendar-slides");
     this.isDragging = true;
 
     this.offsetX =
@@ -256,7 +256,7 @@ export class YearVisualization {
 
   handleTouchMove(event) {
     const window = document.documentElement.clientWidth;
-    const slides = document.querySelector(".slides");
+    const slides = document.querySelector(".calendar-slides");
 
     if (this.isDragging) {
       let clientX = event.touches[0].clientX;
@@ -277,7 +277,7 @@ export class YearVisualization {
 
   handleMouseTouchMove(event) {
     const window = document.documentElement.clientWidth;
-    const slides = document.querySelector(".slides");
+    const slides = document.querySelector(".calendar-slides");
 
     if (this.isDragging) {
       let clientX = event.clientX || event.touches[0].clientX;
@@ -301,12 +301,12 @@ export class YearVisualization {
   }
 
   handleDayMouseOut(event) {
-    const text = document.querySelector(".cell-text");
+    const text = document.querySelector(".day-text");
     const parent = text && text.parentElement ? text.parentElement : null;
     if (parent) {
       parent.removeChild(text);
     }
-    const target = event.target.closest(".cell");
+    const target = event.target.closest(".calendar-cell");
     const firstChild = target ? target.children[0] : null;
     if (firstChild) {
       firstChild.classList.remove("day_hover");
@@ -314,7 +314,7 @@ export class YearVisualization {
   }
 
   handleDayHover(event) {
-    const target = event.target.closest(".cell");
+    const target = event.target.closest(".calendar-cell");
     const firstChild = target ? target.children[0] : null;
     if (firstChild) {
       firstChild.classList.add("day_hover");
@@ -330,14 +330,14 @@ export class YearVisualization {
         message = `${date}.${month}`;
       }
       const text = document.createElement("div");
-      text.classList.add("cell-text");
+      text.classList.add("day-text");
       text.innerHTML = message;
       firstChild.append(text);
     }
   }
 
   handleCalendarClick(event) {
-    const clickedCell = event.target.closest(".cell");
+    const clickedCell = event.target.closest(".calendar-cell");
     if (clickedCell) {
       const startPoint = this.zoomCalendarFromPoint(clickedCell);
       this.slider.addEventListener("transitionend", () => {
@@ -387,7 +387,7 @@ export class YearVisualization {
       this.cellSliderStart = initialDay;
     }
     this.cellSliderOpen = true;
-    let cellSlider = document.querySelector(".cell-slider");
+    let cellSlider = document.querySelector(".day-calendar-slider");
     let closeBut = document.querySelector(".close-button");
     if (cellSlider) {
       cellSlider.remove();
@@ -401,9 +401,9 @@ export class YearVisualization {
     const dayInfo = this.yearMap.get(
       `${this.yearNum}-${this.cellSliderStart.month}-${this.cellSliderStart.date}`,
     );
-    cellSlider = createElement("section", "cell-slider");
-    const cellSlides = createElement("div", "cell-slides");
-    // Temporary solution: create 3 slides with the same day
+    cellSlider = createElement("section", "day-calendar-slider");
+    const cellSlides = createElement("div", "day-calendar-slides");
+    // Temporary solution: create 3 calendar-slides with the same day
     for (let i = 0; i < 3; i++) {
       const day = this.createCellSlide(dayInfo);
       cellSlides.append(day);
@@ -420,8 +420,8 @@ export class YearVisualization {
 
   createCellSlide(dayInfo) {
     const dayElement = createElement("div", "day");
-    const weekday = createElement("div", "cell-text_small");
-    const date = createElement("div", "cell-text");
+    const weekday = createElement("div", "day-text_small");
+    const date = createElement("div", "day-text");
     dayElement.append(weekday);
     dayElement.append(date);
     if (dayInfo.working) {
@@ -437,9 +437,9 @@ export class YearVisualization {
   }
 
   removeCellSlider(event, cellSlider) {
-    //Temporary solution: without calendar slider animation
+    //Temporary solution: without calendar calendar-slider animation
     this.cellSliderOpen = false;
-    cellSlider.classList.add("cell-slider-closed");
+    cellSlider.classList.add("day-calendar-slider-closed");
     cellSlider.addEventListener("transitionend", () => {
       cellSlider.style.opacity = "";
       cellSlider.style.scale = "";
@@ -448,10 +448,10 @@ export class YearVisualization {
       cellSlider.remove();
       const closeBut = event.target;
       closeBut.remove();
-      this.slider.style.transform = "";
-      this.slider.style.scale = "";
-      this.slider.style.display = "block";
-      this.slider.removeEventListener("transitionend", () => {});
+      this.calendar-slider.style.transform = "";
+      this.calendar-slider.style.scale = "";
+      this.calendar-slider.style.display = "block";
+      this.calendar-slider.removeEventListener("transitionend", () => {});
       this.addCalendarEventListeners();
     });
   }*/
