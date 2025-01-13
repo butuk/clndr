@@ -1,5 +1,6 @@
 import { months } from "../dictionaries/months.js";
 import { createElement, intToRoman } from "./helpFunctions.js";
+import { DaysSequenceVisualization } from "./DaysSequenceVisualization.js";
 
 export class YearVisualization {
   constructor(object, block) {
@@ -11,7 +12,6 @@ export class YearVisualization {
     this.currentYear = today.getFullYear();
     this.delta = 3;
     this.isDragging = false;
-    this.yearMap = object.year.yearDatesMap;
     this.yearNum = object.year.yearNum;
 
     this.handleMouseGrab = this.handleMouseGrab.bind(this);
@@ -20,12 +20,12 @@ export class YearVisualization {
     this.handleTouchEnd = this.handleTouchEnd.bind(this);
     this.handleTouchGrabCalendar = this.handleTouchGrabCalendar.bind(this);
     this.handleCalendarClick = this.handleCalendarClick.bind(this);
-    this.createCellSlider = this.createCellSlider.bind(this);
+    //this.createCellSlider = this.createCellSlider.bind(this);
     this.removeCalendarEventListeners =
       this.removeCalendarEventListeners.bind(this);
     this.addCalendarEventListeners = this.addCalendarEventListeners.bind(this);
     this.zoomCalendarFromPoint = this.zoomCalendarFromPoint.bind(this);
-    this.createCellSlide = this.createCellSlide.bind(this);
+    //this.createCellSlide = this.createCellSlide.bind(this);
 
     this.render(object);
     /*window.addEventListener("resize", () => {
@@ -37,11 +37,6 @@ export class YearVisualization {
 
   render(object) {
     this.object = object;
-
-    //If cell slider was open, change it
-    if (this.cellSliderOpen) {
-      this.createCellSlider();
-    }
 
     this.content = document.querySelector(`.${this.block}`);
     this.slider = createElement("section", "slider");
@@ -82,7 +77,7 @@ export class YearVisualization {
     const cell = document.querySelector(".cell");
     const cellWidth = cell.getBoundingClientRect().width;
     const cellHeight = cell.getBoundingClientRect().height;
-    console.log(cellWidth, cellHeight, Math.min(cellWidth, cellHeight));
+    //console.log(cellWidth, cellHeight, Math.min(cellWidth, cellHeight));
     this.condition = Math.min(cellWidth, cellHeight) < this.controlNumber;
 
     //Center the visualization
@@ -348,7 +343,7 @@ export class YearVisualization {
       this.slider.addEventListener("transitionend", () => {
         this.slider.style.display = "none";
         this.removeCalendarEventListeners();
-        this.createCellSlider(startPoint);
+        new DaysSequenceVisualization(startPoint, this.object);
       });
     }
   }
@@ -387,7 +382,7 @@ export class YearVisualization {
     return triggeredCell.dataset;
   }
 
-  createCellSlider(initialDay) {
+  /*createCellSlider(initialDay) {
     if (initialDay) {
       this.cellSliderStart = initialDay;
     }
@@ -459,5 +454,5 @@ export class YearVisualization {
       this.slider.removeEventListener("transitionend", () => {});
       this.addCalendarEventListeners();
     });
-  }
+  }*/
 }
