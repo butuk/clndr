@@ -16,6 +16,11 @@ export class Year {
       day.working = weekday !== 0 && weekday !== 6;
       this.days.push(day);
     }
+    // Linking to previous and next days
+    for (let i = 0; i < this.days.length; i++) {
+      this.days[i].previous = i > 0 ? this.days[i - 1] : null;
+      this.days[i].next = i < this.days.length - 1 ? this.days[i + 1] : null;
+    }
     this.createHashMap(this.yearNum);
   }
 

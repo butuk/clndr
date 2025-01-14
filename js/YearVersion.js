@@ -27,19 +27,23 @@ export class YearVersion {
     document.documentElement.setAttribute("lang", language);
     for (let day of this.year.days) {
       const month = day.month;
-      day.monthName = months[month - 1][this.language];
       const weekday = day.weekday;
-      day.weekdayNameShort =
-        weekdays[weekday]["translate"][this.language]["short"];
-      day.weekdayNameLong =
-        weekdays[weekday]["translate"][this.language]["long"];
+      day.monthName = this.language ? months[month - 1][this.language] : null;
+      day.weekdayNameShort = weekdays[weekday]["translate"][this.language]
+        ? weekdays[weekday]["translate"][this.language]["short"]
+        : null;
+      day.weekdayNameLong = weekdays[weekday]["translate"][this.language]
+        ? weekdays[weekday]["translate"][this.language]["long"]
+        : null;
     }
     if (this.specialDays) {
       for (let specialDay in this.specialDays) {
         const day = this.year.yearDatesMap.get(
           `${this.year.yearNum}-${specialDay}`,
         );
-        day.holiday = this.specialDays[specialDay][this.language];
+        day.holiday = this.language
+          ? this.specialDays[specialDay][this.language]
+          : null;
       }
     }
     return this;

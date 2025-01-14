@@ -27,8 +27,8 @@ country = savedCountry ? savedCountry : "poland";
 // Calendar
 const newYear = new Year(2025);
 const version = new YearVersion(newYear, country, language);
-const visualization = new YearVisualization(version, "content");
-// new DaysSequenceVisualization(version);
+// const visualization = new YearVisualization(version, "content");
+new DaysSequenceVisualization(version, "2025-4-5");
 
 // Interface
-new InterfaceHeader(version, visualization, "header");
+new InterfaceHeader(version, " ", "header");

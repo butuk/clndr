@@ -35,3 +35,30 @@ $headline-font: 2rem;
   width: $width;
   height: $height;
 }
+
+@mixin cell-font ($size){
+  font-size: $size;
+  color: var(--back-color);
+}
+
+@mixin circle($size, $color) {
+  @include flex-block(center, center);
+  @media screen and (orientation: portrait) {
+    height: $size;
+    width: auto;
+  }
+  @media screen and (orientation: landscape) {
+    width: $size;
+    height: auto;
+  }
+  margin: 0 auto;
+  overflow: hidden;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: $color;
+  &::before {
+    content: "";
+    display: block;
+  }
+  cursor: none;
+}

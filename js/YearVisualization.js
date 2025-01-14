@@ -22,14 +22,12 @@ export class YearVisualization {
     this.handleCalendarClick = this.handleCalendarClick.bind(this);
     this.removeCalendarEventListeners =
       this.removeCalendarEventListeners.bind(this);
-    this.addCalendarEventListeners = this.addCalendarEventListeners.bind(this);
+    this.addEventListeners = this.addEventListeners.bind(this);
     this.zoomCalendarFromPoint = this.zoomCalendarFromPoint.bind(this);
 
     this.render(object);
-    /*window.addEventListener("resize", () => {
-      this.render(object);
-    });*/
-    this.addCalendarEventListeners();
+    this.centerVisualization(this.yearNum, this.block);
+    this.addEventListeners();
     return this;
   }
 
@@ -79,9 +77,6 @@ export class YearVisualization {
     const cellWidth = cell.getBoundingClientRect().width;
     const cellHeight = cell.getBoundingClientRect().height;
     this.condition = Math.min(cellWidth, cellHeight) < this.controlNumber;
-
-    //Center the visualization
-    this.centerVisualization(this.object.year.yearNum, this.block);
     return this;
   }
 
@@ -165,7 +160,7 @@ export class YearVisualization {
     return this;
   }
 
-  addCalendarEventListeners() {
+  addEventListeners() {
     // Scrolling
     document.addEventListener("wheel", this.handleWheelEvent, {
       passive: false,
@@ -452,7 +447,7 @@ export class YearVisualization {
       this.calendar-slider.style.scale = "";
       this.calendar-slider.style.display = "block";
       this.calendar-slider.removeEventListener("transitionend", () => {});
-      this.addCalendarEventListeners();
+      this.addEventListeners();
     });
   }*/
 }
