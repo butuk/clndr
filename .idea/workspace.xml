@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42e530b2-336a-427f-8d11-645dfdc78493" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/js/DaysSequenceVisualization.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/DaysSequenceVisualization.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/visualization/_day-sequence.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/visualization/_day-sequence.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
-    </list>
+    <list default="true" id="42e530b2-336a-427f-8d11-645dfdc78493" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -106,7 +102,8 @@
       <workItem from="1736496187986" duration="4460000" />
       <workItem from="1736549624231" duration="625000" />
       <workItem from="1736753687321" duration="6629000" />
-      <workItem from="1736836436988" duration="15759000" />
+      <workItem from="1736836436988" duration="16441000" />
+      <workItem from="1736923206707" duration="7016000" />
     </task>
     <servers />
   </component>

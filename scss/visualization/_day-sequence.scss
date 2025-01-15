@@ -1,7 +1,9 @@
 @import "../settings";
 
 %slidesPosition {
-  transition: transform .5s cubic-bezier(0.3, 0, 0.175, 1);
+  transition:
+    left .5s cubic-bezier(0.77, 0, 0.175, 1),
+    transform .5s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .day-slider {
@@ -63,11 +65,11 @@
     }
     &_to-left {
       @extend %slidesPosition;
-      transform: translate(-33.33%);
+      left: -200%;
     }
     &_to-right {
       @extend %slidesPosition;
-      transform: translate(33.33%);
+      left: 0;
     }
   }
 }

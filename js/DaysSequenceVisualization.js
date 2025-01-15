@@ -11,8 +11,9 @@ export class DaysSequenceVisualization {
       : this.yearMap.get(`${this.yearNum}-1-1`);
 
     this.handleWheelEvent = this.handleWheelEvent.bind(this);
-    this.handleEndOfSlideTransition =
-      this.handleEndOfSlideTransition.bind(this);
+    this.handleMouseGrab = this.handleMouseGrab.bind(this);
+    this.handleMouseMove = this.handleMouseMove.bind(this);
+    this.handleMouseRelease = this.handleMouseRelease.bind(this);
 
     this.create(this.initialDay);
   }
@@ -48,7 +49,10 @@ export class DaysSequenceVisualization {
     slider.append(slides);
     document.body.append(slider);
 
-    document.addEventListener("wheel", this.handleWheelEvent);
+    document.addEventListener("wheel", this.handleWheelEvent, {
+      passive: false,
+    });
+    document.addEventListener("mousedown", this.handleMouseGrab);
   }
 
   getDayByKey(day) {
@@ -74,6 +78,8 @@ export class DaysSequenceVisualization {
   }
 
   handleWheelEvent(event) {
+    event.preventDefault();
+
     if (this.isSliding) {
       return;
     }
@@ -82,15 +88,19 @@ export class DaysSequenceVisualization {
     const deltaX = event.deltaX;
     const slides = document.querySelector(".day-slides");
 
+    console.log(deltaX, deltaY);
+
     // Moving to the previous day
     if (
       (deltaY < 0 || deltaX < 0) &&
       !slides.classList.contains("day-slides_beginning")
     ) {
+      document.removeEventListener("wheel", this.handleWheelEvent);
       this.isSliding = true;
       this.moveSlides(slides, "right");
       slides.addEventListener("transitionend", () => {
-        this.handleEndOfSlideTransition(this.previousDay);
+        this.isSliding = false;
+        this.create(this.previousDay);
       });
     }
     // Moving to the next day
@@ -98,21 +108,59 @@ export class DaysSequenceVisualization {
       (deltaY > 0 || deltaX > 0) &&
       !slides.classList.contains("day-slides_end")
     ) {
+      document.removeEventListener("wheel", this.handleWheelEvent);
       this.isSliding = true;
       this.moveSlides(slides, "left");
       slides.addEventListener("transitionend", () => {
-        this.handleEndOfSlideTransition(this.nextDay);
+        this.isSliding = false;
+        this.create(this.nextDay);
       });
     }
   }
 
-  moveSlides(element, direction) {
-    element.classList.add(`day-slides_to-${direction}`);
+  handleMouseGrab(event) {
+    this.clientXstart = event.clientX;
+    document.addEventListener("mousemove", this.handleMouseMove);
+    document.body.style.cursor = "grabbing";
   }
 
-  handleEndOfSlideTransition(dayTo) {
-    this.isSliding = false;
-    this.create(dayTo);
+  handleMouseMove(event) {
+    this.clientXend = event.clientX || event.touches[0].clientX;
+    this.clientDeltaX = this.clientXend - this.clientXstart;
+    const slides = document.querySelector(".day-slides");
+    slides.style.transform = `translateX(${this.clientDeltaX}px)`;
+    document.addEventListener("mouseup", this.handleMouseRelease);
+  }
+
+  handleMouseRelease() {
+    document.removeEventListener("mousemove", this.handleMouseMove);
+    const slides = document.querySelector(".day-slides");
+    if (
+      this.clientDeltaX > 0 &&
+      !slides.classList.contains("day-slides_beginning")
+    ) {
+      this.moveSlides(slides, "right");
+      slides.addEventListener("transitionend", () => {
+        this.create(this.previousDay);
+      });
+    } else if (
+      this.clientDeltaX < 0 &&
+      !slides.classList.contains("day-slides_end")
+    ) {
+      this.moveSlides(slides, "left");
+      //slides.style.transition = "transform 0.5s ease";
+      slides.style.transform = `translateX(-${this.clientDeltaX}px)`;
+      slides.addEventListener("transitionend", () => {
+        this.create(this.nextDay);
+      });
+    } else {
+      return;
+    }
+    document.body.style.cursor = "grab";
+  }
+
+  moveSlides(element, direction) {
+    element.classList.add(`day-slides_to-${direction}`);
   }
 
   /*remove(e, daySlider) {

@@ -18,12 +18,11 @@ export class YearVisualization {
     this.handleMouseTouchMove = this.handleMouseTouchMove.bind(this);
     this.handleTouchMove = this.handleTouchMove.bind(this);
     this.handleTouchEnd = this.handleTouchEnd.bind(this);
-    this.handleTouchGrabCalendar = this.handleTouchGrabCalendar.bind(this);
-    this.handleCalendarClick = this.handleCalendarClick.bind(this);
-    this.removeCalendarEventListeners =
-      this.removeCalendarEventListeners.bind(this);
+    this.handleTouchGrab = this.handleTouchGrab.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.removeEventListeners = this.removeEventListeners.bind(this);
     this.addEventListeners = this.addEventListeners.bind(this);
-    this.zoomCalendarFromPoint = this.zoomCalendarFromPoint.bind(this);
+    this.zoomFromPoint = this.zoomFromPoint.bind(this);
 
     this.render(object);
     this.centerVisualization(this.yearNum, this.block);
@@ -168,7 +167,7 @@ export class YearVisualization {
 
     // Grabbing the calendar-slides
     document.addEventListener("mousedown", this.handleMouseGrab);
-    document.addEventListener("touchstart", this.handleTouchGrabCalendar);
+    document.addEventListener("touchstart", this.handleTouchGrab);
 
     // Days on hover
     if (!this.condition) {
@@ -178,19 +177,19 @@ export class YearVisualization {
 
     // Click on mobile
     /*if (this.condition) {
-      document.addEventListener("click", this.handleCalendarClick);
+      document.addEventListener("click", this.handleClick);
     }*/
 
     return this;
   }
 
-  removeCalendarEventListeners() {
+  removeEventListeners() {
     document.removeEventListener("wheel", this.handleWheelEvent);
     document.removeEventListener("mousedown", this.handleMouseGrab);
-    document.removeEventListener("touchstart", this.handleTouchGrabCalendar);
+    document.removeEventListener("touchstart", this.handleTouchGrab);
     this.slides.removeEventListener("mouseover", this.handleDayHover);
     this.slides.removeEventListener("mouseout", this.handleDayMouseOut);
-    document.removeEventListener("click", this.handleCalendarClick);
+    document.removeEventListener("click", this.handleClick);
   }
 
   handleWheelEvent(event) {
@@ -224,7 +223,7 @@ export class YearVisualization {
     event.preventDefault();
   }
 
-  handleTouchGrabCalendar(event) {
+  handleTouchGrab(event) {
     const slides = document.querySelector(".calendar-slides");
     this.isDragging = true;
 
@@ -331,19 +330,19 @@ export class YearVisualization {
     }
   }
 
-  handleCalendarClick(event) {
+  handleClick(event) {
     const clickedCell = event.target.closest(".calendar-cell");
     if (clickedCell) {
-      const startPoint = this.zoomCalendarFromPoint(clickedCell);
+      const startPoint = this.zoomFromPoint(clickedCell);
       this.slider.addEventListener("transitionend", () => {
         this.slider.style.display = "none";
-        this.removeCalendarEventListeners();
+        this.removeEventListeners();
         new DaysSequenceVisualization(startPoint, this.object);
       });
     }
   }
 
-  zoomCalendarFromPoint(triggeredCell) {
+  zoomFromPoint(triggeredCell) {
     const dayNeeded = triggeredCell.children[0];
     const dayWidth = dayNeeded.getBoundingClientRect().width;
     const dayHeight = dayNeeded.getBoundingClientRect().height;
@@ -376,78 +375,4 @@ export class YearVisualization {
     this.slider.style.transition = "all .15s ease-in-out";
     return triggeredCell.dataset;
   }
-
-  /*createCellSlider(initialDay) {
-    if (initialDay) {
-      this.cellSliderStart = initialDay;
-    }
-    this.cellSliderOpen = true;
-    let cellSlider = document.querySelector(".day-calendar-slider");
-    let closeBut = document.querySelector(".close-button");
-    if (cellSlider) {
-      cellSlider.remove();
-    }
-    if (closeBut) {
-      closeBut.remove();
-    }
-
-    closeBut = createElement("div", "close-button");
-
-    const dayInfo = this.yearMap.get(
-      `${this.yearNum}-${this.cellSliderStart.month}-${this.cellSliderStart.date}`,
-    );
-    cellSlider = createElement("section", "day-calendar-slider");
-    const cellSlides = createElement("div", "day-calendar-slides");
-    // Temporary solution: create 3 calendar-slides with the same day
-    for (let i = 0; i < 3; i++) {
-      const day = this.createCellSlide(dayInfo);
-      cellSlides.append(day);
-    }
-    //---------
-    cellSlider.append(cellSlides);
-    document.body.append(closeBut);
-    document.body.append(cellSlider);
-
-    closeBut.addEventListener("click", (e) =>
-      this.removeCellSlider(e, cellSlider),
-    );
-  }
-
-  createCellSlide(dayInfo) {
-    const dayElement = createElement("div", "day");
-    const weekday = createElement("div", "day-text_small");
-    const date = createElement("div", "day-text");
-    dayElement.append(weekday);
-    dayElement.append(date);
-    if (dayInfo.working) {
-      dayElement.classList.add("day_working");
-    } else {
-      dayElement.classList.add("day_special");
-    }
-    if (dayInfo.weekdayNameLong) {
-      weekday.innerHTML = `${dayInfo.weekdayNameLong}`;
-    }
-    date.innerHTML = `${dayInfo.date}.${dayInfo.month}`;
-    return dayElement;
-  }
-
-  removeCellSlider(event, cellSlider) {
-    //Temporary solution: without calendar calendar-slider animation
-    this.cellSliderOpen = false;
-    cellSlider.classList.add("day-calendar-slider-closed");
-    cellSlider.addEventListener("transitionend", () => {
-      cellSlider.style.opacity = "";
-      cellSlider.style.scale = "";
-      cellSlider.style.transform = "";
-      cellSlider.removeEventListener("transitionend", () => {});
-      cellSlider.remove();
-      const closeBut = event.target;
-      closeBut.remove();
-      this.calendar-slider.style.transform = "";
-      this.calendar-slider.style.scale = "";
-      this.calendar-slider.style.display = "block";
-      this.calendar-slider.removeEventListener("transitionend", () => {});
-      this.addEventListeners();
-    });
-  }*/
 }
