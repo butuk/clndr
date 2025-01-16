@@ -5,8 +5,8 @@ import { InterfaceHeader } from "./js/InterfaceHeader.js";
 import { DaysSequenceVisualization } from "./js/DaysSequenceVisualization.js";
 
 //Year
-const currentDate = new Date();
-const currentYear = currentDate.getFullYear();
+const currentDate = new Date(),
+  currentYear = currentDate.getFullYear();
 let year;
 
 // User's browser tab title
@@ -14,12 +14,19 @@ document.title = `${currentDate.getDate()}.${
   currentDate.getMonth() + 1
 }.${currentYear}`;
 
+// Disable context menu
+window.oncontextmenu = (event) => {
+  event.preventDefault();
+  event.stopPropagation();
+  return false;
+};
+
 // Language and country
-let language;
-let country;
-let savedYear = localStorage.getItem("year");
-let savedLanguage = localStorage.getItem("language");
-let savedCountry = localStorage.getItem("country");
+let language,
+  country,
+  savedYear = localStorage.getItem("year"),
+  savedLanguage = localStorage.getItem("language"),
+  savedCountry = localStorage.getItem("country");
 year = savedYear ? savedYear : currentYear;
 language = savedLanguage ? savedLanguage : "eng";
 country = savedCountry ? savedCountry : "poland";

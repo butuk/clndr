@@ -40,6 +40,7 @@ export class YearVisualization {
       ? document.querySelector(".calendar-slides")
       : createElement("div", "calendar-slides");
 
+    //Clear old elements if any
     const oldVisualization = document.querySelectorAll(".calendar-slide");
     for (let slide of oldVisualization) {
       if (slide) {
@@ -72,9 +73,9 @@ export class YearVisualization {
     this.content.append(this.slider);
 
     //Check screen and visualization proportion and set condition of mobile behavior
-    const cell = document.querySelector(".calendar-cell");
-    const cellWidth = cell.getBoundingClientRect().width;
-    const cellHeight = cell.getBoundingClientRect().height;
+    const cell = document.querySelector(".calendar-cell"),
+      cellWidth = cell.getBoundingClientRect().width,
+      cellHeight = cell.getBoundingClientRect().height;
     this.condition = Math.min(cellWidth, cellHeight) < this.controlNumber;
     return this;
   }
@@ -137,17 +138,17 @@ export class YearVisualization {
   }
 
   centerVisualization(year, block) {
-    const chosenYear = year;
-    const centerX = document.documentElement.clientWidth / 2;
-    const currentDay = document.querySelectorAll(".current-date")[1];
-    const slidesX = this.slides.getBoundingClientRect().left;
-    const dayWidth = document
-      .querySelector(".working-day")
-      .parentElement.getBoundingClientRect().width;
+    const chosenYear = year,
+      centerX = document.documentElement.clientWidth / 2,
+      currentDay = document.querySelectorAll(".current-date")[1],
+      slidesX = this.slides.getBoundingClientRect().left,
+      dayWidth = document
+        .querySelector(".working-day")
+        .parentElement.getBoundingClientRect().width;
     if (block) {
       if (currentDay) {
-        const dayX = currentDay.getBoundingClientRect().left;
-        const delta = centerX - dayX;
+        const dayX = currentDay.getBoundingClientRect().left,
+          delta = centerX - dayX;
         this.slides.style.left = slidesX + delta + "px";
       } else {
         this.slides.style.left =
@@ -193,10 +194,10 @@ export class YearVisualization {
   }
 
   handleWheelEvent(event) {
-    const slides = document.querySelector(".calendar-slides");
-    const window = document.documentElement.clientWidth;
-    const deltaY = event.deltaY;
-    const deltaX = event.deltaX;
+    const slides = document.querySelector(".calendar-slides"),
+      window = document.documentElement.clientWidth,
+      deltaY = event.deltaY,
+      deltaX = event.deltaX;
     let left = slides.getBoundingClientRect().left;
 
     let leftBorder = -2 * window;
@@ -224,10 +225,9 @@ export class YearVisualization {
   }
 
   handleTouchGrab(event) {
-    const slides = document.querySelector(".calendar-slides");
+    const slides = document.querySelector(".calendar-slides"),
+      clientX = event.touches[0].clientX;
     this.isDragging = true;
-
-    const clientX = event.touches[0].clientX;
 
     this.offsetX = clientX + Math.abs(slides.getBoundingClientRect().left);
 
@@ -249,13 +249,13 @@ export class YearVisualization {
   }
 
   handleTouchMove(event) {
-    const window = document.documentElement.clientWidth;
-    const slides = document.querySelector(".calendar-slides");
+    const window = document.documentElement.clientWidth,
+      slides = document.querySelector(".calendar-slides");
 
     if (this.isDragging) {
-      let clientX = event.touches[0].clientX;
-      let left = clientX - this.offsetX;
-      let leftBorder = -2 * window;
+      let clientX = event.touches[0].clientX,
+        left = clientX - this.offsetX,
+        leftBorder = -2 * window;
       if (
         slides.getBoundingClientRect().left < leftBorder ||
         slides.getBoundingClientRect().left > 0
@@ -270,13 +270,13 @@ export class YearVisualization {
   }
 
   handleMouseTouchMove(event) {
-    const window = document.documentElement.clientWidth;
-    const slides = document.querySelector(".calendar-slides");
+    const window = document.documentElement.clientWidth,
+      slides = document.querySelector(".calendar-slides");
 
     if (this.isDragging) {
-      let clientX = event.clientX || event.touches[0].clientX;
-      let left = clientX - this.offsetX;
-      let leftBorder = -2 * window;
+      let clientX = event.clientX || event.touches[0].clientX,
+        left = clientX - this.offsetX,
+        leftBorder = -2 * window;
       if (
         slides.getBoundingClientRect().left < leftBorder ||
         slides.getBoundingClientRect().left > 0
@@ -313,8 +313,8 @@ export class YearVisualization {
       currentDay = document.querySelectorAll(".current-date")[1],
       slidesX = this.slides.getBoundingClientRect().left,
       dayWidth = document
-        .querySelector(".day")
-        .parentElement.getBoundingClientRect().width;
+        .querySelector(".calendar-cell")
+        .getBoundingClientRect().width;
     if (block) {
       if (currentDay) {
         const dayX = currentDay.getBoundingClientRect().left;
@@ -330,8 +330,8 @@ export class YearVisualization {
   }
 
   handleDayHover(event) {
-    const target = event.target.closest(".calendar-cell");
-    const firstChild = target ? target.children[0] : null;
+    const target = event.target.closest(".calendar-cell"),
+      firstChild = target ? target.children[0] : null;
     if (firstChild) {
       firstChild.classList.add("day_hover");
 
@@ -365,34 +365,36 @@ export class YearVisualization {
   }
 
   zoomFromPoint(triggeredCell) {
-    const dayNeeded = triggeredCell.children[0];
-    const dayWidth = dayNeeded.getBoundingClientRect().width;
-    const dayHeight = dayNeeded.getBoundingClientRect().height;
-    const screenWidth = window.innerWidth;
-    const screenHeight = window.innerHeight;
-    const scale = screenWidth / dayWidth;
-    const screenCenterX = screenWidth / 2;
-    const screenCenterY = screenHeight / 2;
-    const dayCenterX =
-      dayNeeded.getBoundingClientRect().left +
-      dayNeeded.getBoundingClientRect().width / 2;
-    const dayCenterY =
-      dayNeeded.getBoundingClientRect().top +
-      dayNeeded.getBoundingClientRect().height / 2;
-    const xNeeded =
-      (this.slider.getBoundingClientRect().left + screenCenterX - dayCenterX) *
-      scale;
-    const persentFromTop = (
-      (this.slider.getBoundingClientRect().top + dayHeight / 2) /
-      screenHeight /
-      2
-    ).toFixed(5);
-    const yNeeded =
-      (this.slider.getBoundingClientRect().top +
-        screenCenterY -
-        dayCenterY -
-        screenHeight * persentFromTop) *
-      scale;
+    const dayNeeded = triggeredCell.children[0],
+      dayWidth = dayNeeded.getBoundingClientRect().width,
+      dayHeight = dayNeeded.getBoundingClientRect().height,
+      screenWidth = window.innerWidth,
+      screenHeight = window.innerHeight,
+      scale = screenWidth / dayWidth,
+      screenCenterX = screenWidth / 2,
+      screenCenterY = screenHeight / 2,
+      dayCenterX =
+        dayNeeded.getBoundingClientRect().left +
+        dayNeeded.getBoundingClientRect().width / 2,
+      dayCenterY =
+        dayNeeded.getBoundingClientRect().top +
+        dayNeeded.getBoundingClientRect().height / 2,
+      xNeeded =
+        (this.slider.getBoundingClientRect().left +
+          screenCenterX -
+          dayCenterX) *
+        scale,
+      persentFromTop = (
+        (this.slider.getBoundingClientRect().top + dayHeight / 2) /
+        screenHeight /
+        2
+      ).toFixed(5),
+      yNeeded =
+        (this.slider.getBoundingClientRect().top +
+          screenCenterY -
+          dayCenterY -
+          screenHeight * persentFromTop) *
+        scale;
     this.slider.style.transform = `translate(${xNeeded}px, ${yNeeded}px) scale(${scale}) `;
     this.slider.style.transition = "all .15s ease-in-out";
     return triggeredCell.dataset;
