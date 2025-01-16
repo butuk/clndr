@@ -55,6 +55,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+<<<<<<< HEAD
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/scss/interface" />
@@ -69,6 +70,8 @@
       </set>
     </attachedChunks>
   </component>
+=======
+>>>>>>> gh-pages
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -94,16 +97,7 @@
       <workItem from="1734561805242" duration="25610000" />
       <workItem from="1734727140894" duration="1787000" />
       <workItem from="1735126460531" duration="71232000" />
-      <workItem from="1736032267752" duration="4915000" />
-      <workItem from="1736117892095" duration="316000" />
-      <workItem from="1736118216327" duration="749000" />
-      <workItem from="1736164723139" duration="43880000" />
-      <workItem from="1736429265890" duration="14203000" />
-      <workItem from="1736496187986" duration="4460000" />
-      <workItem from="1736549624231" duration="625000" />
-      <workItem from="1736753687321" duration="6629000" />
-      <workItem from="1736836436988" duration="16441000" />
-      <workItem from="1736923206707" duration="7016000" />
+      <workItem from="1737009594785" duration="501000" />
     </task>
     <servers />
   </component>

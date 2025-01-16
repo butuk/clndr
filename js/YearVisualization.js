@@ -307,6 +307,28 @@ export class YearVisualization {
     }
   }
 
+  centerVisualization(year, block) {
+    const chosenYear = year,
+      centerX = document.documentElement.clientWidth / 2,
+      currentDay = document.querySelectorAll(".current-date")[1],
+      slidesX = this.slides.getBoundingClientRect().left,
+      dayWidth = document
+        .querySelector(".day")
+        .parentElement.getBoundingClientRect().width;
+    if (block) {
+      if (currentDay) {
+        const dayX = currentDay.getBoundingClientRect().left;
+        const delta = centerX - dayX;
+        this.slides.style.left = slidesX + delta + dayWidth / 2 + "px";
+      } else {
+        this.slides.style.left =
+          chosenYear % 4 === 0
+            ? slidesX + dayWidth * 3 + "px"
+            : slidesX + dayWidth * 4 + "px";
+      }
+    }
+  }
+
   handleDayHover(event) {
     const target = event.target.closest(".calendar-cell");
     const firstChild = target ? target.children[0] : null;
