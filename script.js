@@ -6,8 +6,15 @@ import { DaysSequenceVisualization } from "./js/DaysSequenceVisualization.js";
 
 //Year
 const currentDate = new Date(),
-  currentYear = currentDate.getFullYear();
-let year;
+  currentYear = currentDate.getFullYear(),
+  today = `${currentDate.getFullYear()}-${
+    currentDate.getMonth() + 1
+  }-${currentDate.getDate()}`;
+
+// Fix for an experiment consequences
+if (localStorage.getItem("year") !== null) {
+  localStorage.removeItem("year");
+}
 
 // User's browser tab title
 document.title = `${currentDate.getDate()}.${
@@ -24,18 +31,16 @@ window.oncontextmenu = (event) => {
 // Language and country
 let language,
   country,
-  savedYear = localStorage.getItem("year"),
   savedLanguage = localStorage.getItem("language"),
   savedCountry = localStorage.getItem("country");
-year = savedYear ? savedYear : currentYear;
 language = savedLanguage ? savedLanguage : "eng";
 country = savedCountry ? savedCountry : "poland";
 
 // Calendar
-const newYear = new Year(2025);
+const newYear = new Year(currentYear);
 const version = new YearVersion(newYear, country, language);
 // const visualization = new YearVisualization(version, "content");
-new DaysSequenceVisualization(version, "2025-4-5");
+new DaysSequenceVisualization(version, today);
 
 // Interface
 new InterfaceHeader(version, " ", "header");

@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42e530b2-336a-427f-8d11-645dfdc78493" name="Changes" comment="" />
+    <list default="true" id="42e530b2-336a-427f-8d11-645dfdc78493" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/DaysSequenceVisualization.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/DaysSequenceVisualization.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/YearVisualization.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/YearVisualization.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/script.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,14 +60,6 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-<<<<<<< HEAD
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/scss/interface" />
-      <recent name="$PROJECT_DIR$/icons" />
-      <recent name="$PROJECT_DIR$/scss/visualization" />
-    </key>
-  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -70,8 +67,6 @@
       </set>
     </attachedChunks>
   </component>
-=======
->>>>>>> gh-pages
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

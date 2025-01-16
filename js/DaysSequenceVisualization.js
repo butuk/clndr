@@ -1,13 +1,14 @@
 import { createElement } from "./helpFunctions.js";
 
 export class DaysSequenceVisualization {
-  constructor(object, initialDay) {
+  constructor(object, startDay) {
     this.isSliding = false;
     this.object = object;
     this.yearMap = this.object.year.yearDatesMap;
     this.yearNum = this.object.year.yearNum;
-    this.initialDay = initialDay
-      ? this.yearMap.get(initialDay)
+    console.log(startDay);
+    this.initialDay = startDay
+      ? this.yearMap.get(startDay)
       : this.yearMap.get(`${this.yearNum}-1-1`);
 
     this.handleWheelEvent = this.handleWheelEvent.bind(this);

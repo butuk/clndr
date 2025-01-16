@@ -137,29 +137,6 @@ export class YearVisualization {
     return this;
   }
 
-  centerVisualization(year, block) {
-    const chosenYear = year,
-      centerX = document.documentElement.clientWidth / 2,
-      currentDay = document.querySelectorAll(".current-date")[1],
-      slidesX = this.slides.getBoundingClientRect().left,
-      dayWidth = document
-        .querySelector(".working-day")
-        .parentElement.getBoundingClientRect().width;
-    if (block) {
-      if (currentDay) {
-        const dayX = currentDay.getBoundingClientRect().left,
-          delta = centerX - dayX;
-        this.slides.style.left = slidesX + delta + "px";
-      } else {
-        this.slides.style.left =
-          chosenYear % 4 === 0
-            ? slidesX + dayWidth * 3 + "px"
-            : slidesX + dayWidth * 4 + "px";
-      }
-    }
-    return this;
-  }
-
   addEventListeners() {
     // Scrolling
     document.addEventListener("wheel", this.handleWheelEvent, {
@@ -308,8 +285,7 @@ export class YearVisualization {
   }
 
   centerVisualization(year, block) {
-    const chosenYear = year,
-      centerX = document.documentElement.clientWidth / 2,
+    const centerX = document.documentElement.clientWidth / 2,
       currentDay = document.querySelectorAll(".current-date")[1],
       slidesX = this.slides.getBoundingClientRect().left,
       dayWidth = document
@@ -322,7 +298,7 @@ export class YearVisualization {
         this.slides.style.left = slidesX + delta + dayWidth / 2 + "px";
       } else {
         this.slides.style.left =
-          chosenYear % 4 === 0
+          year % 4 === 0
             ? slidesX + dayWidth * 3 + "px"
             : slidesX + dayWidth * 4 + "px";
       }
