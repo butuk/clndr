@@ -1,8 +1,8 @@
 import { months } from "../dictionaries/months.js";
 import { createElement, intToRoman } from "./helpFunctions.js";
-import { DaysSequenceVisualization } from "./DaysSequenceVisualization.js";
+import { DatesSequenceVisualization } from "./DatesSequenceVisualization.js";
 
-export class YearVisualization {
+export class CalendarVisualization {
   constructor(object, block) {
     this.block = block;
     this.controlNumber = 27; // Cell's smallest side size
@@ -335,7 +335,7 @@ export class YearVisualization {
       this.slider.addEventListener("transitionend", () => {
         this.slider.style.display = "none";
         this.removeEventListeners();
-        new DaysSequenceVisualization(startPoint, this.object);
+        new DatesSequenceVisualization(startPoint, this.object);
       });
     }
   }

@@ -1,8 +1,8 @@
 import { Year } from "./js/Year.js";
 import { YearVersion } from "./js/YearVersion.js";
-import { YearVisualization } from "./js/YearVisualization.js";
+import { CalendarVisualization } from "./js/CalendarVisualization.js";
 import { InterfaceHeader } from "./js/InterfaceHeader.js";
-import { DaysSequenceVisualization } from "./js/DaysSequenceVisualization.js";
+import { DatesSequenceVisualization } from "./js/DatesSequenceVisualization.js";
 
 //Year
 const currentDate = new Date(),
@@ -39,8 +39,8 @@ country = savedCountry ? savedCountry : "poland";
 // Calendar
 const newYear = new Year(currentYear);
 const version = new YearVersion(newYear, country, language);
-// const visualization = new YearVisualization(version, "content");
-new DaysSequenceVisualization(version, today);
+//const visualization = new CalendarVisualization(version, "content");
+new DatesSequenceVisualization(version, today);
 
 // Interface
 new InterfaceHeader(version, " ", "header");

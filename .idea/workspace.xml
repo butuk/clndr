@@ -6,9 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="42e530b2-336a-427f-8d11-645dfdc78493" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/DaysSequenceVisualization.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/DaysSequenceVisualization.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/YearVisualization.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/YearVisualization.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/DaysSequenceVisualization.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/DatesSequenceVisualization.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/YearVisualization.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/CalendarVisualization.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/visualization/_day-sequence.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/visualization/_day-sequence.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css.map" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +96,21 @@
       <workItem from="1734727140894" duration="1787000" />
       <workItem from="1735126460531" duration="71232000" />
       <workItem from="1737009594785" duration="501000" />
+      <workItem from="1737096804897" duration="903000" />
+      <workItem from="1737097719634" duration="2000" />
+      <workItem from="1737098027506" duration="81000" />
+      <workItem from="1737098142624" duration="17000" />
+      <workItem from="1737098179410" duration="290000" />
+      <workItem from="1737098490204" duration="84000" />
+      <workItem from="1737098602659" duration="152000" />
+      <workItem from="1737098820450" duration="4000" />
+      <workItem from="1737098834716" duration="91000" />
+      <workItem from="1737099124013" duration="63000" />
+      <workItem from="1737101472340" duration="479000" />
+      <workItem from="1737102098698" duration="2558000" />
+      <workItem from="1737181520162" duration="15320000" />
+      <workItem from="1737354883662" duration="3246000" />
+      <workItem from="1737442879763" duration="7496000" />
     </task>
     <servers />
   </component>
