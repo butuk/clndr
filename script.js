@@ -1,25 +1,20 @@
 import { Year } from "./js/Year.js";
-import { YearVersion } from "./js/YearVersion.js";
 import { CalendarVisualization } from "./js/CalendarVisualization.js";
 import { InterfaceHeader } from "./js/InterfaceHeader.js";
 import { DatesSequenceVisualization } from "./js/DatesSequenceVisualization.js";
+import { Settings } from "./js/Settings.js";
 
-//Year
-const currentDate = new Date(),
-  currentYear = currentDate.getFullYear(),
-  today = `${currentDate.getFullYear()}-${
-    currentDate.getMonth() + 1
-  }-${currentDate.getDate()}`;
-
+/*
 // Fix for an experiment consequences
 if (localStorage.getItem("year") !== null) {
   localStorage.removeItem("year");
-}
+}*/
 
 // User's browser tab title
-document.title = `${currentDate.getDate()}.${
-  currentDate.getMonth() + 1
-}.${currentYear}`;
+const date = new Date();
+document.title = `${date.getDate()}.${
+  date.getMonth() + 1
+}.${date.getFullYear()}`;
 
 // Disable context menu
 window.oncontextmenu = (event) => {
@@ -28,19 +23,13 @@ window.oncontextmenu = (event) => {
   return false;
 };
 
-// Language and country
-let language,
-  country,
-  savedLanguage = localStorage.getItem("language"),
-  savedCountry = localStorage.getItem("country");
-language = savedLanguage ? savedLanguage : "eng";
-country = savedCountry ? savedCountry : "poland";
+// Settings
+const settings = new Settings();
 
 // Calendar
-const newYear = new Year(currentYear);
-const version = new YearVersion(newYear, country, language);
-//const visualization = new CalendarVisualization(version, "content");
-new DatesSequenceVisualization(version, today);
+const year = new Year(settings);
+const visualization = new CalendarVisualization(year, "content");
+// new DatesSequenceVisualization(year, "2025-1-14");
 
 // Interface
-new InterfaceHeader(version, " ", "header");
+new InterfaceHeader(year, visualization, "header", settings);

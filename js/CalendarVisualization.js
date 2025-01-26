@@ -3,7 +3,7 @@ import { createElement, intToRoman } from "./helpFunctions.js";
 import { DatesSequenceVisualization } from "./DatesSequenceVisualization.js";
 
 export class CalendarVisualization {
-  constructor(object, block) {
+  constructor(year, block) {
     this.block = block;
     this.controlNumber = 27; // Cell's smallest side size
     const today = new Date();
@@ -12,7 +12,7 @@ export class CalendarVisualization {
     this.currentYear = today.getFullYear();
     this.delta = 3;
     this.isDragging = false;
-    this.yearNum = object.year.yearNum;
+    this.number = year.number;
 
     this.handleMouseGrab = this.handleMouseGrab.bind(this);
     this.handleMouseTouchMove = this.handleMouseTouchMove.bind(this);
@@ -24,14 +24,14 @@ export class CalendarVisualization {
     this.addEventListeners = this.addEventListeners.bind(this);
     this.zoomFromPoint = this.zoomFromPoint.bind(this);
 
-    this.render(object);
-    this.centerVisualization(this.yearNum, this.block);
+    this.render(year);
+    this.centerVisualization(this.number, this.block);
     this.addEventListeners();
     return this;
   }
 
-  render(object) {
-    this.object = object;
+  render(year) {
+    this.year = year;
     this.content = document.querySelector(`.${this.block}`);
     this.slider = document.querySelector(".calendar-slider")
       ? document.querySelector(".calendar-slider")
@@ -64,7 +64,7 @@ export class CalendarVisualization {
         this.renderRowHR(rowNum, slide);
       }
       //Creating table body
-      for (let day of this.object.year.days) {
+      for (let day of this.year.days) {
         this.renderTheDay(day, slide);
       }
       this.slides.append(slide);
@@ -126,8 +126,8 @@ export class CalendarVisualization {
     const monthName = createElement("div", "calendar-cell-hr");
     monthName.style.gridColumn = "1";
     monthName.style.gridRow = `${rowNum + 3}`;
-    if (this.object.language) {
-      monthName.textContent = months[rowNum][this.object.language]
+    if (this.year.language) {
+      monthName.textContent = months[rowNum][this.year.language]
         .charAt(0)
         .toUpperCase();
     } else {
@@ -335,7 +335,7 @@ export class CalendarVisualization {
       this.slider.addEventListener("transitionend", () => {
         this.slider.style.display = "none";
         this.removeEventListeners();
-        new DatesSequenceVisualization(startPoint, this.object);
+        new DatesSequenceVisualization(startPoint, this.year);
       });
     }
   }

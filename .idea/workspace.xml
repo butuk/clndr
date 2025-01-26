@@ -6,12 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="42e530b2-336a-427f-8d11-645dfdc78493" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/DaysSequenceVisualization.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/DatesSequenceVisualization.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/YearVisualization.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/CalendarVisualization.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dictionaries/interface.js" beforeDir="false" afterPath="$PROJECT_DIR$/dictionaries/interfaceElements.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/CalendarVisualization.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/CalendarVisualization.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/DatesSequenceVisualization.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/DatesSequenceVisualization.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/Day.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Day.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/InterfaceHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/InterfaceHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/InterfacePopup.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/InterfacePopup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/Year.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Year.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/YearVersion.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/helpFunctions.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/helpFunctions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/visualization/_day-sequence.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/visualization/_day-sequence.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css.map" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +65,7 @@
     &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/butuk/Dropbox/Work/CLNDR 2.0 — 24-12-01/clndr/node_modules/prettier&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.gutterIcons&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -110,7 +116,13 @@
       <workItem from="1737102098698" duration="2558000" />
       <workItem from="1737181520162" duration="15320000" />
       <workItem from="1737354883662" duration="3246000" />
-      <workItem from="1737442879763" duration="7496000" />
+      <workItem from="1737442879763" duration="9997000" />
+      <workItem from="1737478528886" duration="2000" />
+      <workItem from="1737530177143" duration="1331000" />
+      <workItem from="1737614086928" duration="2567000" />
+      <workItem from="1737638549122" duration="1666000" />
+      <workItem from="1737648770931" duration="10398000" />
+      <workItem from="1737731918858" duration="12578000" />
     </task>
     <servers />
   </component>

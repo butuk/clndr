@@ -6,20 +6,14 @@ export function createElement(element, className) {
   return result;
 }
 
-export function markElementAmongOthers(element, markClass) {
-  if (element && element.parentElement) {
-    for (let i = 0; i < element.parentElement.children.length; i++) {
-      element.parentElement.children[i].classList.remove(markClass);
-    }
-    element.classList.add(markClass);
-  }
-}
-
-export function createNameCell(place, text) {
-  const element = document.createElement("div");
-  element.classList.add("name");
-  element.textContent = text;
-  place.append(element);
+export function createDayFinder(year, objectsArray) {
+  const yearNum = year;
+  return new Map(
+    objectsArray.map(function (obj) {
+      const hashKey = `${yearNum}-${obj.month}-${obj.date}`;
+      return [hashKey, obj];
+    }),
+  );
 }
 
 export function intToRoman(num) {
@@ -47,28 +41,4 @@ export function intToRoman(num) {
     }
   }
   return result;
-}
-
-export function throttle(func, limit) {
-  let lastFunc;
-  let lastRan;
-  return function () {
-    const context = this;
-    const args = arguments;
-    if (!lastRan) {
-      func.apply(context, args);
-      lastRan = Date.now();
-    } else {
-      clearTimeout(lastFunc);
-      lastFunc = setTimeout(
-        function () {
-          if (Date.now() - lastRan >= limit) {
-            func.apply(context, args);
-            lastRan = Date.now();
-          }
-        },
-        limit - (Date.now() - lastRan),
-      );
-    }
-  };
 }

@@ -1,7 +1,8 @@
 import { createElement } from "./helpFunctions.js";
 
 export class DatesSequenceVisualization {
-  constructor(object, startDay) {
+  constructor(year, startDay) {
+    this.year = year;
     this.wheelDelta = 0;
     this.currentSlideIndex = 0;
     this.isMoving = false;
@@ -10,15 +11,14 @@ export class DatesSequenceVisualization {
     this.currentX = 0;
     this.previousX = 0;
     this.animationID = 0;
-    this.object = object;
-    this.yearMap = this.object.year.yearDatesMap;
-    this.yearNum = this.object.year.yearNum;
+    console.log(this.year.dayFinder);
+    // this.yearMap = this.year.dayFinder;
+    this.number = this.year.number;
     this.initialDay = startDay
-      ? this.yearMap.get(startDay)
-      : this.yearMap.get(`${this.yearNum}-1-1`);
+      ? this.year.dayFinder.get(startDay)
+      : this.year.dayFinder.get(`${this.number}-1-1`);
+    console.log(this.initialDay);
 
-    this.handleWheel = this.handleWheel.bind(this);
-    // this.handleWheelEvent = this.handleWheelEvent.bind(this);
     this.handleInteractionStart = this.handleInteractionStart.bind(this);
     this.handleInteractionInProcess =
       this.handleInteractionInProcess.bind(this);
@@ -78,15 +78,10 @@ export class DatesSequenceVisualization {
     });
     this.slides.addEventListener("touchmove", this.handleInteractionInProcess);
     this.slides.addEventListener("touchend", this.handleInteractionEnd);
-
-    // On wheel event
-    this.slides.addEventListener("wheel", this.handleWheel, {
-      passive: false,
-    });
   }
 
   getDayByKey(day) {
-    return this.yearMap.get(`${this.yearNum}-${day.month}-${day.date}`);
+    return this.year.dayFinder.get(`${this.number}-${day.month}-${day.date}`);
   }
 
   createSlide(dayInfo) {
@@ -107,43 +102,6 @@ export class DatesSequenceVisualization {
     return dayElement;
   }
 
-  handleWheel(event) {
-    event.preventDefault();
-    if (!this.isScrolling) {
-      this.handleInteractionStart(event);
-    }
-    this.handleInteractionInProcess(event);
-
-    clearTimeout(this.isScrolling);
-    this.isScrolling = setTimeout(() => {
-      this.wheelDelta = 0;
-      this.handleInteractionEnd(event);
-      this.isScrolling = false;
-    }, 100);
-  }
-
-  /*handleWheelEvent(event) {
-    event.preventDefault();
-    if (this.isMoving) {
-      return;
-    }
-
-    const deltaY = event.deltaY;
-    const deltaX = event.deltaX;
-
-    if (deltaX > 0 || deltaY < 0) {
-      this.isMoving = true;
-      this.currentSlideIndex = 1;
-    } else if (deltaX < 0 || deltaY > 0) {
-      this.isMoving = true;
-      this.currentSlideIndex = -1;
-    }
-
-    this.switchTransitionOn();
-    this.setSliderFinalPosition();
-    this.setSliderPosition();
-  }*/
-
   getEventX(event) {
     if (event.type.includes("mouse")) {
       return event.pageX;
@@ -161,12 +119,7 @@ export class DatesSequenceVisualization {
     }
   }
 
-  switchTransitionOn(condition = true) {
-    this.slides.style.transition = condition ? this.transition : "none";
-  }
-
   handleInteractionStart(event) {
-    this.switchTransitionOn(false);
     return this.interactionEvent(event);
   }
 
@@ -216,19 +169,26 @@ export class DatesSequenceVisualization {
 
   setSliderFinalPosition() {
     this.currentX = this.currentSlideIndex * -window.innerWidth;
-    clearTimeout(this.isScrolling);
-    this.slides.addEventListener("transitionend", () => {
-      if (this.currentSlideIndex === 1) {
-        this.create(this.nextDay);
-      } else if (this.currentSlideIndex === -1) {
-        this.create(this.previousDay);
-      } else {
-        this.create(this.currentDay);
+    this.isMoving = false;
+
+    const onPlace = () => {
+      switch (this.currentSlideIndex) {
+        case 1:
+          this.create(this.nextDay);
+          break;
+        case -1:
+          this.create(this.previousDay);
+          break;
+        default:
+          this.create(this.currentDay);
       }
       this.currentSlideIndex = 0;
       this.previousX = 0;
       this.currentX = 0;
-      this.isMoving = false;
-    });
+
+      this.slides.removeEventListener("transitionend", onPlace);
+    };
+
+    this.slides.addEventListener("transitionend", onPlace);
   }
 }

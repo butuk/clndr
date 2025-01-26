@@ -1,33 +1,34 @@
 import { createElement } from "./helpFunctions.js";
-import { interfaceElements } from "../dictionaries/interface.js";
+import { interfaceElements } from "../dictionaries/interfaceElements.js";
 
 export class InterfacePopup {
-  constructor(version, visualization) {
-    this.version = version;
+  constructor(year, visualization, settings) {
+    this.settings = settings;
+    this.year = year;
     this.show = this.show.bind(this);
     this.hideOverlay = this.hideOverlay.bind(this);
     this.stopPropagation = this.stopPropagation.bind(this);
     this.switchParameter = this.switchParameter.bind(this);
-    this.show(this.version, visualization);
+    this.show(this.year, visualization);
   }
 
-  show(version, visualization) {
+  show(year, visualization) {
     this.overlay = createElement("div", "overlay");
     const popup = createElement("div", "popup");
     // Options
-    if (version.country) {
+    if (year.country) {
       this.createOptionsLine(
         "country",
-        version.country,
+        year.country,
         interfaceElements.countries,
         popup,
         visualization,
       );
     }
-    if (version.language) {
+    if (year.language) {
       this.createOptionsLine(
         "language",
-        version.language,
+        year.language,
         interfaceElements.languages,
         popup,
         visualization,
@@ -72,7 +73,7 @@ export class InterfacePopup {
           event,
           datasetKey,
           block.dataset[`${parameter}`],
-          this.version,
+          this.year,
           visualization,
         );
       });
@@ -81,7 +82,7 @@ export class InterfacePopup {
     block.append(line);
   }
 
-  switchParameter(event, parameterKey, setParameter, version, visualization) {
+  switchParameter(event, parameterKey, setParameter, year, visualization) {
     const block = event.target;
     const optionsLine = block.parentElement;
     for (let element of optionsLine.children) {
@@ -92,19 +93,36 @@ export class InterfacePopup {
     let indicator;
     switch (parameterKey) {
       case "country":
-        version.localize(setParameter);
+        this.settings.country = setParameter;
         localStorage.setItem("country", setParameter);
         indicator = document.querySelector(".country");
         indicator.innerHTML = interfaceElements.countries[setParameter];
+        indicator.addEventListener("change", (event) => {
+          const selectedCountry = event.target.value;
+          this.settings.country = selectedCountry;
+          console.log(
+            `LanguageSwitcher: Country changed to ${selectedCountry}`,
+          );
+          visualization.render(year);
+        });
         break;
       case "language":
-        version.translate(setParameter);
+        this.settings.language = setParameter;
         localStorage.setItem("language", setParameter);
         indicator = document.querySelector(".language");
         indicator.innerHTML = interfaceElements.languages[setParameter];
+        indicator.addEventListener("change", (event) => {
+          const selectedLanguage = event.target.value;
+          this.settings.language = selectedLanguage;
+          console.log(
+            `LanguageSwitcher: Language changed to ${selectedLanguage}`,
+          );
+          visualization.render(year);
+        });
+
         break;
     }
-    visualization.render(version);
+    visualization.render(year);
   }
 
   stopPropagation = (event) => {

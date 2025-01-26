@@ -4,6 +4,5 @@ export class Day {
     this.month = month;
     this.date = date;
     this.weekday = weekday;
-    //console.log(this);
   }
 }
