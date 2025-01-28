@@ -11,13 +11,10 @@ export class DatesSequenceVisualization {
     this.currentX = 0;
     this.previousX = 0;
     this.animationID = 0;
-    console.log(this.year.dayFinder);
-    // this.yearMap = this.year.dayFinder;
     this.number = this.year.number;
     this.initialDay = startDay
       ? this.year.dayFinder.get(startDay)
       : this.year.dayFinder.get(`${this.number}-1-1`);
-    console.log(this.initialDay);
 
     this.handleInteractionStart = this.handleInteractionStart.bind(this);
     this.handleInteractionInProcess =
@@ -26,10 +23,10 @@ export class DatesSequenceVisualization {
     this.animation = this.animation.bind(this);
     this.interactionEvent = this.interactionEvent.bind(this);
 
-    this.create(this.initialDay);
+    this.render(this.initialDay);
   }
 
-  create(initialDay) {
+  render(initialDay) {
     const slider = document.querySelector(".day-slider")
       ? document.querySelector(".day-slider")
       : createElement("section", "day-slider");
@@ -73,10 +70,16 @@ export class DatesSequenceVisualization {
     this.slides.addEventListener("mouseleave", this.handleInteractionEnd);
 
     // On touch events
-    this.slides.addEventListener("touchstart", (event) => {
-      this.handleInteractionStart(event);
+    this.slides.addEventListener(
+      "touchstart",
+      (event) => {
+        this.handleInteractionStart(event);
+      },
+      { passive: true },
+    );
+    this.slides.addEventListener("touchmove", this.handleInteractionInProcess, {
+      passive: true,
     });
-    this.slides.addEventListener("touchmove", this.handleInteractionInProcess);
     this.slides.addEventListener("touchend", this.handleInteractionEnd);
   }
 
@@ -85,6 +88,7 @@ export class DatesSequenceVisualization {
   }
 
   createSlide(dayInfo) {
+    console.log(dayInfo);
     const dayElement = createElement("div", "day");
     const weekday = createElement("div", "day-text_small");
     const date = createElement("div", "day-text");
@@ -174,13 +178,13 @@ export class DatesSequenceVisualization {
     const onPlace = () => {
       switch (this.currentSlideIndex) {
         case 1:
-          this.create(this.nextDay);
+          this.render(this.nextDay);
           break;
         case -1:
-          this.create(this.previousDay);
+          this.render(this.previousDay);
           break;
         default:
-          this.create(this.currentDay);
+          this.render(this.currentDay);
       }
       this.currentSlideIndex = 0;
       this.previousX = 0;

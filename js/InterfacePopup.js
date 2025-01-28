@@ -2,36 +2,34 @@ import { createElement } from "./helpFunctions.js";
 import { interfaceElements } from "../dictionaries/interfaceElements.js";
 
 export class InterfacePopup {
-  constructor(year, visualization, settings) {
-    this.settings = settings;
-    this.year = year;
+  constructor(settings) {
+    this.settings = settings ? settings : null;
+
     this.show = this.show.bind(this);
     this.hideOverlay = this.hideOverlay.bind(this);
     this.stopPropagation = this.stopPropagation.bind(this);
     this.switchParameter = this.switchParameter.bind(this);
-    this.show(this.year, visualization);
+    this.show(this.settings);
   }
 
-  show(year, visualization) {
+  show(settings) {
     this.overlay = createElement("div", "overlay");
     const popup = createElement("div", "popup");
     // Options
-    if (year.country) {
+    if (settings && settings.country) {
       this.createOptionsLine(
         "country",
-        year.country,
+        settings.country,
         interfaceElements.countries,
         popup,
-        visualization,
       );
     }
-    if (year.language) {
+    if (settings && settings.language) {
       this.createOptionsLine(
         "language",
-        year.language,
+        settings.language,
         interfaceElements.languages,
         popup,
-        visualization,
       );
     }
     // Additional links line
@@ -51,13 +49,7 @@ export class InterfacePopup {
     popup.addEventListener("click", this.stopPropagation);
   }
 
-  createOptionsLine(
-    parameter,
-    setParameter,
-    optionsGroup,
-    block,
-    visualization,
-  ) {
+  createOptionsLine(parameter, setParameter, optionsGroup, block) {
     const line = createElement("div", "options-line");
     Object.keys(optionsGroup).forEach((key) => {
       const country = optionsGroup[key];
@@ -69,20 +61,14 @@ export class InterfacePopup {
       block.innerHTML = country;
       const datasetKey = Object.keys(block.dataset)[0];
       block.addEventListener("click", (event) => {
-        this.switchParameter(
-          event,
-          datasetKey,
-          block.dataset[`${parameter}`],
-          this.year,
-          visualization,
-        );
+        this.switchParameter(event, datasetKey, block.dataset[`${parameter}`]);
       });
       line.append(block);
     });
     block.append(line);
   }
 
-  switchParameter(event, parameterKey, setParameter, year, visualization) {
+  switchParameter(event, parameterKey, setParameter) {
     const block = event.target;
     const optionsLine = block.parentElement;
     for (let element of optionsLine.children) {
@@ -103,7 +89,6 @@ export class InterfacePopup {
           console.log(
             `LanguageSwitcher: Country changed to ${selectedCountry}`,
           );
-          visualization.render(year);
         });
         break;
       case "language":
@@ -117,12 +102,10 @@ export class InterfacePopup {
           console.log(
             `LanguageSwitcher: Language changed to ${selectedLanguage}`,
           );
-          visualization.render(year);
         });
 
         break;
     }
-    visualization.render(year);
   }
 
   stopPropagation = (event) => {

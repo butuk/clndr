@@ -9,30 +9,31 @@ const currentDate = new Date(),
   }-${currentDate.getDate()}`;
 
 export class Settings {
-  constructor() {
+  constructor(year) {
+    this.eventTarget = new EventTarget();
+    this._year = year;
     let savedLanguage = localStorage.getItem("language"),
       savedCountry = localStorage.getItem("country");
-    this._language = savedLanguage ? savedLanguage : "eng";
-    this._country = savedCountry ? savedCountry : "poland";
-    this._year = currentDate.getFullYear();
-    this.eventTarget = new EventTarget();
+    this.language = savedLanguage ? savedLanguage : "eng";
+    this.country = savedCountry ? savedCountry : "poland";
+    this.year = year.number ? year.number : currentDate.getFullYear();
   }
 
   set year(value) {
-    this._year = value;
+    this._number = value;
+    this._year.number = value;
   }
 
   get year() {
-    return this._year;
+    return this._number;
   }
 
   set language(value) {
     if (languages.hasOwnProperty(value)) {
       this._language = value;
       localStorage.setItem("language", value);
-      this.eventTarget.dispatchEvent(
-        new CustomEvent("languageChanged", { detail: { language: value } }),
-      );
+      this._year.language = value;
+      this.eventTarget.dispatchEvent(new CustomEvent("change"));
     }
   }
 
@@ -44,9 +45,8 @@ export class Settings {
     if (countries.hasOwnProperty(value)) {
       this._country = value;
       localStorage.setItem("country", value);
-      this.eventTarget.dispatchEvent(
-        new CustomEvent("countryChanged", { detail: { country: value } }),
-      );
+      this._year.country = value;
+      this.eventTarget.dispatchEvent(new CustomEvent("change"));
     }
   }
 
@@ -54,13 +54,7 @@ export class Settings {
     return this._country;
   }
 
-  // Subscribe to language changes
-  onLanguageChange(listener) {
-    this.eventTarget.addEventListener("languageChanged", listener);
-  }
-
-  // Subscribe to country changes
-  onCountryChange(listener) {
-    this.eventTarget.addEventListener("countryChanged", listener);
+  onChange(listener) {
+    this.eventTarget.addEventListener("change", listener);
   }
 }

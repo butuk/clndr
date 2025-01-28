@@ -23,13 +23,15 @@ window.oncontextmenu = (event) => {
   return false;
 };
 
-// Settings
-const settings = new Settings();
-
 // Calendar
-const year = new Year(settings);
-const visualization = new CalendarVisualization(year, "content");
-// new DatesSequenceVisualization(year, "2025-1-14");
+const year = new Year();
+
+// Settings
+const settings = new Settings(year);
+
+// Visualizations
+const calendarViz = new CalendarVisualization(year, "content", settings);
+//const daySequenceViz = new DatesSequenceVisualization(year);
 
 // Interface
-new InterfaceHeader(year, visualization, "header", settings);
+new InterfaceHeader("header", settings);

@@ -7,11 +7,9 @@ import { floatingHolidaysDates } from "../dictionaries/floatingHolidaysDates.js"
 import { daysExchanges } from "../dictionaries/daysExchanges.js";
 
 export class Year {
-  constructor(settings) {
-    this.settings = settings;
-    this.number = settings.year ? settings.year : new Date().getFullYear();
-
+  constructor(number) {
     // Days of the year
+    this.number = number ? number : new Date().getFullYear();
     this.days = [];
     const start = new Date(this.number, 0, 1); // January 1st
     const end = new Date(this.number + 1, 0, 1); // January 1st of the next year number
@@ -31,21 +29,6 @@ export class Year {
     }
     // Day finder
     this.dayFinder = createDayFinder(this.number, this.days);
-
-    this.country = settings.country ? settings.country : null;
-    this.language = settings.language ? settings.language : null;
-
-    // Subscribe to language changes
-    this.settings.onLanguageChange((event) => {
-      const { language } = event.detail;
-      this.updateLanguage(language);
-    });
-
-    // Subscribe to country changes
-    this.settings.onCountryChange((event) => {
-      const { country } = event.detail;
-      this.updateCountry(country);
-    });
   }
 
   set number(value) {
@@ -140,15 +123,5 @@ export class Year {
 
   get language() {
     return this._language;
-  }
-
-  updateLanguage(language) {
-    console.log(`Calendar: Language: ${language}`);
-    this.language = language;
-  }
-
-  updateCountry(country) {
-    console.log(`Calendar: Country: ${country}`);
-    this.country = country;
   }
 }
