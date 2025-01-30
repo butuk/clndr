@@ -1,7 +1,11 @@
 import { createElement } from "./helpFunctions.js";
 
 export class DatesSequenceVisualization {
-  constructor(year, startDay) {
+  constructor(year, settings, startDay) {
+    if (settings) {
+      this.settings = settings;
+      this.settings.onChange(this.handleSettingsChange.bind(this));
+    }
     this.year = year;
     this.wheelDelta = 0;
     this.currentSlideIndex = 0;
@@ -84,11 +88,11 @@ export class DatesSequenceVisualization {
   }
 
   getDayByKey(day) {
+    console.log(day);
     return this.year.dayFinder.get(`${this.number}-${day.month}-${day.date}`);
   }
 
   createSlide(dayInfo) {
-    console.log(dayInfo);
     const dayElement = createElement("div", "day");
     const weekday = createElement("div", "day-text_small");
     const date = createElement("div", "day-text");
@@ -104,6 +108,10 @@ export class DatesSequenceVisualization {
     }
     date.innerHTML = `${dayInfo.date}.${dayInfo.month}`;
     return dayElement;
+  }
+
+  handleSettingsChange() {
+    this.render(this.currentDay);
   }
 
   getEventX(event) {

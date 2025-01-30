@@ -31,7 +31,7 @@ const settings = new Settings(year);
 
 // Visualizations
 const calendarViz = new CalendarVisualization(year, "content", settings);
-//const daySequenceViz = new DatesSequenceVisualization(year);
+//const daySequenceViz = new DatesSequenceVisualization(year, settings);
 
 // Interface
 new InterfaceHeader("header", settings);
