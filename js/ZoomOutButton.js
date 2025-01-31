@@ -1,6 +1,6 @@
 import { createElement } from "./helpFunctions";
 
-export class InterfaceZoomOutButton {
+export class ZoomOutButton {
   constructor() {
     this.create();
   }

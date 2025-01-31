@@ -331,7 +331,7 @@ table {
   color: var(--back-color);
   margin-bottom: 5%;
 }
-.day-slider .day-slides .day .day-text {
+.day-slider .day-slides .day .day-text_big {
   font-size: 8rem;
   color: var(--back-color);
 }

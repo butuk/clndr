@@ -1,6 +1,6 @@
 import { Year } from "./js/Year.js";
 import { CalendarVisualization } from "./js/CalendarVisualization.js";
-import { InterfaceHeader } from "./js/InterfaceHeader.js";
+import { PageHeader } from "./js/PageHeader.js";
 import { DatesSequenceVisualization } from "./js/DatesSequenceVisualization.js";
 import { Settings } from "./js/Settings.js";
 
@@ -26,12 +26,12 @@ window.oncontextmenu = (event) => {
 // Calendar
 const year = new Year();
 
-// Settings
-const settings = new Settings(year);
-
 // Visualizations
-const calendarViz = new CalendarVisualization(year, "content", settings);
-//const daySequenceViz = new DatesSequenceVisualization(year, settings);
+const calendarViz = new CalendarVisualization(year, "content");
+const daySequenceViz = new DatesSequenceVisualization(year);
 
-// Interface
-new InterfaceHeader("header", settings);
+// Site header
+const controls = new PageHeader("header");
+
+// Settings, switchers and indicators
+new Settings(year, [calendarViz, daySequenceViz], controls);

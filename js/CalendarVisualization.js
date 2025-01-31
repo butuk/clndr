@@ -3,13 +3,8 @@ import { createElement, intToRoman } from "./helpFunctions.js";
 import { DatesSequenceVisualization } from "./DatesSequenceVisualization.js";
 
 export class CalendarVisualization {
-  constructor(year, block, settings) {
+  constructor(year, block) {
     this.year = year;
-    if (settings) {
-      this.settings = settings;
-      this.settings.onChange(this.handleSettingsChange.bind(this));
-    }
-
     this.block = block;
     this.controlNumber = 27; // Cell's smallest side size
     const today = new Date();
@@ -36,8 +31,7 @@ export class CalendarVisualization {
     return this;
   }
 
-  render(year) {
-    this.year = year;
+  render() {
     this.content = document.querySelector(`.${this.block}`);
     this.slider = document.querySelector(".calendar-slider")
       ? document.querySelector(".calendar-slider")
@@ -174,10 +168,6 @@ export class CalendarVisualization {
     this.slides.removeEventListener("mouseover", this.handleDayHover);
     this.slides.removeEventListener("mouseout", this.handleDayMouseOut);
     document.removeEventListener("click", this.handleClick);
-  }
-
-  handleSettingsChange() {
-    this.render(this.year);
   }
 
   handleWheelEvent(event) {

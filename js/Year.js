@@ -31,6 +31,10 @@ export class Year {
     this.dayFinder = createDayFinder(this.number, this.days);
   }
 
+  find(day) {
+    return this.dayFinder.get(day);
+  }
+
   set number(value) {
     this._number = value;
     return this;
@@ -62,7 +66,7 @@ export class Year {
     }
     //Make holidays non-working days
     for (let date in holidaysItems) {
-      const day = this.dayFinder.get(`${this.number}-${date}`);
+      const day = this.find(`${this.number}-${date}`);
       day.working = false;
     }
     //Handle other special days types changes
@@ -78,8 +82,8 @@ export class Year {
           exchangeTo[change["to"]] = daysNames["to"];
         }
         for (let item of changes) {
-          const fromDay = this.dayFinder.get(`${this.number}-${item.from}`);
-          const toDay = this.dayFinder.get(`${this.number}-${item.to}`);
+          const fromDay = this.find(`${this.number}-${item.from}`);
+          const toDay = this.find(`${this.number}-${item.to}`);
           fromDay.working = workDaysMask.from;
           toDay.working = workDaysMask.to;
         }
@@ -112,7 +116,7 @@ export class Year {
     }
     if (this.specialDays) {
       for (let specialDay in this.specialDays) {
-        const day = this.dayFinder.get(`${this.number}-${specialDay}`);
+        const day = this.find(`${this.number}-${specialDay}`);
         day.holiday = this._language
           ? this.specialDays[specialDay][this._language]
           : null;

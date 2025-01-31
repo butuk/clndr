@@ -1,11 +1,7 @@
 import { createElement } from "./helpFunctions.js";
 
 export class DatesSequenceVisualization {
-  constructor(year, settings, startDay) {
-    if (settings) {
-      this.settings = settings;
-      this.settings.onChange(this.handleSettingsChange.bind(this));
-    }
+  constructor(year, startDay) {
     this.year = year;
     this.wheelDelta = 0;
     this.currentSlideIndex = 0;
@@ -16,9 +12,9 @@ export class DatesSequenceVisualization {
     this.previousX = 0;
     this.animationID = 0;
     this.number = this.year.number;
-    this.initialDay = startDay
-      ? this.year.dayFinder.get(startDay)
-      : this.year.dayFinder.get(`${this.number}-1-1`);
+    this.currentDay = startDay
+      ? this.year.find(`${this.number}-${startDay}`)
+      : this.year.find(`${this.number}-1-1`);
 
     this.handleInteractionStart = this.handleInteractionStart.bind(this);
     this.handleInteractionInProcess =
@@ -27,10 +23,10 @@ export class DatesSequenceVisualization {
     this.animation = this.animation.bind(this);
     this.interactionEvent = this.interactionEvent.bind(this);
 
-    this.render(this.initialDay);
+    this.render();
   }
 
-  render(initialDay) {
+  render() {
     const slider = document.querySelector(".day-slider")
       ? document.querySelector(".day-slider")
       : createElement("section", "day-slider");
@@ -41,18 +37,17 @@ export class DatesSequenceVisualization {
     }
     this.slides = createElement("div", "day-slides");
 
-    if (initialDay.previous) {
-      this.previousDay = this.getDayByKey(initialDay.previous);
+    if (this.currentDay.previous) {
+      this.previousDay = this.getDayByKey(this.currentDay.previous);
       const previous = this.createSlide(this.previousDay);
       this.slides.append(previous);
     } else {
       this.slides.classList.add("day-slides_beginning");
     }
-    this.currentDay = this.getDayByKey(initialDay);
     const current = this.createSlide(this.currentDay);
     this.slides.append(current);
-    if (initialDay.next) {
-      this.nextDay = this.getDayByKey(initialDay.next);
+    if (this.currentDay.next) {
+      this.nextDay = this.getDayByKey(this.currentDay.next);
       const next = this.createSlide(this.nextDay);
       this.slides.append(next);
     } else {
@@ -88,14 +83,13 @@ export class DatesSequenceVisualization {
   }
 
   getDayByKey(day) {
-    console.log(day);
-    return this.year.dayFinder.get(`${this.number}-${day.month}-${day.date}`);
+    return this.year.find(`${this.number}-${day.month}-${day.date}`);
   }
 
   createSlide(dayInfo) {
     const dayElement = createElement("div", "day");
     const weekday = createElement("div", "day-text_small");
-    const date = createElement("div", "day-text");
+    const date = createElement("div", "day-text_big");
     dayElement.append(weekday);
     dayElement.append(date);
     if (dayInfo.working) {
@@ -108,10 +102,6 @@ export class DatesSequenceVisualization {
     }
     date.innerHTML = `${dayInfo.date}.${dayInfo.month}`;
     return dayElement;
-  }
-
-  handleSettingsChange() {
-    this.render(this.currentDay);
   }
 
   getEventX(event) {
@@ -182,18 +172,16 @@ export class DatesSequenceVisualization {
   setSliderFinalPosition() {
     this.currentX = this.currentSlideIndex * -window.innerWidth;
     this.isMoving = false;
-
     const onPlace = () => {
       switch (this.currentSlideIndex) {
         case 1:
-          this.render(this.nextDay);
+          this.currentDay = this.nextDay;
           break;
         case -1:
-          this.render(this.previousDay);
+          this.currentDay = this.previousDay;
           break;
-        default:
-          this.render(this.currentDay);
       }
+      this.render();
       this.currentSlideIndex = 0;
       this.previousX = 0;
       this.currentX = 0;

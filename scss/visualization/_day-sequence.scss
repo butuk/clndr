@@ -41,7 +41,7 @@
           @include cell-font($headline-font);
           margin-bottom: 5%;
         }
-        .day-text {
+        .day-text_big {
           @include cell-font($headline-font * 4);
         }
         &_working {
