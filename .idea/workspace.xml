@@ -6,17 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="42e530b2-336a-427f-8d11-645dfdc78493" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/CalendarVisualization.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/CalendarVisualization.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/DatesSequenceVisualization.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/DatesSequenceVisualization.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/SettingIndicator.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/SettingIndicator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/Settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Settings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/_settings.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/_settings.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/interface/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/interface/_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/visualization/_calendar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/visualization/_calendar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/visualization/_day-sequence.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/visualization/_day-sequence.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/Display.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Display.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/ZoomOutButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/CloseButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/interface/_zoomout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/interface/_close-button.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/styles.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,27 +44,38 @@
     <option name="showLibraryContents" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Node.js.CalendarVisualization.js.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.Year.js.executor&quot;: &quot;Debug&quot;,
-    &quot;Node.js.script.js.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;structure&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/butuk/Dropbox/Work/CLNDR 2.0 — 24-12-01/clndr&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/butuk/Dropbox/Work/CLNDR 2.0 — 24-12-01/clndr/node_modules/prettier&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Node.js.CalendarVisualization.js.executor": "Run",
+    "Node.js.Display.js.executor": "Debug",
+    "Node.js.Year.js.executor": "Debug",
+    "Node.js.script.js.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "structure",
+    "last_opened_file_path": "/Users/butuk/Dropbox/Work/CLNDR 2.0 — 24-12-01/clndr",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/Users/butuk/Dropbox/Work/CLNDR 2.0 — 24-12-01/clndr/node_modules/prettier",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
+    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Display.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/js/Display.js" working-dir="$PROJECT_DIR$/js">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.Display.js" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -137,6 +143,7 @@
       <workItem from="1739860299081" duration="4748000" />
       <workItem from="1740733094543" duration="22000" />
       <workItem from="1740733146291" duration="2273000" />
+      <workItem from="1740996104155" duration="1785000" />
     </task>
     <servers />
   </component>

@@ -1,6 +1,6 @@
-import { createElement } from "./helpFunctions";
+import { createElement } from "./helpFunctions.js";
 
-export class ZoomOutButton {
+export class CloseButton {
   constructor() {
     this.create();
   }
@@ -12,6 +12,6 @@ export class ZoomOutButton {
     }
     closeBut = createElement("div", "close-button");
     document.body.append(closeBut);
-    //closeBut.addEventListener("click", (e) => this.remove(e, cellSlider));
+    return closeBut;
   }
 }

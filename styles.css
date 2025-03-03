@@ -547,7 +547,7 @@ header .button:hover {
   margin: 0 auto;
   top: 7vh;
   position: absolute;
-  z-index: 998;
+  z-index: 996;
 }
 @media screen and (orientation: landscape) {
   .close-button {

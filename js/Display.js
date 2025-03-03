@@ -1,3 +1,4 @@
+import { CloseButton } from "./CloseButton.js";
 import { CalendarVisualization } from "./CalendarVisualization.js";
 import { DatesSequenceVisualization } from "./DatesSequenceVisualization.js";
 
@@ -34,6 +35,10 @@ export class Display {
   }
 
   runSwitchToDateSlider(event) {
+    const closeBut = new CloseButton();
+    closeBut.addEventListener("click", () => {
+      this.runSwitchToDateSlider(event);
+    });
     this.calendar.slider.removeEventListener(
       "click",
       this.runSwitchToDateSlider,
@@ -73,6 +78,8 @@ export class Display {
       this.calendarDisappearingEnd,
     );
   }
+
+  runSwitchToCalendarSlider() {}
 
   get visualizations() {
     return this._visualizations;
