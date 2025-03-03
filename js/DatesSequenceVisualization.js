@@ -27,7 +27,7 @@ export class DatesSequenceVisualization {
   }
 
   render() {
-    const slider = document.querySelector(".day-slider")
+    this.slider = document.querySelector(".day-slider")
       ? document.querySelector(".day-slider")
       : createElement("section", "day-slider");
 
@@ -53,8 +53,8 @@ export class DatesSequenceVisualization {
     } else {
       this.slides.classList.add("day-slides_end");
     }
-    slider.append(this.slides);
-    document.body.append(slider);
+    this.slider.append(this.slides);
+    document.body.append(this.slider);
 
     this.transition = window
       .getComputedStyle(this.slides)

@@ -6,17 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="42e530b2-336a-427f-8d11-645dfdc78493" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/CalendarVisualization.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/CalendarVisualization.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/DatesSequenceVisualization.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/DatesSequenceVisualization.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/InterfaceHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/PageHeader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/InterfacePopup.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/PagePopup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/InterfaceZoomOutButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/ZoomOutButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/SettingIndicator.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/SettingIndicator.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/Settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Settings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/Year.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Year.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/_settings.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/_settings.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/interface/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/interface/_header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scss/visualization/_calendar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/visualization/_calendar.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scss/visualization/_day-sequence.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/visualization/_day-sequence.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css.map" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +56,7 @@
     &quot;Node.js.script.js.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;divs&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;structure&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/butuk/Dropbox/Work/CLNDR 2.0 — 24-12-01/clndr&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -65,7 +65,7 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/butuk/Dropbox/Work/CLNDR 2.0 — 24-12-01/clndr/node_modules/prettier&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.intentionPowerPack&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -73,7 +73,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-WS-243.23654.157" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-WS-243.25659.40" />
       </set>
     </attachedChunks>
   </component>
@@ -129,6 +129,14 @@
       <workItem from="1738218587705" duration="19684000" />
       <workItem from="1738311613361" duration="2279000" />
       <workItem from="1738315303836" duration="3349000" />
+      <workItem from="1738738147557" duration="19076000" />
+      <workItem from="1738911526680" duration="2629000" />
+      <workItem from="1739343107684" duration="2782000" />
+      <workItem from="1739428470241" duration="2909000" />
+      <workItem from="1739860237421" duration="24000" />
+      <workItem from="1739860299081" duration="4748000" />
+      <workItem from="1740733094543" duration="22000" />
+      <workItem from="1740733146291" duration="2273000" />
     </task>
     <servers />
   </component>

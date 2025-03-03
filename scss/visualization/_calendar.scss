@@ -1,7 +1,7 @@
 @import "../settings";
 
 .content {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
 }
@@ -15,6 +15,13 @@
   }
   @media screen and (max-width: $mobile-size) {
     height: 70vh;
+  }
+
+  &_hidden {
+    transition: all .4s ease-out;
+    transform-origin: center;
+    transform: scale(1.5);
+    opacity: 0;
   }
 }
 
@@ -38,9 +45,10 @@
   @include flex-block();
   position: relative;
   overflow: visible;
-  @media screen and (max-width: $mobile-size) {
-    //pointer-events: none;
-  }
+  /*@media screen and (max-width: $mobile-size) {
+    pointer-events: none;
+  }*/
+
 }
 
 .calendar-cell-hr {
@@ -70,7 +78,7 @@
   @media screen and (max-width: $mobile-size) {
     outline-width: 1px;
   }
-  outline-offset: .5em;
+  outline-offset: 1vw;
   -webkit-border-radius: 50%;
 }
 

@@ -1,7 +1,6 @@
-import { Year } from "./js/Year.js";
-import { CalendarVisualization } from "./js/CalendarVisualization.js";
 import { PageHeader } from "./js/PageHeader.js";
-import { DatesSequenceVisualization } from "./js/DatesSequenceVisualization.js";
+import { Year } from "./js/Year.js";
+import { Display } from "./js/Display.js";
 import { Settings } from "./js/Settings.js";
 
 /*
@@ -23,15 +22,14 @@ window.oncontextmenu = (event) => {
   return false;
 };
 
-// Calendar
-const year = new Year();
-
-// Visualizations
-const calendarViz = new CalendarVisualization(year, "content");
-const daySequenceViz = new DatesSequenceVisualization(year);
-
 // Site header
 const controls = new PageHeader("header");
 
+// Calendar
+const year = new Year();
+
+// Display
+const display = new Display(year, "content");
+
 // Settings, switchers and indicators
-new Settings(year, [calendarViz, daySequenceViz], controls);
+new Settings(year, display.visualizations, controls);

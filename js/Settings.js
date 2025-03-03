@@ -9,7 +9,7 @@ const currentDate = new Date();
 
 export class Settings {
   constructor(year, visualizations, controlsObject) {
-    this.switchSettings = this.switchSettings.bind(this);
+    this.switch = this.switch.bind(this);
     this.visualizations = visualizations ? visualizations : null;
     if (this.visualizations) {
       this.visualizationsUpdate();
@@ -73,8 +73,18 @@ export class Settings {
 
   createIndicators() {
     document.querySelector(".headline").innerHTML = this.year;
-    new SettingIndicator("countries", this.country, "sup", "headline");
-    new SettingIndicator("languages", this.language, "sup", "headline");
+    this.countryIndicator = new SettingIndicator(
+      "countries",
+      this.country,
+      "sup",
+      "headline",
+    );
+    this.languageIndicator = new SettingIndicator(
+      "languages",
+      this.language,
+      "sup",
+      "headline",
+    );
   }
 
   createControls() {
@@ -85,21 +95,22 @@ export class Settings {
       languages,
     );
     countryLine.element.addEventListener("click", (event) => {
-      this.switchSettings(event, "country");
+      this.switch(event, "country");
       countryLine.switch("country", this.country);
     });
     languageLine.element.addEventListener("click", (event) => {
-      this.switchSettings(event, "language");
+      this.switch(event, "language");
       languageLine.switch("language", this.language);
     });
     this.controlObject.controlsArray.push(countryLine.element);
     this.controlObject.controlsArray.push(languageLine.element);
   }
 
-  switchSettings(event, parameter) {
+  switch(event, parameter) {
     if (event.target.classList.contains("option")) {
       const element = event.target;
       this[parameter] = element.dataset[parameter];
+      this[`${parameter}Indicator`].update(element.dataset[parameter]);
     }
   }
 }

@@ -1,17 +1,43 @@
 @import "../settings";
 
+
+
+@keyframes disappear {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scale(0) !important;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .day-slider {
   @include flex-block(center, center, 100vw, 90vh);
-  position: absolute;
+  min-width: 1px;
+  min-height: 1px;
+  position: fixed;
   left: 0;
   top: 0;
   overflow: hidden;
-  opacity: 1;
-  &-closed {
-    opacity: 0;
+  &_appear {
+    animation: appear 0.4s ease-in-out both;
+  }
+  &_disappear {
+    /*opacity: 0;
     scale: 5%;
     transform-origin: center;
-    transition: scale .2s ease-in-out, opacity .2s ease-in-out;
+    transition: scale .2s ease-in-out, opacity .2s ease-in-out;*/
   }
 
   .day-slides {
@@ -21,7 +47,7 @@
     transition: transform .4s ease-out;
 
       .day{
-        @include flex-block(center, center);
+        @include flex-block();
         aspect-ratio: 1/1;
         border-radius: 50%;
         @media screen and (orientation:portrait ) {

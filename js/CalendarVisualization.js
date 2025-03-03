@@ -20,12 +20,11 @@ export class CalendarVisualization {
     this.handleTouchMove = this.handleTouchMove.bind(this);
     this.handleTouchEnd = this.handleTouchEnd.bind(this);
     this.handleTouchGrab = this.handleTouchGrab.bind(this);
-    this.handleClick = this.handleClick.bind(this);
     this.removeEventListeners = this.removeEventListeners.bind(this);
     this.addEventListeners = this.addEventListeners.bind(this);
     this.zoomFromPoint = this.zoomFromPoint.bind(this);
 
-    this.render(this.year);
+    this.render();
     this.centerVisualization(this.number, this.block);
     this.addEventListeners();
     return this;
@@ -137,6 +136,27 @@ export class CalendarVisualization {
     return this;
   }
 
+  centerVisualization(year, block) {
+    const centerX = document.documentElement.clientWidth / 2,
+      currentDay = document.querySelectorAll(".current-date")[1],
+      slidesX = this.slides.getBoundingClientRect().left,
+      dayWidth = document
+        .querySelector(".calendar-cell")
+        .getBoundingClientRect().width;
+    if (block) {
+      if (currentDay) {
+        const dayX = currentDay.getBoundingClientRect().left;
+        const delta = centerX - dayX;
+        this.slides.style.left = slidesX + delta + dayWidth / 2 + "px";
+      } else {
+        this.slides.style.left =
+          year % 4 === 0
+            ? slidesX + dayWidth * 3 + "px"
+            : slidesX + dayWidth * 4 + "px";
+      }
+    }
+  }
+
   addEventListeners() {
     // Scrolling
     document.addEventListener("wheel", this.handleWheelEvent, {
@@ -167,7 +187,6 @@ export class CalendarVisualization {
     document.removeEventListener("touchstart", this.handleTouchGrab);
     this.slides.removeEventListener("mouseover", this.handleDayHover);
     this.slides.removeEventListener("mouseout", this.handleDayMouseOut);
-    document.removeEventListener("click", this.handleClick);
   }
 
   handleWheelEvent(event) {
@@ -284,27 +303,6 @@ export class CalendarVisualization {
     }
   }
 
-  centerVisualization(year, block) {
-    const centerX = document.documentElement.clientWidth / 2,
-      currentDay = document.querySelectorAll(".current-date")[1],
-      slidesX = this.slides.getBoundingClientRect().left,
-      dayWidth = document
-        .querySelector(".calendar-cell")
-        .getBoundingClientRect().width;
-    if (block) {
-      if (currentDay) {
-        const dayX = currentDay.getBoundingClientRect().left;
-        const delta = centerX - dayX;
-        this.slides.style.left = slidesX + delta + dayWidth / 2 + "px";
-      } else {
-        this.slides.style.left =
-          year % 4 === 0
-            ? slidesX + dayWidth * 3 + "px"
-            : slidesX + dayWidth * 4 + "px";
-      }
-    }
-  }
-
   handleDayHover(event) {
     const target = event.target.closest(".calendar-cell"),
       firstChild = target ? target.children[0] : null;
@@ -328,18 +326,6 @@ export class CalendarVisualization {
     }
   }
 
-  handleClick(event) {
-    const clickedCell = event.target.closest(".calendar-cell");
-    if (clickedCell) {
-      const startPoint = this.zoomFromPoint(clickedCell);
-      this.slider.addEventListener("transitionend", () => {
-        this.slider.style.display = "none";
-        this.removeEventListeners();
-        new DatesSequenceVisualization(startPoint, this.year);
-      });
-    }
-  }
-
   zoomFromPoint(triggeredCell) {
     const dayNeeded = triggeredCell.children[0],
       dayWidth = dayNeeded.getBoundingClientRect().width,
@@ -360,19 +346,17 @@ export class CalendarVisualization {
           screenCenterX -
           dayCenterX) *
         scale,
-      persentFromTop = (
+      percentFromTop =
         (this.slider.getBoundingClientRect().top + dayHeight / 2) /
         screenHeight /
-        2
-      ).toFixed(5),
+        2,
       yNeeded =
         (this.slider.getBoundingClientRect().top +
           screenCenterY -
           dayCenterY -
-          screenHeight * persentFromTop) *
+          screenHeight * percentFromTop) *
         scale;
+    this.slider.classList.remove("day_hover");
     this.slider.style.transform = `translate(${xNeeded}px, ${yNeeded}px) scale(${scale}) `;
-    this.slider.style.transition = "all .15s ease-in-out";
-    return triggeredCell.dataset;
   }
 }

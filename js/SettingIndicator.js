@@ -13,4 +13,8 @@ export class SettingIndicator {
   set parameter(value) {
     this.block.innerHTML = interfaceElements[this.type][value];
   }
+
+  update(value) {
+    this.parameter = value;
+  }
 }

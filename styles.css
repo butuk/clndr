@@ -93,7 +93,7 @@ table {
 }
 
 .content {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
 }
@@ -116,6 +116,12 @@ table {
   .calendar-slider {
     height: 70vh;
   }
+}
+.calendar-slider_hidden {
+  transition: all 0.4s ease-out;
+  transform-origin: center;
+  transform: scale(1.5);
+  opacity: 0;
 }
 
 .calendar-slides {
@@ -146,7 +152,11 @@ table {
   height: auto;
   position: relative;
   overflow: visible;
+  /*@media screen and (max-width: $mobile-size) {
+    pointer-events: none;
+  }*/
 }
+
 .calendar-cell-hr {
   display: flex;
   justify-content: center;
@@ -223,7 +233,7 @@ table {
 
 .current-date {
   outline: 0.075em solid var(--main-color);
-  outline-offset: 0.5em;
+  outline-offset: 1vw;
   -webkit-border-radius: 50%;
 }
 @media screen and (max-width: 640px) {
@@ -273,23 +283,45 @@ table {
   }
 }
 
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: scale(0) !important;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 .day-slider {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
   height: 90vh;
-  position: absolute;
+  min-width: 1px;
+  min-height: 1px;
+  position: fixed;
   left: 0;
   top: 0;
   overflow: hidden;
-  opacity: 1;
 }
-.day-slider-closed {
-  opacity: 0;
+.day-slider_appear {
+  animation: appear 0.4s ease-in-out both;
+}
+.day-slider_disappear {
+  /*opacity: 0;
   scale: 5%;
   transform-origin: center;
-  transition: scale 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  transition: scale .2s ease-in-out, opacity .2s ease-in-out;*/
 }
 .day-slider .day-slides {
   display: flex;
@@ -358,7 +390,7 @@ table {
 }
 
 header {
-  position: absolute;
+  position: fixed;
   top: 0;
   z-index: 997;
   display: flex;

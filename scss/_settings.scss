@@ -42,7 +42,7 @@ $headline-font: 2rem;
 }
 
 @mixin circle($size, $color) {
-  @include flex-block(center, center);
+  @include flex-block();
   @media screen and (orientation: portrait) {
     height: $size;
     width: auto;
