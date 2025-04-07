@@ -1,6 +1,6 @@
 import { CloseButton } from "./CloseButton.js";
-import { CalendarVisualization } from "./CalendarVisualization.js";
-import { DatesSequenceVisualization } from "./DatesSequenceVisualization.js";
+import { VisualizationOfCalendar } from "./VisualizationOfCalendar.js";
+import { VisualizationOfDatesSequence } from "./VisualizationOfDatesSequence.js";
 
 export class Display {
   constructor(year, block) {
@@ -13,7 +13,7 @@ export class Display {
     this.dateSequenceAppearingEnd = this.dateSequenceAppearingEnd.bind(this);
     this.calendarDisappearingEnd = this.calendarDisappearingEnd.bind(this);
 
-    this.calendar = new CalendarVisualization(this.year, this.block);
+    this.calendar = new VisualizationOfCalendar(this.year, this.block);
     this._visualizations.push(this.calendar);
     this.addEventListeners();
   }
@@ -35,10 +35,10 @@ export class Display {
   }
 
   runSwitchToDateSlider(event) {
-    const closeBut = new CloseButton();
+    /*const closeBut = new CloseButton();
     closeBut.addEventListener("click", () => {
       this.runSwitchToDateSlider(event);
-    });
+    });*/
     this.calendar.slider.removeEventListener(
       "click",
       this.runSwitchToDateSlider,
@@ -52,7 +52,7 @@ export class Display {
         this.calendarDisappearingEnd,
       );
       const startPoint = `${clickedCell.dataset.month}-${clickedCell.dataset.date}`;
-      this.dateSequence = new DatesSequenceVisualization(this.year, startPoint);
+      this.dateSequence = new VisualizationOfDatesSequence(this.year, startPoint);
 
       this.dateSequence.slider.classList.add("day-slider_appear");
       this.dateSequence.slider.addEventListener(

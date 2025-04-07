@@ -1,11 +1,13 @@
 import { months } from "../dictionaries/months.js";
 import { createElement, intToRoman } from "./helpFunctions.js";
-import { DatesSequenceVisualization } from "./DatesSequenceVisualization.js";
+import {Visualization} from "./Visualization.js";
+import { VisualizationOfDatesSequence } from "./VisualizationOfDatesSequence.js";
 
-export class CalendarVisualization {
-  constructor(year, block) {
-    this.year = year;
-    this.block = block;
+export class VisualizationOfCalendar extends Visualization {
+  constructor(year, container) {
+    super(year, container);
+    /*this.year = year;
+    this.container = container;*/
     this.controlNumber = 27; // Cell's smallest side size
     const today = new Date();
     this.currentMonth = today.getMonth() + 1;
@@ -13,6 +15,7 @@ export class CalendarVisualization {
     this.currentYear = today.getFullYear();
     this.delta = 3;
     this.isDragging = false;
+    console.log(year);
     this.number = year.number;
 
     this.handleMouseGrab = this.handleMouseGrab.bind(this);
@@ -25,13 +28,13 @@ export class CalendarVisualization {
     this.zoomFromPoint = this.zoomFromPoint.bind(this);
 
     this.render();
-    this.centerVisualization(this.number, this.block);
+    this.centerVisualization(this.number);
     this.addEventListeners();
     return this;
   }
 
   render() {
-    this.content = document.querySelector(`.${this.block}`);
+    //this.content = document.querySelector(`.${this.container}`);
     this.slider = document.querySelector(".calendar-slider")
       ? document.querySelector(".calendar-slider")
       : createElement("section", "calendar-slider");
@@ -69,7 +72,8 @@ export class CalendarVisualization {
       this.slides.append(slide);
     }
     this.slider.append(this.slides);
-    this.content.append(this.slider);
+    this.container.append(this.slider);
+    //this.content.append(this.slider);
 
     //Check screen and visualization proportion and set condition of mobile behavior
     const cell = document.querySelector(".calendar-cell"),
@@ -136,14 +140,14 @@ export class CalendarVisualization {
     return this;
   }
 
-  centerVisualization(year, block) {
+  centerVisualization(year) {
     const centerX = document.documentElement.clientWidth / 2,
       currentDay = document.querySelectorAll(".current-date")[1],
       slidesX = this.slides.getBoundingClientRect().left,
       dayWidth = document
         .querySelector(".calendar-cell")
         .getBoundingClientRect().width;
-    if (block) {
+
       if (currentDay) {
         const dayX = currentDay.getBoundingClientRect().left;
         const delta = centerX - dayX;
@@ -154,7 +158,7 @@ export class CalendarVisualization {
             ? slidesX + dayWidth * 3 + "px"
             : slidesX + dayWidth * 4 + "px";
       }
-    }
+
   }
 
   addEventListeners() {

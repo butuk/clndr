@@ -8,12 +8,14 @@ const countries = interfaceElements.countries;
 const currentDate = new Date();
 
 export class Settings {
-  constructor(year, visualizations, controlsObject) {
+  constructor(year, controlsObject) {
     this.switch = this.switch.bind(this);
-    this.visualizations = visualizations ? visualizations : null;
+
+
+    /*this.visualizations = visualizations ? visualizations : null;
     if (this.visualizations) {
       this.visualizationsUpdate();
-    }
+    }*/
     this._year = year;
     this.controlObject = controlsObject;
     let savedLanguage = localStorage.getItem("language"),

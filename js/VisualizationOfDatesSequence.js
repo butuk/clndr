@@ -1,6 +1,6 @@
 import { createElement } from "./helpFunctions.js";
 
-export class DatesSequenceVisualization {
+export class VisualizationOfDatesSequence {
   constructor(year, startDay) {
     this.year = year;
     this.wheelDelta = 0;

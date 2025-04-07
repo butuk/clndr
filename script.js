@@ -1,7 +1,9 @@
 import { PageHeader } from "./js/PageHeader.js";
 import { Year } from "./js/Year.js";
 import { Display } from "./js/Display.js";
+import {ViewTransitionController} from "./js/ViewTransitionController.js";
 import { Settings } from "./js/Settings.js";
+import {VisualizationOfCalendar} from "./js/VisualizationOfCalendar.js";
 
 /*
 // Fix for an experiment consequences
@@ -28,8 +30,15 @@ const controls = new PageHeader("header");
 // Calendar
 const year = new Year();
 
+/*
 // Display
 const display = new Display(year, "content");
+*/
+const container = document.querySelector('.content');
+const transitionController = new ViewTransitionController(year, container);
+
+// Стартуем с годового календаря
+transitionController.transitionTo(VisualizationOfCalendar);
 
 // Settings, switchers and indicators
-new Settings(year, display.visualizations, controls);
+new Settings(year, controls);
