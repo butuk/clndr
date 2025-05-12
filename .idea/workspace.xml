@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42e530b2-336a-427f-8d11-645dfdc78493" name="Changes" comment="" />
+    <list default="true" id="42e530b2-336a-427f-8d11-645dfdc78493" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,7 +73,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-WS-243.25659.40" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-WS-251.25410.117" />
       </set>
     </attachedChunks>
   </component>
@@ -136,6 +138,7 @@
       <workItem from="1740733094543" duration="22000" />
       <workItem from="1740733146291" duration="2273000" />
       <workItem from="1740996104155" duration="1785000" />
+      <workItem from="1747036772901" duration="135000" />
     </task>
     <servers />
   </component>
