@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42e530b2-336a-427f-8d11-645dfdc78493" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +21,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -47,19 +53,24 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;structure&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/butuk/Dropbox/Work/CLNDR 2.0 — 24-12-01/clndr&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/butuk/Library/CloudStorage/Dropbox/Work/CLNDR 2.0/clndr/ts&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/butuk/Dropbox/Work/CLNDR 2.0 — 24-12-01/clndr/node_modules/prettier&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/butuk/Library/CloudStorage/Dropbox/Work/CLNDR 2.0/clndr/node_modules/prettier&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Console&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/butuk/Library/CloudStorage/Dropbox/Work/CLNDR 2.0/clndr/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ts" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Display.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/js/Display.js" working-dir="$PROJECT_DIR$/js">
       <method v="2" />
@@ -139,11 +150,28 @@
       <workItem from="1740733146291" duration="2273000" />
       <workItem from="1740996104155" duration="1785000" />
       <workItem from="1747036772901" duration="135000" />
+      <workItem from="1747036915779" duration="1777000" />
+      <workItem from="1747038709663" duration="284000" />
+      <workItem from="1747039008567" duration="909000" />
+      <workItem from="1747124839143" duration="447000" />
+      <workItem from="1747125302587" duration="3636000" />
+      <workItem from="1747135171070" duration="600000" />
+      <workItem from="1747295354642" duration="891000" />
+      <workItem from="1747297416527" duration="1555000" />
+      <workItem from="1747384776208" duration="3011000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/ts/Year.js" />
+        <option value="$PROJECT_DIR$/ts/Day.js" />
+        <option value="$PROJECT_DIR$/ts/helpFunctions.js" />
+        <option value="$PROJECT_DIR$/ts/Data.js" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

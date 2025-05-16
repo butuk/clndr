@@ -2,7 +2,7 @@
   "name": "calendar",
   "version": "1.0.0",
   "description": "Calendar pet project",
-  "main": "script.js",
+  "main": "script.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,7 +20,9 @@
   },
   "homepage": "https://github.com/butuk/calendar#readme",
   "devDependencies": {
-    "prettier": "3.1.1"
+    "prettier": "3.1.1",
+    "sass": "^1.88.0",
+    "typescript": "^5.8.3"
   },
   "type": "module"
 }
