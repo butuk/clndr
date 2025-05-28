@@ -1,23 +1,68 @@
 type Settings = {
+  _year: number;
   _language: string;
   _country: string;
+  get language(): string;
+  get country(): string;
   set(): void;
-  setLanguage(language: string): void;
-  getLanguage(): string;
-  setCountry(country: string): void;
-  getCountry(): string;
 };
 
-export const settings: Settings = {
-  set() {
-    this._language = "eng";
-    this._country = "PL";
+export const settings = {
+  _language: "eng",
+  _country: "PL",
+  set() {},
+
+  set language(language: string) {
+    // Translations with JSON
+    type Translation = {
+      [key: string]: string | Translation;
+    };
+
+    let currentLang: string = "pol";
+    let translations: Translation = {};
+
+    function getNestedValue(obj: Translation, keyPath: string): string {
+      const [key, ...rest] = keyPath.split(".");
+
+      const value = obj?.[key];
+      if (value === undefined) {
+        return "";
+      }
+      if (rest.length === 0) {
+        return value as string;
+      }
+      return getNestedValue(value as Translation, rest.join("."));
+    }
+
+    function applyTranslations(translations: Translation): void {
+      document.querySelectorAll("[data-word]").forEach((el) => {
+        const key: string = el.getAttribute("data-word") || "";
+        const value: string = getNestedValue(translations, key);
+        console.log(value);
+        if (value) {
+          el.textContent = value;
+        }
+      });
+    }
+
+    async function loadLanguage(lang: string): Promise<Translation> {
+      const res = await fetch(`./dictionaries/${lang}.json`);
+      translations = await res.json();
+      return translations;
+    }
+
+    (async () => {
+      const translations = await loadLanguage(currentLang);
+      applyTranslations(translations);
+    })();
   },
-  set language(language: string) {},
+
   get language(): string {
     return this._language;
   },
+
   set country(country: string) {},
+
   get country(): string {
     return this._country;
   },

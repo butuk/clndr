@@ -44,6 +44,8 @@ function applyTranslations(translations) {
         console.log(value);
         if (value) {
             el.textContent = value;
+            let today = new Date().toISOString().split("T")[0];
+            el.setAttribute("data-date", today);
         }
     });
 }

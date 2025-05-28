@@ -8,11 +8,16 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaries/floatingHolidaysDates.js" beforeDir="false" afterPath="$PROJECT_DIR$/dictionaries/floatingHolidaysDates.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaries/holidays.js" beforeDir="false" afterPath="$PROJECT_DIR$/dictionaries/holidays.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaries/months.js" beforeDir="false" afterPath="$PROJECT_DIR$/dictionaries/months.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaries/weekdays.js" beforeDir="false" afterPath="$PROJECT_DIR$/dictionaries/weekdays.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dictionaries/eng.json" beforeDir="false" afterPath="$PROJECT_DIR$/dictionaries/languages/eng.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dictionaries/pol.json" beforeDir="false" afterPath="$PROJECT_DIR$/dictionaries/languages/pol.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dictionaries/ua.json" beforeDir="false" afterPath="$PROJECT_DIR$/dictionaries/countries/ua.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts/Data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts/Data.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts/Day.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts/Day.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts/Year.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts/Year.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts/settings.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ts/settings.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,34 +46,33 @@
     <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectViewState">
-    <option name="foldersAlwaysOnTop" value="false" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Node.js.CalendarVisualization.js.executor": "Run",
-    "Node.js.Display.js.executor": "Debug",
-    "Node.js.Year.js.executor": "Debug",
-    "Node.js.app.ts.executor": "Debug",
-    "Node.js.script.js.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "structure",
-    "last_opened_file_path": "/Users/butuk/Library/CloudStorage/Dropbox/Work/CLNDR 2.0/clndr/ts",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "/Users/butuk/Library/CloudStorage/Dropbox/Work/CLNDR 2.0/clndr/node_modules/prettier",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "/Users/butuk/Library/CloudStorage/Dropbox/Work/CLNDR 2.0/clndr/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Node.js.CalendarVisualization.js.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.Display.js.executor&quot;: &quot;Debug&quot;,
+    &quot;Node.js.Year.js.executor&quot;: &quot;Debug&quot;,
+    &quot;Node.js.app.ts.executor&quot;: &quot;Debug&quot;,
+    &quot;Node.js.script.js.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;new-structure&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/butuk/Library/CloudStorage/Dropbox/Work/CLNDR 2.0/clndr/ts&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/butuk/Library/CloudStorage/Dropbox/Work/CLNDR 2.0/clndr/node_modules/prettier&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/butuk/Library/CloudStorage/Dropbox/Work/CLNDR 2.0/clndr/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/ts" />
@@ -178,6 +182,8 @@
       <workItem from="1747938163021" duration="2458000" />
       <workItem from="1747940697144" duration="1265000" />
       <workItem from="1747987929551" duration="10568000" />
+      <workItem from="1748420378502" duration="2222000" />
+      <workItem from="1748459550871" duration="3379000" />
     </task>
     <servers />
   </component>
@@ -185,10 +191,7 @@
     <option name="version" value="3" />
     <option name="exactExcludedFiles">
       <list>
-        <option value="$PROJECT_DIR$/ts/Year.js" />
-        <option value="$PROJECT_DIR$/ts/Day.js" />
         <option value="$PROJECT_DIR$/ts/helpFunctions.js" />
-        <option value="$PROJECT_DIR$/ts/Data.js" />
         <option value="$PROJECT_DIR$/dictionaries/weekdays.js" />
         <option value="$PROJECT_DIR$/dictionaries/months.js" />
         <option value="$PROJECT_DIR$/ts/settings.js" />
