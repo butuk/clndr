@@ -1,5 +1,9 @@
 export const floatingHolidaysDates = {
   belarus: {
+    easter: {
+      2024: "5-5",
+      2025: "4-20",
+    },
     radunitsa: {
       2024: "5-14",
       2025: "4-29",

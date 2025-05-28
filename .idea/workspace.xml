@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42e530b2-336a-427f-8d11-645dfdc78493" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dictionaries/floatingHolidaysDates.js" beforeDir="false" afterPath="$PROJECT_DIR$/dictionaries/floatingHolidaysDates.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dictionaries/holidays.js" beforeDir="false" afterPath="$PROJECT_DIR$/dictionaries/holidays.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dictionaries/months.js" beforeDir="false" afterPath="$PROJECT_DIR$/dictionaries/months.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dictionaries/weekdays.js" beforeDir="false" afterPath="$PROJECT_DIR$/dictionaries/weekdays.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,39 +46,44 @@
     <option name="showLibraryContents" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Node.js.CalendarVisualization.js.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.Display.js.executor&quot;: &quot;Debug&quot;,
-    &quot;Node.js.Year.js.executor&quot;: &quot;Debug&quot;,
-    &quot;Node.js.script.js.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;structure&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/butuk/Library/CloudStorage/Dropbox/Work/CLNDR 2.0/clndr/ts&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/butuk/Library/CloudStorage/Dropbox/Work/CLNDR 2.0/clndr/node_modules/prettier&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Console&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/butuk/Library/CloudStorage/Dropbox/Work/CLNDR 2.0/clndr/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Node.js.CalendarVisualization.js.executor": "Run",
+    "Node.js.Display.js.executor": "Debug",
+    "Node.js.Year.js.executor": "Debug",
+    "Node.js.app.ts.executor": "Debug",
+    "Node.js.script.js.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "structure",
+    "last_opened_file_path": "/Users/butuk/Library/CloudStorage/Dropbox/Work/CLNDR 2.0/clndr/ts",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/Users/butuk/Library/CloudStorage/Dropbox/Work/CLNDR 2.0/clndr/node_modules/prettier",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "/Users/butuk/Library/CloudStorage/Dropbox/Work/CLNDR 2.0/clndr/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/ts" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Node.js.app.ts">
     <configuration name="Display.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/js/Display.js" working-dir="$PROJECT_DIR$/js">
+      <method v="2" />
+    </configuration>
+    <configuration name="app.ts" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/app.ts" typescript-loader="bundled" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.app.ts" />
         <item itemvalue="Node.js.Display.js" />
       </list>
     </recent_temporary>
@@ -158,7 +165,19 @@
       <workItem from="1747135171070" duration="600000" />
       <workItem from="1747295354642" duration="891000" />
       <workItem from="1747297416527" duration="1555000" />
-      <workItem from="1747384776208" duration="3011000" />
+      <workItem from="1747384776208" duration="5273000" />
+      <workItem from="1747432070483" duration="2035000" />
+      <workItem from="1747638652542" duration="29000" />
+      <workItem from="1747638690450" duration="3191000" />
+      <workItem from="1747726347599" duration="816000" />
+      <workItem from="1747727937066" duration="2530000" />
+      <workItem from="1747812413323" duration="634000" />
+      <workItem from="1747813385837" duration="2389000" />
+      <workItem from="1747900773590" duration="2243000" />
+      <workItem from="1747904508911" duration="100000" />
+      <workItem from="1747938163021" duration="2458000" />
+      <workItem from="1747940697144" duration="1265000" />
+      <workItem from="1747987929551" duration="10568000" />
     </task>
     <servers />
   </component>
@@ -170,6 +189,9 @@
         <option value="$PROJECT_DIR$/ts/Day.js" />
         <option value="$PROJECT_DIR$/ts/helpFunctions.js" />
         <option value="$PROJECT_DIR$/ts/Data.js" />
+        <option value="$PROJECT_DIR$/dictionaries/weekdays.js" />
+        <option value="$PROJECT_DIR$/dictionaries/months.js" />
+        <option value="$PROJECT_DIR$/ts/settings.js" />
       </list>
     </option>
   </component>
@@ -186,5 +208,91 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/dictionaries/holidays.js</url>
+          <line>7</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/dictionaries/holidays.js</url>
+          <line>14</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/dictionaries/holidays.js</url>
+          <line>21</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/dictionaries/holidays.js</url>
+          <line>28</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/dictionaries/holidays.js</url>
+          <line>37</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/dictionaries/holidays.js</url>
+          <line>44</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/dictionaries/holidays.js</url>
+          <line>51</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/dictionaries/holidays.js</url>
+          <line>58</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/dictionaries/holidays.js</url>
+          <line>65</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/dictionaries/holidays.js</url>
+          <line>72</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/dictionaries/holidays.js</url>
+          <line>79</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/dictionaries/holidays.js</url>
+          <line>84</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/dictionaries/holidays.js</url>
+          <line>91</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/dictionaries/holidays.js</url>
+          <line>98</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/dictionaries/holidays.js</url>
+          <line>105</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/dictionaries/holidays.js</url>
+          <line>112</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

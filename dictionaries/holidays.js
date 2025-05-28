@@ -103,7 +103,7 @@ export const holidays = {
       ukr: "Православне Різдво",
     },
     "3-8": {
-      eng: "Women's _Day",
+      eng: "Women's Day",
       pol: "Dzień Kobiet",
       bel_1: "Дзень жанчын",
       bel_2: "Dzień žančyn",
