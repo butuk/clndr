@@ -1,12 +1,17 @@
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
+import { Visualization } from "./ts/Visualization.js";
+/*
+import { PageHeader } from "./js/PageHeader.js";
+import { Year } from "./js/Year.js";
+import { Display } from "./js/Display.js";
+import { ViewTransitionController } from "./js/ViewTransitionController.js";
+import { Settings } from "./js/Settings.js";
+
+
+/*
+// Fix for an experiment consequences
+if (localStorage.getItem("year") !== null) {
+  localStorage.removeItem("year");
+}*/
 /*import { months } from "./dictionaries/months.js";
 
 const today = new Date();
@@ -23,41 +28,5 @@ window.oncontextmenu = (event) => {
     event.stopPropagation();
     return false;
 };
-// Translations with JSON
-let currentLang = "pol";
-let translations = {};
-function getNestedValue(obj, keyPath) {
-    const [key, ...rest] = keyPath.split(".");
-    const value = obj === null || obj === void 0 ? void 0 : obj[key];
-    if (value === undefined) {
-        return "";
-    }
-    if (rest.length === 0) {
-        return value;
-    }
-    return getNestedValue(value, rest.join("."));
-}
-function applyTranslations(translations) {
-    document.querySelectorAll("[data-word]").forEach((el) => {
-        const key = el.getAttribute("data-word") || "";
-        const value = getNestedValue(translations, key);
-        console.log(value);
-        if (value) {
-            el.textContent = value;
-            let today = new Date().toISOString().split("T")[0];
-            el.setAttribute("data-date", today);
-        }
-    });
-}
-function loadLanguage(lang) {
-    return __awaiter(this, void 0, void 0, function* () {
-        const res = yield fetch(`./dictionaries/${lang}.json`);
-        translations = yield res.json();
-        return translations;
-    });
-}
-(() => __awaiter(void 0, void 0, void 0, function* () {
-    const translations = yield loadLanguage(currentLang);
-    applyTranslations(translations);
-}))();
-export {};
+const container = document.querySelector(".content");
+new Visualization(container, 2023);

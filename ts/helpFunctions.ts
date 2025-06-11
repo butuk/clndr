@@ -1,12 +1,12 @@
-/*export function createElement(element, className) {
+export function createElement(element: string, className: string) {
   const result = document.createElement(`${element}`);
   if (className) {
     result.classList.add(`${className}`);
   }
   return result;
-}*/
+}
 
-export function intToRoman(num: number): string {
+/*export function intToRoman(num: number): string {
   const romanNumerals = [
     { value: 1000, symbol: "M" },
     { value: 900, symbol: "CM" },
@@ -31,4 +31,4 @@ export function intToRoman(num: number): string {
     }
   }
   return result;
-}
+}*/

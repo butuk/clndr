@@ -8,16 +8,15 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaries/eng.json" beforeDir="false" afterPath="$PROJECT_DIR$/dictionaries/languages/eng.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaries/pol.json" beforeDir="false" afterPath="$PROJECT_DIR$/dictionaries/languages/pol.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaries/ua.json" beforeDir="false" afterPath="$PROJECT_DIR$/dictionaries/countries/ua.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ts/Data.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ts/Data.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ts/Day.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ts/Day.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ts/Year.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ts/Year.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts/Visualization.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ts/Visualization.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts/helpFunctions.js" beforeDir="false" afterPath="$PROJECT_DIR$/ts/helpFunctions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts/helpFunctions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ts/helpFunctions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/ts/settings.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ts/settings.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ts/settings.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +59,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;new-structure&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/butuk/Library/CloudStorage/Dropbox/Work/CLNDR 2.0/clndr/ts&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -69,7 +69,7 @@
     &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/butuk/Library/CloudStorage/Dropbox/Work/CLNDR 2.0/clndr/node_modules/prettier&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/butuk/Library/CloudStorage/Dropbox/Work/CLNDR 2.0/clndr/node_modules/typescript/lib&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/marysiayanusheuskaya/Desktop/Vitalya/CLNDR/clndr/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -82,7 +82,7 @@
     <configuration name="Display.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/js/Display.js" working-dir="$PROJECT_DIR$/js">
       <method v="2" />
     </configuration>
-    <configuration name="app.ts" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/app.ts" typescript-loader="bundled" working-dir="$PROJECT_DIR$">
+    <configuration name="app.ts" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="app.ts" typescript-loader="bundled" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <recent_temporary>
@@ -184,6 +184,11 @@
       <workItem from="1747987929551" duration="10568000" />
       <workItem from="1748420378502" duration="2222000" />
       <workItem from="1748459550871" duration="3379000" />
+      <workItem from="1748854433983" duration="72000" />
+      <workItem from="1748854530936" duration="286000" />
+      <workItem from="1749451689263" duration="2477000" />
+      <workItem from="1749540705686" duration="2791000" />
+      <workItem from="1749628823527" duration="2375000" />
     </task>
     <servers />
   </component>
@@ -195,6 +200,7 @@
         <option value="$PROJECT_DIR$/dictionaries/weekdays.js" />
         <option value="$PROJECT_DIR$/dictionaries/months.js" />
         <option value="$PROJECT_DIR$/ts/settings.js" />
+        <option value="$PROJECT_DIR$/ts/Visualization.js" />
       </list>
     </option>
   </component>

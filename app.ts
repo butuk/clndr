@@ -1,10 +1,11 @@
+import { Visualization } from "./ts/Visualization.js";
 /*
 import { PageHeader } from "./js/PageHeader.js";
 import { Year } from "./js/Year.js";
 import { Display } from "./js/Display.js";
 import { ViewTransitionController } from "./js/ViewTransitionController.js";
 import { Settings } from "./js/Settings.js";
-import { VisualizationOfCalendar } from "./js/VisualizationOfCalendar.js";
+
 
 /*
 // Fix for an experiment consequences
@@ -32,5 +33,6 @@ window.oncontextmenu = (event) => {
   return false;
 };
 
-// Site header
-//const controls = new PageHeader("header");
+const container = document.querySelector(".content");
+
+new Visualization(container, 2023);

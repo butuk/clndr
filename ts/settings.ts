@@ -46,7 +46,7 @@ export const settings = {
     }
 
     async function loadLanguage(lang: string): Promise<Translation> {
-      const res = await fetch(`./dictionaries/${lang}.json`);
+      const res = await fetch(`./dictionaries/languages/${lang}.json`);
       translations = await res.json();
       return translations;
     }
