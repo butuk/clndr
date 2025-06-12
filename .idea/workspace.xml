@@ -8,15 +8,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dictionaries/countries/ua.json" beforeDir="false" afterPath="$PROJECT_DIR$/dictionaries/countries/UA.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ts/Visualization.js" beforeDir="false" afterPath="$PROJECT_DIR$/ts/Visualization.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ts/Visualization.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ts/Visualization.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ts/helpFunctions.js" beforeDir="false" afterPath="$PROJECT_DIR$/ts/helpFunctions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ts/helpFunctions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ts/helpFunctions.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ts/settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/ts/settings.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ts/settings.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ts/settings.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,30 +45,30 @@
     <option name="showLibraryContents" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Node.js.CalendarVisualization.js.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.Display.js.executor&quot;: &quot;Debug&quot;,
-    &quot;Node.js.Year.js.executor&quot;: &quot;Debug&quot;,
-    &quot;Node.js.app.ts.executor&quot;: &quot;Debug&quot;,
-    &quot;Node.js.script.js.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;new-structure&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/butuk/Library/CloudStorage/Dropbox/Work/CLNDR 2.0/clndr/ts&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/butuk/Library/CloudStorage/Dropbox/Work/CLNDR 2.0/clndr/node_modules/prettier&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/marysiayanusheuskaya/Desktop/Vitalya/CLNDR/clndr/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Node.js.CalendarVisualization.js.executor": "Run",
+    "Node.js.Display.js.executor": "Debug",
+    "Node.js.Year.js.executor": "Debug",
+    "Node.js.app.ts.executor": "Debug",
+    "Node.js.script.js.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "new-structure",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/Users/butuk/Library/CloudStorage/Dropbox/Work/CLNDR 2.0/clndr/ts",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "/Users/marysiayanusheuskaya/Desktop/Vitalya/CLNDR/clndr/node_modules/prettier",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "/Users/marysiayanusheuskaya/Desktop/Vitalya/CLNDR/clndr/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/ts" />
@@ -188,7 +184,8 @@
       <workItem from="1748854530936" duration="286000" />
       <workItem from="1749451689263" duration="2477000" />
       <workItem from="1749540705686" duration="2791000" />
-      <workItem from="1749628823527" duration="2375000" />
+      <workItem from="1749628823527" duration="2973000" />
+      <workItem from="1749722944370" duration="2254000" />
     </task>
     <servers />
   </component>

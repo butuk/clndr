@@ -8,7 +8,6 @@
     "sat": false,
     "sun": false
   },
-  //stady holidays
   "holidays" :{
     "01-01": "new-year",
     "03-08" : "womens-day",

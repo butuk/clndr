@@ -1,4 +1,5 @@
 import { Visualization } from "./ts/Visualization.js";
+import { settings } from "./ts/settings.js";
 /*
 import { PageHeader } from "./js/PageHeader.js";
 import { Year } from "./js/Year.js";
@@ -29,4 +30,7 @@ window.oncontextmenu = (event) => {
     return false;
 };
 const container = document.querySelector(".content");
-new Visualization(container, 2023);
+// Set default settings
+settings.country = "PL";
+settings.language = "eng";
+new Visualization(container, settings, 2023);

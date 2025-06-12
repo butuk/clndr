@@ -1,0 +1,22 @@
+{
+  "working-day": {
+    "mon": true,
+    "tue": true,
+    "wed": true,
+    "thu": true,
+    "fri": true,
+    "sat": false,
+    "sun": false
+  },
+  "holidays" :{
+    "01-01": "new-year",
+    "03-08" : "womens-day",
+    "05-01" : "labour-day",
+    "05-08" : "remebrance-day",
+    "06-28" : "constitution-day",
+    "07-15" : "ukrainian-statehood",
+    "08-24" : "independence-day",
+    "10-01" : "defender-day",
+    "12-25" : "christmas"
+  }
+}

@@ -5,13 +5,20 @@ type Day = {
 
 type DaysMap = Map<string, Day>;
 
+type Settings = {
+  language: string;
+  country: string;
+};
+
 export class Visualization {
   year: number;
   container: Element | null;
+  settings: Settings;
 
-  constructor(container: Element | null, year?: number) {
+  constructor(container: Element | null, settings: Settings, year?: number) {
     this.year = year ? year : new Date().getFullYear();
     this.container = container ? container : null;
+    this.settings = settings;
     console.log(this.year);
     this.create();
   }
@@ -32,7 +39,7 @@ export class Visualization {
       date.setDate(date.getDate() + 1);
     }
 
-    console.log(days);
+    console.log(this.settings.country);
     return days;
   }
 }

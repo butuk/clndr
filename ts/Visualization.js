@@ -1,7 +1,8 @@
 export class Visualization {
-    constructor(container, year) {
+    constructor(container, settings, year) {
         this.year = year ? year : new Date().getFullYear();
         this.container = container ? container : null;
+        this.settings = settings;
         console.log(this.year);
         this.create();
     }
@@ -17,7 +18,7 @@ export class Visualization {
             days.set(`${formatted}`, { date: new Date(date) });
             date.setDate(date.getDate() + 1);
         }
-        console.log(days);
+        console.log(this.settings.country);
         return days;
     }
 }

@@ -1,20 +1,20 @@
 type Settings = {
-  _year: number;
   _language: string;
   _country: string;
   get language(): string;
   get country(): string;
-  set(): void;
+  set language(language: string);
+  set country(country: string);
 };
 
-export const settings = {
+export const settings: Settings = {
   _language: "eng",
   _country: "PL",
-  set() {},
 
   set language(language: string) {
+    this._language = language;
     // Translations with JSON
-    type Translation = {
+    /*type Translation = {
       [key: string]: string | Translation;
     };
 
@@ -54,14 +54,16 @@ export const settings = {
     (async () => {
       const translations = await loadLanguage(currentLang);
       applyTranslations(translations);
-    })();
+    })();*/
   },
 
   get language(): string {
     return this._language;
   },
 
-  set country(country: string) {},
+  set country(country: string) {
+    this._country = country;
+  },
 
   get country(): string {
     return this._country;
