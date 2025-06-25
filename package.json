@@ -25,7 +25,7 @@
     "typescript": "^5.8.3"
   },
   "scripts": {
-    "watch": "tsc --watch"
+    "go": "tsc --watch"
   },
   "type": "module"
 }

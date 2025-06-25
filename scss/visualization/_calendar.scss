@@ -45,6 +45,9 @@
   @include flex-block();
   position: relative;
   overflow: visible;
+  background: aquamarine;
+  width: 10px;
+  height: 10px;
   /*@media screen and (max-width: $mobile-size) {
     pointer-events: none;
   }*/

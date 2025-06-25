@@ -6,13 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="42e530b2-336a-427f-8d11-645dfdc78493" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/visualization/_calendar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/visualization/_calendar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ts/Visualization.js" beforeDir="false" afterPath="$PROJECT_DIR$/ts/Visualization.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ts/Visualization.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ts/Visualization.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ts/helpFunctions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ts/helpFunctions.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,10 +183,7 @@
       <workItem from="1749722944370" duration="2254000" />
       <workItem from="1749944828639" duration="458000" />
       <workItem from="1749945297904" duration="204000" />
-      <workItem from="1749983761597" duration="227000" />
-      <workItem from="1750752537225" duration="1599000" />
-      <workItem from="1750839189833" duration="1423000" />
-      <workItem from="1750840626699" duration="970000" />
+      <workItem from="1749945513000" duration="682000" />
     </task>
     <servers />
   </component>

@@ -29,8 +29,7 @@ window.oncontextmenu = (event) => {
     event.stopPropagation();
     return false;
 };
-const container = document.querySelector(".content");
+new Visualization(".content", 2024);
 // Set default settings
 settings.country = "PL";
 settings.language = "eng";
-new Visualization(container, settings, 2023);
