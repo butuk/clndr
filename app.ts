@@ -35,7 +35,13 @@ window.oncontextmenu = (event) => {
   return false;
 };
 
-new Visualization(".content", 2024);
+const container: HTMLElement | null = document.querySelector(".content");
+
+if (!container) {
+  throw new Error("Container element not found");
+} else {
+  new Visualization(container, 2024);
+}
 
 // Set default settings
 settings.country = "PL";

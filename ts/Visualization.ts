@@ -2,16 +2,11 @@ import { createElement } from "./helpFunctions.js";
 
 export class Visualization {
   year: number;
-  containerName: string;
-  content: HTMLElement | null;
   slider: HTMLElement | null;
   slides: HTMLElement | null;
 
-  constructor(container: string, year?: number) {
+  constructor(container: HTMLElement, year?: number) {
     this.year = year ? year : new Date().getFullYear();
-    this.containerName = container;
-
-    this.content = document.querySelector(this.containerName);
 
     this.slider = document.querySelector(".calendar-slider")
       ? document.querySelector(".calendar-slider")
@@ -19,28 +14,21 @@ export class Visualization {
 
     this.slides = document.querySelector(".calendar-slides")
       ? document.querySelector(".calendar-slides")
-      : createElement("div", "calendar-slides");
-    console.log(this.slides);
-    this.create();
-  }
+      : createElement("section", "calendar-slides");
 
-  create() {
-    // Days of the chosen year
+    for (let i = 0; i < 3; i++) {
+      const slide: HTMLElement = createElement("div", "calendar-slide");
 
-    // const days: DaysMap = new Map();
-    let date = new Date(this.year, 0, 1); // January 1st
+      let date = new Date(this.year, 0, 1); // January 1st
 
-    while (date.getFullYear() === this.year) {
-      const cell = createElement("div", "calendar-cell");
-      cell.style.gridRow = `${date.getMonth() + 2}`;
-      cell.style.gridColumn = `${date.getDate() + 1}`;
-      if (this.slides && typeof this.slides.append === "function") {
-        this.slides.append(cell);
-      } else {
-        console.error("Slides element is not available for appending cells.");
-      }
+      while (date.getFullYear() === this.year) {
+        const cell = createElement("div", "calendar-cell");
+        cell.style.gridRow = `${date.getMonth() + 2}`;
+        cell.style.gridColumn = `${date.getDate() + 1}`;
+        cell.textContent = `${date.getMonth() + 1}`;
 
-      /*
+        slide.append(cell);
+        /*
         const yyyy = date.getFullYear();
         const mm = String(date.getMonth() + 1).padStart(2, "0");
         const dd = String(date.getDate()).padStart(2, "0");
@@ -48,15 +36,14 @@ export class Visualization {
         days.set(`${formatted}`, { date: new Date(date) });
       */
 
-      date.setDate(date.getDate() + 1);
+        date.setDate(date.getDate() + 1);
+      }
+
+      this.slides?.append(slide);
     }
-    this.slider?.append(`${this.slides}`);
-    if (this.content && typeof this.content.append === "function") {
-      this.content.append(`${this.slider}`);
-    } else {
-      console.error(
-        "Content element is not available for appending the slider.",
-      );
-    }
+
+    this.slider?.append(this.slides!);
+
+    container.append(this.slider!);
   }
 }
