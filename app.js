@@ -34,7 +34,7 @@ if (!container) {
     throw new Error("Container element not found");
 }
 else {
-    new Visualization(container, 2024);
+    new Visualization(container, 2025);
 }
 // Set default settings
 settings.country = "PL";

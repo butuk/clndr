@@ -4,7 +4,8 @@
   "description": "Calendar pet project",
   "main": "script.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "go": "tsc --watch"
   },
   "repository": {
     "type": "git",
@@ -23,9 +24,6 @@
     "prettier": "3.1.1",
     "sass": "^1.88.0",
     "typescript": "^5.8.3"
-  },
-  "scripts": {
-    "go": "tsc --watch"
   },
   "type": "module"
 }

@@ -13,10 +13,18 @@ export class Visualization {
             const slide = createElement("div", "calendar-slide");
             let date = new Date(this.year, 0, 1); // January 1st
             while (date.getFullYear() === this.year) {
-                const cell = createElement("div", "calendar-cell");
+                const cell = createElement("svg", "calendar-cell");
                 cell.style.gridRow = `${date.getMonth() + 2}`;
                 cell.style.gridColumn = `${date.getDate() + 1}`;
-                cell.textContent = `${date.getMonth() + 1}`;
+                cell.setAttribute("viewBox", "0 0 100 100");
+                cell.setAttribute("width", "100%");
+                cell.setAttribute("height", "100%");
+                const day = createElement("circle", "working-day");
+                day.setAttribute("cx", "50");
+                day.setAttribute("cy", "50");
+                day.setAttribute("r", "50");
+                cell.append(day);
+                //cell.textContent = `${date.getMonth() + 1}`;
                 slide.append(cell);
                 /*
                 const yyyy = date.getFullYear();
