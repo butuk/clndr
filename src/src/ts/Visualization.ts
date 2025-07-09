@@ -22,12 +22,12 @@ export class Visualization {
       let date = new Date(this.year, 0, 1); // January 1st
 
       while (date.getFullYear() === this.year) {
-        const cell = createElement("svg", "calendar-cell");
+        const cell = createElement("div", "calendar-cell");
         cell.style.gridRow = `${date.getMonth() + 2}`;
         cell.style.gridColumn = `${date.getDate() + 1}`;
         cell.setAttribute("viewBox", "0 0 100 100");
-        cell.setAttribute("width", "100%");
-        cell.setAttribute("height", "100%");
+        // cell.setAttribute("width", "100%");
+        // cell.setAttribute("height", "100%");
 
         const day = createElement("circle", "working-day");
         day.setAttribute("cx", "50");

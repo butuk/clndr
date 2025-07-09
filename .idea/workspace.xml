@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42e530b2-336a-427f-8d11-645dfdc78493" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/_settings.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/_settings.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/visualization/_calendar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/visualization/_calendar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ts/Visualization.js" beforeDir="false" afterPath="$PROJECT_DIR$/ts/Visualization.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ts/Visualization.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ts/Visualization.ts" afterDir="false" />
-    </list>
+    <list default="true" id="42e530b2-336a-427f-8d11-645dfdc78493" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -204,7 +191,7 @@
       <workItem from="1751882205955" duration="3869000" />
       <workItem from="1751961630665" duration="1251000" />
       <workItem from="1751962902231" duration="260000" />
-      <workItem from="1751963175913" duration="687000" />
+      <workItem from="1751963175913" duration="748000" />
     </task>
     <servers />
   </component>
