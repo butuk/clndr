@@ -1,13 +1,15 @@
+@use "../settings";
+
 header {
   position: fixed;
   top: 0;
   z-index: 997;
-  @include flex-block(space-between, center, 100%);
+  @include settings.flex-block(space-between, center, 100%);
   .headline {
     padding-left: .5rem;
     color: var(--accent-color);
-    @media screen and (max-width: $mobile-size) {
-      font-size: $headline-font;
+    @media screen and (max-width: settings.$mobile-size) {
+      font-size: settings.$headline-font;
     }
   }
 
@@ -19,9 +21,9 @@ header {
 
   .button {
     background: url('./icons/burger.svg') no-repeat center;
-    @include flex-block(center, center, 2rem, 2rem);
+    @include settings.flex-block(center, center, 2rem, 2rem);
     margin: .25rem;
-    @media screen and (max-width: $mobile-size) {
+    @media screen and (max-width: settings.$mobile-size) {
       width: 2.5rem;
       height: 3rem;
       margin: 1rem;

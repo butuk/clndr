@@ -1,4 +1,4 @@
-@import "../settings";
+@use "../settings";
 
 @keyframes appear {
   0% {
@@ -32,25 +32,25 @@
     left: 50%;
     transform: translate(-50%, -50%);
     padding: min(3%, 3rem) 8% min(4%, 4rem);
-    @media screen and (max-width: $mobile-size) {
-      padding: 3rem .25rem;
-    }
     background-color: var(--extra-back-color);
     color: var(--main-color);
     border-radius: 2px;
-    @include flex-block(center, space-between);
+    @include settings.flex-block(center, space-between);
     flex-direction: column;
 
+    @media screen and (max-width: settings.$mobile-size) {
+      padding: 3rem .25rem;
+    }
     &:hover {
       cursor: default;
     }
 
     .options-line {
       padding: 1.5rem;
-      @include flex-block();
+      @include settings.flex-block();
 
       .option {
-        @include flex-block(center, center, 3.5rem);
+        @include settings.flex-block(center, center, 3.5rem);
         color: var(--main-color);
         margin: 0 .1rem;
         min-height: 40px;

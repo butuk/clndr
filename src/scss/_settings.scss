@@ -43,14 +43,7 @@ $headline-font: 2rem;
 
 @mixin circle($size, $color) {
   @include flex-block();
-  @media screen and (orientation: portrait) {
-    height: $size;
-    width: auto;
-  }
-  @media screen and (orientation: landscape) {
-    width: $size;
-    height: auto;
-  }
+
   margin: 0 auto;
   overflow: hidden;
   aspect-ratio: 1/1;
@@ -61,5 +54,13 @@ $headline-font: 2rem;
     display: block;
   }
   cursor: none;
+  @media screen and (orientation: portrait) {
+    height: $size;
+    width: auto;
+  }
+  @media screen and (orientation: landscape) {
+    width: $size;
+    height: auto;
+  }
 }
 

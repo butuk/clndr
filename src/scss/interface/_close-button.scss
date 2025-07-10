@@ -4,10 +4,12 @@
   height: 10vh;
   margin: 0 auto;
   top: 7vh;
+  position: absolute;
+  z-index: 996;
+
   @media screen and (orientation: landscape) {
     top: 0;
 
   }
-  position: absolute;
-  z-index: 996;
+
 }
