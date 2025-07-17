@@ -1,9 +1,24 @@
-export function createElement(element: string, className: string): HTMLElement {
-  const result = document.createElement(`${element}`);
-  if (className) {
-    result.classList.add(`${className}`);
-  }
-  return result;
+export function createElement(
+  tag: string,
+  className?: string,
+): HTMLElement | SVGElement {
+  const svgTags = [
+    "svg",
+    "circle",
+    "rect",
+    "path",
+    "g",
+    "line",
+    "ellipse",
+    "polygon",
+    "polyline",
+    "text",
+  ];
+  const el = svgTags.includes(tag)
+    ? document.createElementNS("http://www.w3.org/2000/svg", tag)
+    : document.createElement(tag);
+  if (className) el.setAttribute("class", className);
+  return el;
 }
 
 /*export function intToRoman(num: number): string {

@@ -5,18 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42e530b2-336a-427f-8d11-645dfdc78493" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/_settings.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/_settings.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/interface/_close-button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/interface/_close-button.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/interface/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/interface/_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/interface/_popup.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/interface/_popup.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/visualization/_calendar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/visualization/_calendar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/visualization/_day-sequence.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/visualization/_day-sequence.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/src/ts/Visualization.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ts/Visualization.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ts/Visualization.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ts/helpFunctions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ts/helpFunctions.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,31 +41,31 @@
     <option name="showLibraryContents" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Node.js.CalendarVisualization.js.executor": "Run",
-    "Node.js.Display.js.executor": "Debug",
-    "Node.js.Year.js.executor": "Debug",
-    "Node.js.app.ts.executor": "Debug",
-    "Node.js.script.js.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "code.cleanup.on.save": "true",
-    "git-widget-placeholder": "new-structure",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/Users/butuk/Dropbox/Work/CLNDR 2.0 — 24-12-01/clndr",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "/Users/marysiayanusheuskaya/Desktop/Vitalya/CLNDR/clndr/node_modules/prettier",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "/Users/butuk/Dropbox/Work/CLNDR 2.0 — 24-12-01/clndr/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Node.js.CalendarVisualization.js.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.Display.js.executor&quot;: &quot;Debug&quot;,
+    &quot;Node.js.Year.js.executor&quot;: &quot;Debug&quot;,
+    &quot;Node.js.app.ts.executor&quot;: &quot;Debug&quot;,
+    &quot;Node.js.script.js.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;new-structure&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/butuk/Dropbox/Work/CLNDR 2.0 — 24-12-01/clndr&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/marysiayanusheuskaya/Desktop/Vitalya/CLNDR/clndr/node_modules/prettier&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/butuk/Dropbox/Work/CLNDR 2.0 — 24-12-01/clndr/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/ts" />
