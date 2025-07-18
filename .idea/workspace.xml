@@ -8,7 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/visualization/_calendar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/visualization/_calendar.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ts/Visualization.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ts/Visualization.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ts/helpFunctions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ts/helpFunctions.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,6 +200,8 @@
       <workItem from="1752159309413" duration="150000" />
       <workItem from="1752159658427" duration="954000" />
       <workItem from="1752171935546" duration="1192000" />
+      <workItem from="1752844898195" duration="356000" />
+      <workItem from="1752845547890" duration="1335000" />
     </task>
     <servers />
   </component>

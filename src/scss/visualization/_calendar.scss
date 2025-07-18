@@ -44,6 +44,7 @@
 .calendar-cell {/*
   @include flex-block();
   position: relative;*/
+  fill: var(--main-color);
   overflow: visible;
   position: relative;
   top: 50%;
@@ -69,7 +70,6 @@
 }
 
 .working-day {
-  fill: var(--main-color);
   cx: 50;
   cy: 50;
   r: 10;
@@ -81,8 +81,14 @@
 }
 
 .special-day {
-  @include settings.circle(12%, var(--accent-color));
-  @extend %cellHover;
+  x: 50;
+  y: 50;
+  width: 20%;
+  height: 20%;
+  transform: rotate(45deg);
+  transform-origin: 75% 50%;
+  //@include settings.circle(12%, var(--accent-color));
+  //@extend %cellHover;
 }
 
 .current-date {

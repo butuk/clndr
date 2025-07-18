@@ -30,7 +30,12 @@ export class Visualization {
         cell.style.gridColumn = `${date.getDate() + 1}`;
         cell.setAttribute("viewBox", "0 0 100 100");
 
-        const day = createElement("circle", "working-day");
+        const dayOfWeek = date.getDay();
+
+        const day =
+          dayOfWeek !== 0
+            ? createElement("circle", "working-day")
+            : createElement("rect", "special-day");
         cell.append(day);
 
         //cell.textContent = `${date.getMonth() + 1}`;
