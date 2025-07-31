@@ -21,7 +21,7 @@ export function createElement(
   return el;
 }
 
-/*export function intToRoman(num: number): string {
+export function intToRoman(num: number): string {
   const romanNumerals = [
     { value: 1000, symbol: "M" },
     { value: 900, symbol: "CM" },
@@ -46,4 +46,4 @@ export function createElement(
     }
   }
   return result;
-}*/
+}

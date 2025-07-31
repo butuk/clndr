@@ -1,4 +1,4 @@
-import { createElement } from "./helpFunctions.ts";
+import { createElement, intToRoman } from "./helpFunctions.ts";
 
 export class Visualization {
   year: number;
@@ -23,36 +23,29 @@ export class Visualization {
         "calendar-slide",
       );
 
+      for (let rowNum = 0; rowNum < 12; rowNum++) {
+        this.renderRowHR(rowNum, slide);
+      }
+
       let date = new Date(this.year, 0, 1); // January 1st
 
       for (let i = 2; i <= 32; i++) {
         this.renderColumnHR(i, slide);
       }
       while (date.getFullYear() === this.year) {
+        const columnNum = date.getDate() + 1;
+        const dayOfWeek = date.getDay();
         const cell = createElement("svg", "calendar-cell");
         cell.style.gridRow = `${date.getMonth() + 2}`;
-        cell.style.gridColumn = `${date.getDate() + 1}`;
+        cell.style.gridColumn = `${columnNum}`;
+        cell.style.top = `${this.delta * columnNum}%`;
         cell.setAttribute("viewBox", "0 0 100 100");
-
-        const dayOfWeek = date.getDay();
-
         const day =
           dayOfWeek !== 0 && dayOfWeek !== 6
             ? createElement("circle", "working-day")
             : createElement("rect", "special-day");
         cell.append(day);
         slide.append(cell);
-
-        /*
-        //cell.textContent = `${date.getMonth() + 1}`;
-
-        const yyyy = date.getFullYear();
-        const mm = String(date.getMonth() + 1).padStart(2, "0");
-        const dd = String(date.getDate()).padStart(2, "0");
-        const formatted = `${yyyy}-${mm}-${dd}`;
-        days.set(`${formatted}`, { date: new Date(date) });
-        */
-
         date.setDate(date.getDate() + 1);
       }
 
@@ -75,8 +68,19 @@ export class Visualization {
     hr.style.gridRow = "1";
     hr.style.gridColumn = `${columnNum}`;
     hr.textContent = `${columnNum - 1}`;
-    //hr.style.top = `${this.delta * columnNum + 50}%`;
+    hr.style.top = `${this.delta * columnNum}%`;
     where.append(hr);
+    return this;
+  }
+
+  renderRowHR(rowNum, where) {
+    const monthName = createElement("div", "calendar-cell-hr");
+    monthName.style.gridColumn = "1";
+    monthName.style.gridRow = `${rowNum + 2}`;
+
+    monthName.textContent = intToRoman(rowNum + 1);
+
+    where.append(monthName);
     return this;
   }
 }
