@@ -1,4 +1,4 @@
-import './styles.scss';
+import "./styles.scss";
 import { Visualization } from "./ts/Visualization.ts";
 import { settings } from "./ts/settings.ts";
 // import { createElement } from "./ts/helpFunctions.js";
@@ -41,7 +41,7 @@ const container: HTMLElement | null = document.querySelector(".content");
 if (!container) {
   throw new Error("Container element not found");
 } else {
-  new Visualization(container, 2025);
+  new Visualization(container);
 }
 
 // Set default settings

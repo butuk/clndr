@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="42e530b2-336a-427f-8d11-645dfdc78493" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ts/Visualization.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ts/Visualization.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ts/helpFunctions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ts/helpFunctions.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,7 +204,8 @@
       <workItem from="1752845547890" duration="2166000" />
       <workItem from="1753353008905" duration="60000" />
       <workItem from="1753696759658" duration="1833000" />
-      <workItem from="1753950433831" duration="1917000" />
+      <workItem from="1753950433831" duration="2554000" />
+      <workItem from="1755160655821" duration="2285000" />
     </task>
     <servers />
   </component>
@@ -326,6 +327,12 @@
           <url>file://$PROJECT_DIR$/ts/Visualization.ts</url>
           <line>35</line>
           <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/ts/Visualization.ts</url>
+          <line>43</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
