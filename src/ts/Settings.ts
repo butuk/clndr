@@ -1,15 +1,23 @@
-type Settings = {
+/*type Settings = {
   _language: string;
   _country: string;
   get language(): string;
   get country(): string;
   set language(language: string);
   set country(country: string);
-};
+};*/
 
-export const settings: Settings = {
-  _language: "eng",
-  _country: "PL",
+export class Settings {
+  private static instance: Settings | null = null;
+  private _language: string | null = null;
+  private _country: string | null = null;
+
+  constructor() {
+    if (Settings.instance) {
+      return Settings.instance;
+    }
+    Settings.instance = this;
+  }
 
   set language(language: string) {
     this._language = language;
@@ -55,17 +63,17 @@ export const settings: Settings = {
       const translations = await loadLanguage(currentLang);
       applyTranslations(translations);
     })();*/
-  },
+  }
 
-  get language(): string {
+  get language(): string | null {
     return this._language;
-  },
+  }
 
   set country(country: string) {
     this._country = country;
-  },
+  }
 
-  get country(): string {
+  get country(): string | null {
     return this._country;
-  },
-};
+  }
+}

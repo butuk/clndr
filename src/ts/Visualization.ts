@@ -1,4 +1,5 @@
 import { createElement, intToRoman } from "./helpFunctions.ts";
+import { Settings } from "./Settings.ts";
 
 export class Visualization {
   year: number;
@@ -9,6 +10,7 @@ export class Visualization {
   constructor(container: HTMLElement, year?: number) {
     this.year = year ? year : new Date().getFullYear();
 
+    //Build place for calendar visualization
     this.slider = document.querySelector(".calendar-slider")
       ? document.querySelector(".calendar-slider")
       : createElement("section", "calendar-slider");
@@ -28,7 +30,6 @@ export class Visualization {
       }
 
       //Building a year calendar
-
       let date = new Date(this.year, 0, 1); // January 1st
 
       for (let i: number = 2; i <= 32; i++) {
@@ -70,7 +71,6 @@ export class Visualization {
   }
 
   //Dates names
-
   renderColumnHR(
     columnNum: number,
     where: HTMLElement | SVGElement,
@@ -91,7 +91,6 @@ export class Visualization {
   }
 
   //Months names
-
   renderRowHR(rowNum: number, where: HTMLElement | SVGElement) {
     const monthName: HTMLElement | SVGElement = createElement(
       "div",
@@ -103,6 +102,7 @@ export class Visualization {
     monthName.textContent = intToRoman(rowNum + 1);
 
     where.append(monthName);
+
     return this;
   }
 }

@@ -74,7 +74,7 @@
 .working-day {
   cx: 50;
   cy: 50;
-  r: 5;
+  r: 3;
   &:hover {
     r: 75;
   }
@@ -85,8 +85,8 @@
 .special-day {
   x: 50;
   y: 60;
-  width: 15%;
-  height: 15%;
+  width: 12%;
+  height: 12%;
   transform: rotate(45deg);
   transform-origin: 75% 50%;
   //@include settings.circle(12%, var(--accent-color));
