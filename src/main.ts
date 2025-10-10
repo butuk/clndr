@@ -14,7 +14,7 @@ window.oncontextmenu = (event) => {
   return false;
 };
 
-//Create main content
+// Create main content
 document.addEventListener("DOMContentLoaded", () => {
   const container: HTMLElement | null = document.querySelector(".content");
 

@@ -10,31 +10,36 @@ export class Visualization {
   constructor(container: HTMLElement, year?: number) {
     this.year = year ? year : new Date().getFullYear();
 
-    //Build place for calendar visualization
+    //"Window" for visible slide
     this.slider = document.querySelector(".calendar-slider")
       ? document.querySelector(".calendar-slider")
       : createElement("section", "calendar-slider");
 
+    //Slides container
     this.slides = document.querySelector(".calendar-slides")
       ? document.querySelector(".calendar-slides")
       : createElement("section", "calendar-slides");
 
+    //Slides
     for (let i: number = 0; i < 3; i++) {
       const slide: HTMLElement | SVGElement = createElement(
         "div",
         "calendar-slide",
       );
 
+      //Creating months names
       for (let rowNum = 0; rowNum < 12; rowNum++) {
         this.renderRowHR(rowNum, slide);
+      }
+
+      //Creating days numbers
+      for (let i: number = 2; i <= 32; i++) {
+        this.renderColumnHR(i, slide);
       }
 
       //Building a year calendar
       let date = new Date(this.year, 0, 1); // January 1st
 
-      for (let i: number = 2; i <= 32; i++) {
-        this.renderColumnHR(i, slide);
-      }
       while (date.getFullYear() === this.year) {
         const columnNum: number = date.getDate() + 1;
         const dayOfWeek: number = date.getDay();
@@ -42,7 +47,7 @@ export class Visualization {
           "svg",
           "calendar-cell",
         );
-        cell.setAttribute("date", date.toISOString().split("T")[0]);
+        cell.setAttribute("data-date", date.toLocaleDateString("en-CA"));
         cell.style.gridRow = `${date.getMonth() + 2}`;
         cell.style.gridColumn = `${columnNum}`;
         cell.style.top = `${this.delta * columnNum}%`;
@@ -56,18 +61,23 @@ export class Visualization {
         date.setDate(date.getDate() + 1);
       }
 
-      const currentDate = new Date();
-      const find = document.querySelector(
-        `[date = "${currentDate.toISOString().split("T")[0]}"]`,
-      );
-      console.log(currentDate.toISOString().split("T")[0]);
-
       this.slides?.append(slide);
     }
 
     this.slider?.append(this.slides!);
 
     container.append(this.slider!);
+
+    const currentDate = new Date();
+    const find = document.querySelectorAll(
+      `[data-date="${currentDate.toLocaleDateString("en-CA")}"]`,
+    );
+
+    find.forEach((e) => {
+      let outline = createElement("circle", "current-date");
+      console.log(e);
+      e.append(outline);
+    });
   }
 
   //Dates names
