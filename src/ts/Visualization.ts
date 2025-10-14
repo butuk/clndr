@@ -6,8 +6,19 @@ export class Visualization {
   slider: HTMLElement | SVGElement | null;
   slides: HTMLElement | SVGElement | null;
   delta: number = 3;
+  isDragging: boolean = false;
+  offsetX: number = 0;
 
   constructor(container: HTMLElement, year?: number) {
+    this.handleMouseGrab = this.handleMouseGrab.bind(this);
+    this.handleMouseTouchMove = this.handleMouseTouchMove.bind(this);
+    this.handleTouchMove = this.handleTouchMove.bind(this);
+    this.handleTouchEnd = this.handleTouchEnd.bind(this);
+    this.handleTouchGrab = this.handleTouchGrab.bind(this);
+    this.handleWheelEvent = this.handleWheelEvent.bind(this);
+    this.removeEventListeners = this.removeEventListeners.bind(this);
+    this.addListeners = this.addListeners.bind(this);
+
     this.year = year ? year : new Date().getFullYear();
 
     //"Window" for visible slide
@@ -27,12 +38,12 @@ export class Visualization {
         "calendar-slide",
       );
 
-      //Creating months names
-      for (let rowNum = 0; rowNum < 12; rowNum++) {
+      //Creating month names
+      for (let rowNum: number = 0; rowNum < 12; rowNum++) {
         this.renderRowHR(rowNum, slide);
       }
 
-      //Creating days numbers
+      //Creating day numbers
       for (let i: number = 2; i <= 32; i++) {
         this.renderColumnHR(i, slide);
       }
@@ -68,19 +79,25 @@ export class Visualization {
 
     container.append(this.slider!);
 
+    //Current date highlighting
     const currentDate = new Date();
     const find = document.querySelectorAll(
       `[data-date="${currentDate.toLocaleDateString("en-CA")}"]`,
     );
 
-    find.forEach((e) => {
-      let outline = createElement("circle", "current-date");
-      console.log(e);
+    find.forEach((e: Element): void => {
+      let outline: HTMLElement | SVGElement = createElement(
+        "circle",
+        "current-date",
+      );
       e.append(outline);
     });
+
+    //Add event listeners
+    this.addListeners();
   }
 
-  //Dates names
+  //Date name
   renderColumnHR(
     columnNum: number,
     where: HTMLElement | SVGElement,
@@ -100,8 +117,8 @@ export class Visualization {
     return this;
   }
 
-  //Months names
-  renderRowHR(rowNum: number, where: HTMLElement | SVGElement) {
+  //Month names
+  renderRowHR(rowNum: number, where: HTMLElement | SVGElement): Visualization {
     const monthName: HTMLElement | SVGElement = createElement(
       "div",
       "calendar-cell-hr",
@@ -114,5 +131,152 @@ export class Visualization {
     where.append(monthName);
 
     return this;
+  }
+
+  addListeners(): void {
+    // Scrolling
+    document.addEventListener("wheel", this.handleWheelEvent, {
+      passive: false,
+    });
+
+    // Grabbing the calendar-slides
+    document.addEventListener("mousedown", this.handleMouseGrab);
+    document.addEventListener("touchstart", this.handleTouchGrab);
+    /*
+            // Days on hover
+            if (!this.condition) {
+              this.slides.addEventListener("mouseover", this.handleDayHover);
+              this.slides.addEventListener("mouseout", this.handleDayMouseOut);
+            }
+
+            // Click on mobile
+            if (this.condition) {
+              document.addEventListener("click", this.handleClick);
+            }*/
+  }
+
+  removeEventListeners(): void {
+    document.removeEventListener("wheel", this.handleWheelEvent);
+    document.removeEventListener("mousedown", this.handleMouseGrab);
+    document.removeEventListener("touchstart", this.handleTouchGrab);
+    // this.slides.removeEventListener("mouseover", this.handleDayHover);
+    // this.slides.removeEventListener("mouseout", this.handleDayMouseOut);
+  }
+
+  handleWheelEvent(event: WheelEvent): void {
+    const window: number = document.documentElement.clientWidth,
+      deltaY: number = event.deltaY,
+      deltaX: number = event.deltaX;
+
+    if (this.slides) {
+      let left: number = this.slides.getBoundingClientRect().left;
+
+      let leftBorder = -2 * window;
+      if (
+        this.slides.getBoundingClientRect().left < leftBorder ||
+        this.slides.getBoundingClientRect().left > 0
+      ) {
+        this.slides.style.left = -window + "px";
+        left = this.slides.getBoundingClientRect().left;
+      }
+
+      if (deltaY > 0) {
+        this.slides.style.left = left + deltaY + "px";
+      } else if (deltaY < 0) {
+        this.slides.style.left = left + deltaY + "px";
+      }
+
+      if (deltaX < 0) {
+        this.slides.style.left = left - deltaX + "px";
+      } else if (deltaX > 0) {
+        this.slides.style.left = left - deltaX + "px";
+      }
+    } else {
+      throw new Error("Calendar slides not found");
+    }
+
+    event.preventDefault();
+  }
+
+  handleTouchGrab(event: TouchEvent): void {
+    const clientX: number = event.touches[0].clientX;
+    this.isDragging = true;
+    if (this.slides) {
+      this.offsetX =
+        clientX + Math.abs(this.slides.getBoundingClientRect().left);
+    } else {
+      throw new Error("Calendar slides not found");
+    }
+
+    document.addEventListener("touchmove", this.handleTouchMove);
+    document.addEventListener("touchend", this.handleTouchEnd);
+  }
+
+  handleMouseGrab(event: MouseEvent): void {
+    this.isDragging = true;
+
+    if (this.slides) {
+      this.offsetX =
+        event.clientX + Math.abs(this.slides.getBoundingClientRect().left);
+
+      document.addEventListener("mousemove", this.handleMouseTouchMove);
+      document.addEventListener("mouseup", this.handleTouchEnd);
+
+      document.body.style.cursor = "grabbing";
+    } else {
+      throw new Error("Calendar slides not found");
+    }
+  }
+
+  handleTouchMove(event: TouchEvent): void {
+    const window: number = document.documentElement.clientWidth;
+
+    if (this.slides) {
+      if (this.isDragging) {
+        let clientX = event.touches[0].clientX,
+          left = clientX - this.offsetX,
+          leftBorder = -2 * window;
+        if (
+          this.slides.getBoundingClientRect().left < leftBorder ||
+          this.slides.getBoundingClientRect().left > 0
+        ) {
+          this.slides.style.left = window + "px";
+          this.offsetX =
+            event.touches[0].clientX +
+            Math.abs(this.slides.getBoundingClientRect().left);
+        }
+        this.slides.style.left = left + "px";
+      }
+    } else {
+      throw new Error("Calendar slides not found");
+    }
+  }
+
+  handleMouseTouchMove(event: MouseEvent): void {
+    const window: number = document.documentElement.clientWidth;
+
+    if (this.slides) {
+      if (this.isDragging) {
+        let clientX = event.clientX,
+          left = clientX - this.offsetX,
+          leftBorder = -2 * window;
+        if (
+          this.slides.getBoundingClientRect().left < leftBorder ||
+          this.slides.getBoundingClientRect().left > 0
+        ) {
+          this.slides.style.left = window + "px";
+          this.offsetX =
+            event.clientX + Math.abs(this.slides.getBoundingClientRect().left);
+        }
+        this.slides.style.left = left + "px";
+      }
+    } else {
+      throw new Error("Calendar slides not found");
+    }
+  }
+
+  handleTouchEnd(): void {
+    this.isDragging = false;
+    document.body.style.cursor = "grab";
   }
 }
