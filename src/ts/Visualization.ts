@@ -81,17 +81,22 @@ export class Visualization {
 
     //Current date highlighting
     const currentDate = new Date();
-    const find = document.querySelectorAll(
-      `[data-date="${currentDate.toLocaleDateString("en-CA")}"]`,
-    );
-
-    find.forEach((e: Element): void => {
-      let outline: HTMLElement | SVGElement = createElement(
-        "circle",
-        "current-date",
+    if (this.slides) {
+      const find = this.slides.querySelectorAll(
+        `[data-date="${currentDate.toLocaleDateString("en-CA")}"]`,
       );
-      e.append(outline);
-    });
+
+      find.forEach((e: Element): void => {
+        let outline: HTMLElement | SVGElement = createElement(
+          "circle",
+          "current-date",
+        );
+        e.append(outline);
+      });
+    }
+
+    //Centering visualization
+    this.centerVisualization();
 
     //Add event listeners
     this.addListeners();
@@ -131,6 +136,30 @@ export class Visualization {
     where.append(monthName);
 
     return this;
+  }
+
+  centerVisualization(): void {
+    if (this.slides) {
+      const oneCell: Element | null =
+        this.slides.querySelector(".calendar-cell");
+      const centerX: number = document.documentElement.clientWidth / 2,
+        currentDay: Element = document.querySelectorAll(".current-date")[1],
+        slidesX: number = this.slides.getBoundingClientRect().left,
+        dayWidth: number | null = oneCell
+          ? oneCell.getBoundingClientRect().width
+          : null;
+
+      if (currentDay && dayWidth !== null) {
+        const dayX = currentDay.getBoundingClientRect().left;
+        const delta = centerX - dayX;
+        this.slides.style.left = slidesX + delta + "px";
+      } else if (dayWidth !== null) {
+        this.slides.style.left =
+          this.year % 4 === 0
+            ? slidesX + dayWidth * 3 + "px"
+            : slidesX + dayWidth * 4 + "px";
+      } else return;
+    }
   }
 
   addListeners(): void {
