@@ -2,7 +2,7 @@
 
 .content {
   position: fixed;
-  bottom: 0;
+  bottom: 0px;
   width: 100%;
 }
 
@@ -58,8 +58,8 @@
   @include settings.flex-block(center, center, 100%, 100%);
   position: relative;
   overflow: visible;
-  min-width: 20px;
-  min-height: 20px;
+  //min-width: 20px;
+  //min-height: 20px;
 }
 
 %cellHover {

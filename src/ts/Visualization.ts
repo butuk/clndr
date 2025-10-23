@@ -59,10 +59,11 @@ export class Visualization {
           "calendar-cell",
         );
         cell.setAttribute("data-date", date.toLocaleDateString("en-CA"));
-        cell.style.gridRow = `${date.getMonth() + 2}`;
+        cell.style.gridRow = `${date.getMonth() + 3}`;
         cell.style.gridColumn = `${columnNum}`;
         cell.style.top = `${this.delta * columnNum}%`;
         cell.setAttribute("viewBox", "0 0 100 100");
+        //cell.setAttribute("preserveAspectRatio", "xMidYMid meet");
         const day =
           dayOfWeek !== 0 && dayOfWeek !== 6
             ? createElement("circle", "working-day")
@@ -114,7 +115,7 @@ export class Visualization {
       "div",
       "calendar-cell-hr",
     );
-    hr.style.gridRow = "1";
+    hr.style.gridRow = "0";
     hr.style.gridColumn = `${columnNum}`;
     hr.textContent = `${columnNum - 1}`;
     hr.style.top = `${this.delta * columnNum}%`;
@@ -129,7 +130,7 @@ export class Visualization {
       "calendar-cell-hr",
     );
     monthName.style.gridColumn = "1";
-    monthName.style.gridRow = `${rowNum + 2}`;
+    monthName.style.gridRow = `${rowNum + 3}`;
 
     monthName.textContent = intToRoman(rowNum + 1);
 
@@ -210,9 +211,9 @@ export class Visualization {
       }
 
       if (deltaY > 0) {
-        this.slides.style.left = left + deltaY + "px";
+        this.slides.style.left = left - deltaY + "px";
       } else if (deltaY < 0) {
-        this.slides.style.left = left + deltaY + "px";
+        this.slides.style.left = left - deltaY + "px";
       }
 
       if (deltaX < 0) {

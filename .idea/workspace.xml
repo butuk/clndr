@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="42e530b2-336a-427f-8d11-645dfdc78493" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/VisualizationOfCalendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/VisualizationOfCalendar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/visualization/_calendar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/visualization/_calendar.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ts/Visualization.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ts/Visualization.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -216,7 +218,9 @@
       <workItem from="1760101480549" duration="43000" />
       <workItem from="1760101545916" duration="2175000" />
       <workItem from="1760453523426" duration="4779000" />
-      <workItem from="1760520040664" duration="2214000" />
+      <workItem from="1760520040664" duration="2751000" />
+      <workItem from="1760608528042" duration="3727000" />
+      <workItem from="1761238858238" duration="2165000" />
     </task>
     <servers />
   </component>
@@ -224,11 +228,8 @@
     <option name="version" value="3" />
     <option name="exactExcludedFiles">
       <list>
-        <option value="$PROJECT_DIR$/ts/helpFunctions.js" />
-        <option value="$PROJECT_DIR$/dictionaries/weekdays.js" />
         <option value="$PROJECT_DIR$/dictionaries/months.js" />
-        <option value="$PROJECT_DIR$/ts/settings.js" />
-        <option value="$PROJECT_DIR$/ts/Visualization.js" />
+        <option value="$PROJECT_DIR$/dictionaries/weekdays.js" />
       </list>
     </option>
   </component>

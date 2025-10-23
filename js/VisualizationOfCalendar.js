@@ -1,6 +1,6 @@
 import { months } from "../dictionaries/months.js";
 import { createElement, intToRoman } from "./helpFunctions.js";
-import {Visualization} from "./Visualization.js";
+import { Visualization } from "./Visualization.js";
 import { VisualizationOfDatesSequence } from "./VisualizationOfDatesSequence.js";
 
 export class VisualizationOfCalendar extends Visualization {
@@ -148,17 +148,16 @@ export class VisualizationOfCalendar extends Visualization {
         .querySelector(".calendar-cell")
         .getBoundingClientRect().width;
 
-      if (currentDay) {
-        const dayX = currentDay.getBoundingClientRect().left;
-        const delta = centerX - dayX;
-        this.slides.style.left = slidesX + delta + dayWidth / 2 + "px";
-      } else {
-        this.slides.style.left =
-          year % 4 === 0
-            ? slidesX + dayWidth * 3 + "px"
-            : slidesX + dayWidth * 4 + "px";
-      }
-
+    if (currentDay) {
+      const dayX = currentDay.getBoundingClientRect().left;
+      const delta = centerX - dayX;
+      this.slides.style.left = slidesX + delta + dayWidth / 2 + "px";
+    } else {
+      this.slides.style.left =
+        year % 4 === 0
+          ? slidesX + dayWidth * 3 + "px"
+          : slidesX + dayWidth * 4 + "px";
+    }
   }
 
   addEventListeners() {
