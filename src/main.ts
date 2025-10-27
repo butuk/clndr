@@ -16,11 +16,13 @@ window.oncontextmenu = (event) => {
 
 // Create main content
 document.addEventListener("DOMContentLoaded", () => {
+  const year: number = new Date().getFullYear();
+
   const container: HTMLElement | null = document.querySelector(".content");
 
   if (!container) {
     throw new Error("Container element not found");
   } else {
-    new Visualization(container);
+    new Visualization(container, year);
   }
 });

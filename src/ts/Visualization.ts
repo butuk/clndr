@@ -10,6 +10,8 @@ export class Visualization {
   offsetX: number = 0;
 
   constructor(container: HTMLElement, year?: number) {
+    this.year = year ? year : new Date().getFullYear();
+
     this.handleMouseGrab = this.handleMouseGrab.bind(this);
     this.handleMouseTouchMove = this.handleMouseTouchMove.bind(this);
     this.handleTouchMove = this.handleTouchMove.bind(this);
@@ -18,8 +20,6 @@ export class Visualization {
     this.handleWheelEvent = this.handleWheelEvent.bind(this);
     this.removeEventListeners = this.removeEventListeners.bind(this);
     this.addListeners = this.addListeners.bind(this);
-
-    this.year = year ? year : new Date().getFullYear();
 
     //"Window" for visible slide
     this.slider = document.querySelector(".calendar-slider")
@@ -31,6 +31,10 @@ export class Visualization {
       ? document.querySelector(".calendar-slides")
       : createElement("section", "calendar-slides");
 
+    this.renderYear(container);
+  }
+
+  renderYear(container: HTMLElement): void {
     //Slides
     for (let i: number = 0; i < 3; i++) {
       const slide: HTMLElement | SVGElement = createElement(
