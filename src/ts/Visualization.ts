@@ -1,16 +1,24 @@
 import { createElement, intToRoman } from "./helpFunctions.ts";
-import { Settings } from "./Settings.ts";
+import State from "./State.ts";
 
 export class Visualization {
+  private state = State.getInstance();
   year: number;
   slider: HTMLElement | SVGElement | null;
   slides: HTMLElement | SVGElement | null;
+  container: HTMLElement;
   delta: number = 3;
   isDragging: boolean = false;
   offsetX: number = 0;
 
   constructor(container: HTMLElement, year?: number) {
-    this.year = year ? year : new Date().getFullYear();
+    this.container = container;
+
+    // Year and subscription to year change
+    this.year = this.state.get("year") ?? new Date().getFullYear();
+    this.state.subscribeTo("year", (newYear: number) => {
+      this.updateYear(newYear);
+    });
 
     this.handleMouseGrab = this.handleMouseGrab.bind(this);
     this.handleMouseTouchMove = this.handleMouseTouchMove.bind(this);
@@ -31,10 +39,10 @@ export class Visualization {
       ? document.querySelector(".calendar-slides")
       : createElement("section", "calendar-slides");
 
-    this.renderYear(container);
+    this.renderYear();
   }
 
-  renderYear(container: HTMLElement): void {
+  private renderYear(): void {
     //Slides
     for (let i: number = 0; i < 3; i++) {
       const slide: HTMLElement | SVGElement = createElement(
@@ -82,7 +90,7 @@ export class Visualization {
 
     this.slider?.append(this.slides!);
 
-    container.append(this.slider!);
+    this.container.append(this.slider!);
 
     //Current date highlighting
     const currentDate = new Date();
@@ -107,8 +115,16 @@ export class Visualization {
     this.addListeners();
   }
 
+  private updateYear(newYear: number): void {
+    this.year = newYear;
+    if (this.slides) {
+      this.slides.innerHTML = "";
+    }
+    this.renderYear();
+  }
+
   //Date name
-  renderColumnHR(
+  private renderColumnHR(
     columnNum: number,
     where: HTMLElement | SVGElement,
   ): Visualization {
@@ -128,7 +144,10 @@ export class Visualization {
   }
 
   //Month names
-  renderRowHR(rowNum: number, where: HTMLElement | SVGElement): Visualization {
+  private renderRowHR(
+    rowNum: number,
+    where: HTMLElement | SVGElement,
+  ): Visualization {
     const monthName: HTMLElement | SVGElement = createElement(
       "div",
       "calendar-cell-hr",

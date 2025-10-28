@@ -27,7 +27,7 @@ export default class State {
 
   set<K extends keyof typeof this.properties>(
     key: K,
-    value: (typeof this.settings)[K],
+    value: (typeof this.properties)[K],
   ): void {
     this.properties[key] = value;
     this.notify(key, value);
