@@ -2,6 +2,8 @@ import "./styles.scss";
 import { Visualization } from "./ts/Visualization.ts";
 import State from "./ts/State.ts";
 import { YearIndicator } from "./ts/YearIndicator.ts";
+import { ButtonPlus } from "./ts/ButtonPlus.ts";
+import { ButtonMinus } from "./ts/ButtonMinus.ts";
 
 // User's browser tab title
 const date = new Date();
@@ -24,9 +26,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const container: HTMLElement | null = document.querySelector(".content");
   const appHeader: HTMLElement | null = document.querySelector("#year");
-  const yearIndicator: YearIndicator | null = appHeader
-    ? new YearIndicator(appHeader)
-    : null;
+  if (appHeader) {
+    new YearIndicator(appHeader);
+  }
+
+  const buttonPlus: HTMLElement | null = document.querySelector("#plus");
+  if (buttonPlus) {
+    new ButtonPlus(buttonPlus);
+  }
+  const buttonMinus: HTMLElement | null = document.querySelector("#minus");
+  if (buttonMinus) {
+    new ButtonMinus(buttonMinus);
+  }
 
   if (!container) {
     throw new Error("Container element not found");

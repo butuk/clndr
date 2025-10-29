@@ -117,9 +117,13 @@ export class Visualization {
 
   private updateYear(newYear: number): void {
     this.year = newYear;
+
+    //Clear old elements if any
     if (this.slides) {
+      this.slides.style.left = "-100%";
       this.slides.innerHTML = "";
     }
+
     this.renderYear();
   }
 
@@ -173,7 +177,7 @@ export class Visualization {
           ? oneCell.getBoundingClientRect().width
           : null;
 
-      if (currentDay && dayWidth !== null) {
+      if (this.year === new Date().getFullYear() && dayWidth !== null) {
         const dayX = currentDay.getBoundingClientRect().left;
         const delta = centerX - dayX;
         this.slides.style.left = slidesX + delta + "px";

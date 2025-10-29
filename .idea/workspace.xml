@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="42e530b2-336a-427f-8d11-645dfdc78493" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ts/Settings.ts" beforeDir="false" afterPath="$PROJECT_DIR$/js/Settings.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ts/State.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ts/State.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ts/Visualization.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ts/Visualization.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,6 +53,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1&quot;: &quot;true&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;new-structure&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
@@ -229,7 +227,9 @@
       <workItem from="1761238858238" duration="2753000" />
       <workItem from="1761289304845" duration="4735000" />
       <workItem from="1761512280499" duration="4403000" />
-      <workItem from="1761600465022" duration="2542000" />
+      <workItem from="1761600465022" duration="3239000" />
+      <workItem from="1761691049882" duration="756000" />
+      <workItem from="1761727070581" duration="1875000" />
     </task>
     <servers />
   </component>

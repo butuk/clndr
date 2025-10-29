@@ -1,0 +1,11 @@
+import { Button } from "./Button.ts";
+
+export class ButtonMinus extends Button {
+  constructor(element: HTMLElement) {
+    super(element);
+  }
+
+  protected onClickAction() {
+    this.state.set("year", this.state.get("year") - 1);
+  }
+}
