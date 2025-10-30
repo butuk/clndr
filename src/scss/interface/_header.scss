@@ -1,16 +1,42 @@
 @use "../settings";
 
+//-----
+.birka {
+  @include settings.flex-block(center, center, 100vw);
+  position: fixed;
+  @extend %small-font;
+  &_hidden {
+    display: none;
+  }
+  &_top {
+    top:1vh;
+  }
+  &_bottom {
+    top: 7vh;
+  }
+}
+//-----
+
 header {
   position: fixed;
-  top: 0;
+  top: 3vh;
   z-index: 997;
-  @include settings.flex-block(space-between, center, 100%);
+  //@include settings.flex-block(space-evenly, center, 30%);
+  left: 50%;
+  transform: translateX(-50%);
+  
+  display: flex;
+  gap: .5rem;
+
+  //----
   .headline {
     padding-left: .5rem;
     color: var(--accent-color);
     @media screen and (max-width: settings.$mobile-size) {
       font-size: settings.$headline-font;
     }
+  //----
+
   }
 
   .parameter {

@@ -1,6 +1,6 @@
 import State from "./State.ts";
 
-export class YearIndicator {
+export class IndicatorForYear {
   private state = State.getInstance();
   private element: HTMLElement;
 

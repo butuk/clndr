@@ -1,9 +1,10 @@
 import "./styles.scss";
 import { Visualization } from "./ts/Visualization.ts";
 import State from "./ts/State.ts";
-import { YearIndicator } from "./ts/YearIndicator.ts";
+import { IndicatorForYear } from "./ts/IndicatorForYear.ts";
 import { ButtonPlus } from "./ts/ButtonPlus.ts";
 import { ButtonMinus } from "./ts/ButtonMinus.ts";
+import { IndicatorButtonReset } from "./ts/IndicatorButtonReset.js";
 
 // User's browser tab title
 const date = new Date();
@@ -27,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const container: HTMLElement | null = document.querySelector(".content");
   const appHeader: HTMLElement | null = document.querySelector("#year");
   if (appHeader) {
-    new YearIndicator(appHeader);
+    new IndicatorForYear(appHeader);
   }
 
   const buttonPlus: HTMLElement | null = document.querySelector("#plus");
@@ -37,6 +38,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const buttonMinus: HTMLElement | null = document.querySelector("#minus");
   if (buttonMinus) {
     new ButtonMinus(buttonMinus);
+  }
+
+  const buttonReset: HTMLElement | null = document.querySelector("#reset");
+  if (buttonReset) {
+    new IndicatorButtonReset(buttonReset);
   }
 
   if (!container) {
