@@ -5,6 +5,7 @@
   @include settings.flex-block(center, center, 100vw);
   position: fixed;
   @extend %small-font;
+  cursor: pointer;
   &_hidden {
     display: none;
   }
@@ -15,6 +16,26 @@
     top: 7vh;
   }
 }
+
+.indicator {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 57px;
+  height: 57px;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+#animation {
+  position: relative;
+  z-index: 1000;
+  pointer-events: all;
+}
 //-----
 
 header {
@@ -24,7 +45,7 @@ header {
   //@include settings.flex-block(space-evenly, center, 30%);
   left: 50%;
   transform: translateX(-50%);
-  
+
   display: flex;
   gap: .5rem;
 
@@ -44,7 +65,7 @@ header {
     color: var(--additionl-color);
     margin-left: .5em;
   }
-
+/*
   .button {
     background: url('./icons/burger.svg') no-repeat center;
     @include settings.flex-block(center, center, 2rem, 2rem);
@@ -59,5 +80,5 @@ header {
       background: url('./icons/burger_hover.svg') no-repeat center;
       cursor: pointer;
     }
-  }
+  }*/
 }

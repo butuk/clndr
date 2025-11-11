@@ -7,9 +7,12 @@
     <list default="true" id="42e530b2-336a-427f-8d11-645dfdc78493" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scss/interface/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/interface/_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ts/YearIndicator.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ts/IndicatorForYear.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/visualization/_calendar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/visualization/_calendar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ts/IndicatorButtonReset.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ts/IndicatorButtonReset.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +71,7 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/butuk/Dropbox/Work/CLNDR 2.0 — 24-12-01/clndr/node_modules/prettier&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.inline.completion&quot;,
     &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/Users/butuk/Dropbox/Work/CLNDR 2.0 — 24-12-01/clndr/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -233,7 +236,13 @@
       <workItem from="1761600465022" duration="3239000" />
       <workItem from="1761691049882" duration="756000" />
       <workItem from="1761727070581" duration="2311000" />
-      <workItem from="1761772051170" duration="2528000" />
+      <workItem from="1761772051170" duration="3371000" />
+      <workItem from="1761858726717" duration="5189000" />
+      <workItem from="1762033101848" duration="5521000" />
+      <workItem from="1762118034502" duration="3776000" />
+      <workItem from="1762206760370" duration="3182000" />
+      <workItem from="1762246983367" duration="2454000" />
+      <workItem from="1762818372801" duration="2570000" />
     </task>
     <servers />
   </component>

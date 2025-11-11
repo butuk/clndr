@@ -248,6 +248,12 @@ export class Visualization {
       } else if (deltaX > 0) {
         this.slides.style.left = left - deltaX + "px";
       }
+
+      // Отправляем событие для анимации canvas
+      const scrollEvent = new CustomEvent("scrollAnimation", {
+        detail: { deltaY, deltaX },
+      });
+      document.dispatchEvent(scrollEvent);
     } else {
       throw new Error("Calendar slides not found");
     }
