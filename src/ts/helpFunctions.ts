@@ -1,6 +1,7 @@
 export function createElement(
   tag: string,
   className?: string,
+  id?: string,
 ): HTMLElement | SVGElement {
   const svgTags = [
     "svg",
@@ -18,6 +19,7 @@ export function createElement(
     ? document.createElementNS("http://www.w3.org/2000/svg", tag)
     : document.createElement(tag);
   if (className) el.setAttribute("class", className);
+  if (id) el.setAttribute("id", id);
   return el;
 }
 

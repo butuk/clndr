@@ -4,7 +4,7 @@ export class IndicatorForYear {
   private state = State.getInstance();
   private element: HTMLElement;
 
-  constructor(container: HTMLElement) {
+  constructor(container: HTMLElement | SVGElement) {
     this.element = document.createElement("span");
     this.element.textContent = this.state.get("year").toString();
 

@@ -1,7 +1,7 @@
 import { Button } from "./Button.ts";
 
 export class ButtonMinus extends Button {
-  constructor(element: HTMLElement) {
+  constructor(element: HTMLElement | SVGElement) {
     super(element);
   }
 
