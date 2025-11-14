@@ -5,50 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42e530b2-336a-427f-8d11-645dfdc78493" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/sequence/01.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sequence/02.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sequence/03.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sequence/04.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sequence/05.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sequence/06.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sequence/07.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sequence/08.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sequence/09.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sequence/10.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sequence/11.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sequence/12.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sequence/13.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sequence/14.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sequence/15.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sequence/16.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sequence/17.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sequence/18.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animation/01.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animation/02.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animation/03.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animation/04.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animation/05.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animation/06.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animation/07.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animation/08.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animation/09.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animation/10.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animation/11.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animation/12.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animation/13.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animation/14.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animation/15.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animation/16.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animation/17.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/animation/18.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ts/Button.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ts/Button.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ts/ButtonMinus.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ts/ButtonMinus.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ts/ButtonPlus.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ts/ButtonPlus.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ts/IndicatorForYear.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ts/IndicatorForYear.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ts/helpFunctions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ts/helpFunctions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ts/Header.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ts/Header.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -280,7 +239,8 @@
       <workItem from="1762246983367" duration="2454000" />
       <workItem from="1762818372801" duration="3275000" />
       <workItem from="1762903218331" duration="1198000" />
-      <workItem from="1762987669234" duration="3019000" />
+      <workItem from="1762987669234" duration="3077000" />
+      <workItem from="1763074013469" duration="2936000" />
     </task>
     <servers />
   </component>
