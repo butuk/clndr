@@ -1,27 +1,29 @@
-import State from "./State.ts";
 import { createElement } from "./helpFunctions.js";
 
 export class Button {
-  protected state = State.getInstance();
-  private clickHandler?: () => void;
-  // private element: HTMLElement | SVGElement;
-
-  /*constructor(element: HTMLElement | SVGElement) {
-    this.element = element;
-    this.onClickAction = this.onClickAction.bind(this);
-    this.element?.addEventListener("click", this.onClickAction);
-  }*/
+  protected element?: HTMLElement | SVGElement;
+  protected clickHandler?: () => void;
   constructor(
     place: HTMLElement | SVGElement,
-    content: string,
     el: string,
+    content: string,
     className?: string | undefined,
     id?: string | undefined,
     onClick?: () => void,
   ) {
     this.clickHandler = onClick;
-    this.render(place, content, el, className, id);
     this.onClickAction = this.onClickAction.bind(this);
+    this.render(place, content, el, className, id);
+  }
+
+  setClickHandler(handler: () => void) {
+    this.clickHandler = handler;
+  }
+
+  setText(content: string): void {
+    if (this.element) {
+      this.element.innerHTML = content;
+    }
   }
 
   protected render(
@@ -31,10 +33,10 @@ export class Button {
     className?: string | undefined,
     id?: string | undefined,
   ): void {
-    const element = createElement(el, className, id);
-    element.innerHTML = content;
-    place.append(element);
-    element?.addEventListener("click", this.onClickAction);
+    this.element = createElement(el, className, id);
+    this.element.innerHTML = content;
+    this.element?.addEventListener("click", this.onClickAction);
+    place.append(this.element);
   }
 
   onClickAction(): void {

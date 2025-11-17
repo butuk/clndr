@@ -3,6 +3,7 @@ import { Visualization } from "./ts/Visualization.ts";
 import State from "./ts/State.ts";
 import { IndicatorOfScroll } from "./ts/InicatorOfScroll.ts";
 import { Header } from "./ts/Header.ts";
+import { Button } from "./ts/Button.js";
 
 // User's browser tab title
 const date = new Date();

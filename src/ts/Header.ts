@@ -1,47 +1,42 @@
-import { IndicatorForYear } from "./IndicatorForYear.ts";
-import { ButtonPlus } from "./ButtonPlus.ts";
-import { ButtonMinus } from "./ButtonMinus.ts";
 import { IndicatorButtonReset } from "./IndicatorButtonReset.ts";
 import { createElement } from "./helpFunctions.ts";
 import { Button } from "./Button.ts";
+import State from "./State.ts";
 
 export class Header {
+  protected state = State.getInstance();
   constructor() {
-    // Create elements
+    // Create element
     const header: HTMLElement | SVGElement = createElement("header", "header");
 
-    /*const buttonMinus: HTMLElement | SVGElement = createElement(
-      "span",
-      "buttonMinus",
-      "minus",
-    );
-    buttonMinus.innerHTML = "−";*/
+    // Button that decreases the year by 1
+    new Button(header, "span", "−", "button", "minus", () => {
+      this.state.set("year", this.state.get("year") - 1);
+    });
 
-    const appHeader: HTMLElement | SVGElement = createElement(
-      "h1",
-      "app-header",
+    // Year indicator
+    const yearIndicator = new Button(
+      header,
+      "span",
+      ` ${this.state.get("year")}`,
+      "button",
       "year",
+      (): void => {},
     );
-    /*const buttonPlus: HTMLElement | SVGElement = createElement(
-      "span",
-      "buttonPlus",
-      "plus",
-    );
-    buttonPlus.innerHTML = "+";*/
+    this.state.subscribeTo("year", (year: number) => {
+      yearIndicator.setText(year.toString());
+    });
 
-    // Make elements work --------- !REDO
-    // new ButtonMinus(buttonMinus);
-    new IndicatorForYear(appHeader);
-    // new ButtonPlus(buttonPlus);
+    // Button that increases the year by 1
+    new Button(header, "span", "+", "button", "plus", () => {
+      this.state.set("year", this.state.get("year") + 1);
+    });
 
-    // header.appendChild(buttonMinus);
-    header.appendChild(appHeader);
-    // header.appendChild(buttonPlus);
     document.body.append(header);
 
-    const buttonReset: HTMLElement | null = document.querySelector("#reset");
+    /*const buttonReset: HTMLElement | null = document.querySelector("#reset");
     if (buttonReset) {
       new IndicatorButtonReset(buttonReset);
-    }
+    }*/
   }
 }

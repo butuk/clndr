@@ -1,6 +1,12 @@
 @use "../settings";
 
 //-----
+.button {
+  cursor: pointer;
+  &:active {
+    cursor: grabbing;
+  }
+}
 .birka {
   @include settings.flex-block(center, center, 100vw);
   position: fixed;
