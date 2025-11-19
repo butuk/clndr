@@ -1,5 +1,6 @@
 import { createElement, intToRoman } from "./helpFunctions.ts";
 import State from "./State.ts";
+import { VisualizationHeader } from "./VisualizationHeader.ts";
 
 export class Visualization {
   private state = State.getInstance();
@@ -39,6 +40,7 @@ export class Visualization {
       ? document.querySelector(".calendar-slides")
       : createElement("section", "calendar-slides");
 
+    new VisualizationHeader();
     this.renderYear();
   }
 

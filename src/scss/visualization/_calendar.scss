@@ -1,14 +1,9 @@
 @use "../settings";
 
-.content {
+.calendar-slider {
   position: fixed;
   bottom: 0;
-  width: 100%;
-}
-
-.calendar-slider {
   @include settings.flex-block(center, center, 100vw, 80vh);
-  position: relative;
   overflow: hidden;
   @media screen and (max-width: settings.$tablet-size) {
     height: 75vh;

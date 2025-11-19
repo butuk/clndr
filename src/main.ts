@@ -1,9 +1,7 @@
 import "./styles.scss";
-import { Visualization } from "./ts/Visualization.ts";
 import State from "./ts/State.ts";
+import { Visualization } from "./ts/Visualization.ts";
 import { IndicatorOfScroll } from "./ts/InicatorOfScroll.ts";
-import { Header } from "./ts/Header.ts";
-import { Button } from "./ts/Button.js";
 
 // User's browser tab title
 const date = new Date();
@@ -20,19 +18,13 @@ window.oncontextmenu = (event) => {
 
 // Create main content
 document.addEventListener("DOMContentLoaded", () => {
-  // System state
+  // System start state
   const state = State.getInstance();
   state.set("year", new Date().getFullYear());
 
-  const container: HTMLElement | null = document.querySelector(".content");
+  // Calendar visualization
+  new Visualization(document.body);
 
-  if (!container) {
-    throw new Error("Container element not found");
-  } else {
-    new Visualization(container);
-  }
-
-  new Header();
-
+  // Scroll indicator
   new IndicatorOfScroll();
 });

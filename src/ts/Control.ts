@@ -1,6 +1,6 @@
 import { createElement } from "./helpFunctions.js";
 
-export class Button {
+export class Control {
   protected element?: HTMLElement | SVGElement;
   protected clickHandler?: () => void;
   constructor(
@@ -16,13 +16,25 @@ export class Button {
     this.render(place, content, el, className, id);
   }
 
-  setClickHandler(handler: () => void) {
+  /*setClickHandler(handler: () => void) {
     this.clickHandler = handler;
-  }
+  }*/
 
   setText(content: string): void {
     if (this.element) {
       this.element.innerHTML = content;
+    }
+  }
+
+  addClass(className: string): void {
+    if (this.element) {
+      this.element.classList.add(className);
+    }
+  }
+
+  removeClass(className: string): void {
+    if (this.element) {
+      this.element.classList.remove(className);
     }
   }
 

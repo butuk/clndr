@@ -1,12 +1,15 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { createElement } from "./helpFunctions.js";
 
 export class IndicatorOfScroll {
   constructor() {
-    console.log("Hi");
     gsap.registerPlugin(ScrollTrigger);
 
-    const frameCount: number = 36;
+    //Frames count by Vite glob import
+    const frameModules = import.meta.glob("/src/frames-sequence/*.svg");
+    const frameCount: number = Object.keys(frameModules).length;
+
     const images: Array<HTMLImageElement> = [];
     const imageSeq = { frame: 1 };
 
@@ -25,7 +28,7 @@ export class IndicatorOfScroll {
         img.onload = (): void => resolve(img);
         img.onerror = (): void =>
           reject(new Error(`Failed to load image: ${num}.svg`));
-        img.src = `/src/sequence/${num}.svg`;
+        img.src = `/src/frames-sequence/${num}.svg`;
       });
 
       imagePromises.push(imagePromise);
@@ -56,7 +59,6 @@ export class IndicatorOfScroll {
 
     Promise.all(imagePromises)
       .then((): void => {
-        console.log("All images loaded successfully");
         resizeCanvas();
 
         //---New approach----
