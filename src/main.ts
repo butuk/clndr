@@ -1,7 +1,7 @@
 import "./styles.scss";
 import State from "./ts/State.ts";
 import { Visualization } from "./ts/Visualization.ts";
-import { IndicatorOfScroll } from "./ts/InicatorOfScroll.ts";
+import { IndicatorOfScroll } from "./ts/IndicatorOfScroll.ts";
 
 // User's browser tab title
 const date = new Date();

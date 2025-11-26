@@ -5,54 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42e530b2-336a-427f-8d11-645dfdc78493" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ts/VisualizationHeader.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/interface/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/interface/_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/visualization/_calendar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/visualization/_calendar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sequence/01.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames-sequence/01.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sequence/02.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames-sequence/02.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sequence/03.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames-sequence/03.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sequence/04.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames-sequence/04.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sequence/05.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames-sequence/05.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sequence/06.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames-sequence/06.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sequence/07.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames-sequence/07.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sequence/08.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames-sequence/08.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sequence/09.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames-sequence/09.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sequence/10.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames-sequence/10.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sequence/11.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames-sequence/11.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sequence/12.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames-sequence/12.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sequence/13.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames-sequence/13.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sequence/14.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames-sequence/14.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sequence/15.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames-sequence/15.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sequence/16.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames-sequence/16.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sequence/17.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames-sequence/17.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sequence/18.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames-sequence/18.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sequence/19.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames-sequence/19.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sequence/20.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames-sequence/20.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sequence/21.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames-sequence/21.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sequence/22.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames-sequence/22.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sequence/23.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames-sequence/23.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sequence/24.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames-sequence/24.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sequence/25.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames-sequence/25.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sequence/26.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames-sequence/26.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sequence/27.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames-sequence/27.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sequence/28.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames-sequence/28.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sequence/29.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames-sequence/29.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sequence/30.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames-sequence/30.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sequence/31.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames-sequence/31.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sequence/32.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames-sequence/32.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sequence/33.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames-sequence/33.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sequence/34.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames-sequence/34.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sequence/35.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames-sequence/35.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sequence/36.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frames-sequence/36.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ts/Button.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ts/Control.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ts/Header.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ts/IndicatorButtonReset.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ts/InicatorOfScroll.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ts/InicatorOfScroll.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ts/Visualization.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ts/Visualization.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +67,7 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/butuk/Dropbox/Work/CLNDR 2.0 — 24-12-01/clndr/node_modules/prettier&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.inline.completion&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;,
     &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/Users/butuk/Dropbox/Work/CLNDR 2.0 — 24-12-01/clndr/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -142,7 +98,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-WS-252.26830.93" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-WS-252.27397.92" />
       </set>
     </attachedChunks>
   </component>
@@ -289,7 +245,14 @@
       <workItem from="1763161312859" duration="600000" />
       <workItem from="1763329594633" duration="3888000" />
       <workItem from="1763416890608" duration="4100000" />
-      <workItem from="1763504984985" duration="1973000" />
+      <workItem from="1763504984985" duration="2456000" />
+      <workItem from="1763588428605" duration="603000" />
+      <workItem from="1763718170028" duration="1715000" />
+      <workItem from="1763719942900" duration="1442000" />
+      <workItem from="1763760114139" duration="768000" />
+      <workItem from="1763761379036" duration="1074000" />
+      <workItem from="1763942889546" duration="1784000" />
+      <workItem from="1764146376901" duration="3873000" />
     </task>
     <servers />
   </component>
@@ -415,13 +378,19 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/ts/Visualization.ts</url>
-          <line>254</line>
+          <line>237</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/ts/Visualization.ts</url>
-          <line>257</line>
+          <line>240</line>
           <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/ts/InicatorOfScroll.ts</url>
+          <line>66</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

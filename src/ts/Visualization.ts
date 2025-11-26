@@ -12,7 +12,7 @@ export class Visualization {
   isDragging: boolean = false;
   offsetX: number = 0;
 
-  constructor(container: HTMLElement, year?: number) {
+  constructor(container: HTMLElement) {
     this.container = container;
 
     // Year and subscription to year change
@@ -20,15 +20,6 @@ export class Visualization {
     this.state.subscribeTo("year", (newYear: number) => {
       this.updateYear(newYear);
     });
-
-    this.handleMouseGrab = this.handleMouseGrab.bind(this);
-    this.handleMouseTouchMove = this.handleMouseTouchMove.bind(this);
-    this.handleTouchMove = this.handleTouchMove.bind(this);
-    this.handleTouchEnd = this.handleTouchEnd.bind(this);
-    this.handleTouchGrab = this.handleTouchGrab.bind(this);
-    this.handleWheelEvent = this.handleWheelEvent.bind(this);
-    this.removeEventListeners = this.removeEventListeners.bind(this);
-    this.addListeners = this.addListeners.bind(this);
 
     //"Window" for visible slide
     this.slider = document.querySelector(".calendar-slider")
@@ -168,7 +159,7 @@ export class Visualization {
     return this;
   }
 
-  centerVisualization(): void {
+  private centerVisualization(): void {
     if (this.slides) {
       const oneCell: Element | null =
         this.slides.querySelector(".calendar-cell");
@@ -192,7 +183,7 @@ export class Visualization {
     }
   }
 
-  addListeners(): void {
+  private addListeners = (): void => {
     // Scrolling
     document.addEventListener("wheel", this.handleWheelEvent, {
       passive: false,
@@ -212,17 +203,9 @@ export class Visualization {
             if (this.condition) {
               document.addEventListener("click", this.handleClick);
             }*/
-  }
+  };
 
-  removeEventListeners(): void {
-    document.removeEventListener("wheel", this.handleWheelEvent);
-    document.removeEventListener("mousedown", this.handleMouseGrab);
-    document.removeEventListener("touchstart", this.handleTouchGrab);
-    // this.slides.removeEventListener("mouseover", this.handleDayHover);
-    // this.slides.removeEventListener("mouseout", this.handleDayMouseOut);
-  }
-
-  handleWheelEvent(event: WheelEvent): void {
+  private handleWheelEvent = (event: WheelEvent): void => {
     const window: number = document.documentElement.clientWidth,
       deltaY: number = event.deltaY,
       deltaX: number = event.deltaX;
@@ -261,9 +244,9 @@ export class Visualization {
     }
 
     event.preventDefault();
-  }
+  };
 
-  handleTouchGrab(event: TouchEvent): void {
+  private handleTouchGrab = (event: TouchEvent): void => {
     const clientX: number = event.touches[0].clientX;
     this.isDragging = true;
     if (this.slides) {
@@ -275,9 +258,9 @@ export class Visualization {
 
     document.addEventListener("touchmove", this.handleTouchMove);
     document.addEventListener("touchend", this.handleTouchEnd);
-  }
+  };
 
-  handleMouseGrab(event: MouseEvent): void {
+  private handleMouseGrab = (event: MouseEvent): void => {
     this.isDragging = true;
 
     if (this.slides) {
@@ -291,9 +274,9 @@ export class Visualization {
     } else {
       throw new Error("Calendar slides not found");
     }
-  }
+  };
 
-  handleTouchMove(event: TouchEvent): void {
+  private handleTouchMove = (event: TouchEvent): void => {
     const window: number = document.documentElement.clientWidth;
 
     if (this.slides) {
@@ -315,9 +298,9 @@ export class Visualization {
     } else {
       throw new Error("Calendar slides not found");
     }
-  }
+  };
 
-  handleMouseTouchMove(event: MouseEvent): void {
+  private handleMouseTouchMove = (event: MouseEvent): void => {
     const window: number = document.documentElement.clientWidth;
 
     if (this.slides) {
@@ -338,10 +321,10 @@ export class Visualization {
     } else {
       throw new Error("Calendar slides not found");
     }
-  }
+  };
 
-  handleTouchEnd(): void {
+  private handleTouchEnd = (): void => {
     this.isDragging = false;
     document.body.style.cursor = "grab";
-  }
+  };
 }
