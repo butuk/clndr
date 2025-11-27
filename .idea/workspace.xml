@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="42e530b2-336a-427f-8d11-645dfdc78493" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ts/InicatorOfScroll.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ts/InicatorOfScroll.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/interface/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/interface/_header.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ts/Visualization.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ts/Visualization.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -252,7 +251,8 @@
       <workItem from="1763760114139" duration="768000" />
       <workItem from="1763761379036" duration="1074000" />
       <workItem from="1763942889546" duration="1784000" />
-      <workItem from="1764146376901" duration="3873000" />
+      <workItem from="1764146376901" duration="4078000" />
+      <workItem from="1764201751126" duration="1999000" />
     </task>
     <servers />
   </component>
@@ -378,18 +378,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/ts/Visualization.ts</url>
-          <line>237</line>
+          <line>239</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/ts/Visualization.ts</url>
-          <line>240</line>
+          <line>242</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/ts/InicatorOfScroll.ts</url>
+          <url>file://$PROJECT_DIR$/src/ts/IndicatorOfScroll.ts</url>
           <line>66</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>

@@ -11,6 +11,8 @@ export class Visualization {
   delta: number = 3;
   isDragging: boolean = false;
   offsetX: number = 0;
+  lastClientX: number = 0;
+  grabCoef: number = 1.05;
 
   constructor(container: HTMLElement) {
     this.container = container;
@@ -264,6 +266,7 @@ export class Visualization {
     this.isDragging = true;
 
     if (this.slides) {
+      this.lastClientX = event.clientX;
       this.offsetX =
         event.clientX + Math.abs(this.slides.getBoundingClientRect().left);
 
@@ -281,6 +284,15 @@ export class Visualization {
 
     if (this.slides) {
       if (this.isDragging) {
+        const currentClientX = event.touches[0].clientX;
+        const deltaX = this.lastClientX - currentClientX;
+        this.lastClientX = currentClientX;
+
+        const scrollEvent = new CustomEvent("scrollAnimation", {
+          detail: { deltaY: 0, deltaX: deltaX * this.grabCoef },
+        });
+        document.dispatchEvent(scrollEvent);
+
         let clientX = event.touches[0].clientX,
           left = clientX - this.offsetX,
           leftBorder = -2 * window;
@@ -305,6 +317,14 @@ export class Visualization {
 
     if (this.slides) {
       if (this.isDragging) {
+        const deltaX = this.lastClientX - event.clientX;
+        this.lastClientX = event.clientX;
+
+        const scrollEvent = new CustomEvent("scrollAnimation", {
+          detail: { deltaY: 0, deltaX: deltaX * this.grabCoef },
+        });
+        document.dispatchEvent(scrollEvent);
+
         let clientX = event.clientX,
           left = clientX - this.offsetX,
           leftBorder = -2 * window;
