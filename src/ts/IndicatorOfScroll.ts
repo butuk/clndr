@@ -153,6 +153,4 @@ export class IndicatorOfScroll {
     this.canvas.height = this.canvas.clientHeight;
     this.render();
   };
-
-  loadFrames() {}
 }

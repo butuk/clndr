@@ -208,33 +208,19 @@ export class Visualization {
   };
 
   private handleWheelEvent = (event: WheelEvent): void => {
-    const window: number = document.documentElement.clientWidth,
+    const windowWidth: number = document.documentElement.clientWidth,
       deltaY: number = event.deltaY,
       deltaX: number = event.deltaX;
 
     if (this.slides) {
       let left: number = this.slides.getBoundingClientRect().left;
 
-      let leftBorder = -2 * window;
-      if (
-        this.slides.getBoundingClientRect().left < leftBorder ||
-        this.slides.getBoundingClientRect().left > 0
-      ) {
-        this.slides.style.left = -window + "px";
-        left = this.slides.getBoundingClientRect().left;
+      const leftBorder: number = -2 * windowWidth;
+      if (left < leftBorder || left > 0) {
+        this.slides.style.left = -windowWidth + "px";
+        left = -windowWidth;
       }
-
-      if (deltaY > 0) {
-        this.slides.style.left = left - deltaY + "px";
-      } else if (deltaY < 0) {
-        this.slides.style.left = left - deltaY + "px";
-      }
-
-      if (deltaX < 0) {
-        this.slides.style.left = left - deltaX + "px";
-      } else if (deltaX > 0) {
-        this.slides.style.left = left - deltaX + "px";
-      }
+      this.slides.style.left = left - deltaY - deltaX + "px";
 
       // Отправляем событие для анимации canvas
       const scrollEvent = new CustomEvent("scrollAnimation", {
