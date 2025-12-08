@@ -6,13 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="42e530b2-336a-427f-8d11-645dfdc78493" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ts/IndicatorOfScroll.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ts/IndicatorOfScroll.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ts/Visualization.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ts/Visualization.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clndr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dictionaries/countries/PL.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/dictionaries/countries/PL.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dictionaries/countries/UA.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/dictionaries/countries/UA.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/interface/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/interface/_header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ts/IndicatorForYear.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ts/VisualizationHeader.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ts/VisualizationHeader.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="111" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -53,6 +61,7 @@
     &quot;Notification.DoNotAsk-vcs.roots.invalid&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;code.cleanup.on.save&quot;: &quot;true&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1&quot;: &quot;true&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
@@ -66,7 +75,7 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/butuk/Dropbox/Work/CLNDR 2.0 — 24-12-01/clndr/node_modules/prettier&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/Users/butuk/Dropbox/Work/CLNDR 2.0 — 24-12-01/clndr/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -77,6 +86,7 @@
       <recent name="$PROJECT_DIR$/ts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/dictionaries" />
       <recent name="$PROJECT_DIR$/js" />
     </key>
   </component>
@@ -97,7 +107,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-WS-252.27397.92" />
+        <option value="bundled-js-predefined-d6986cc7102b-c7e53b3be11b-JavaScript-WS-253.28294.332" />
       </set>
     </attachedChunks>
   </component>
@@ -254,6 +264,10 @@
       <workItem from="1764146376901" duration="4078000" />
       <workItem from="1764201751126" duration="2109000" />
       <workItem from="1764282316856" duration="1918000" />
+      <workItem from="1765141650604" duration="930000" />
+      <workItem from="1765187120454" duration="1165000" />
+      <workItem from="1765188325293" duration="139000" />
+      <workItem from="1765188471869" duration="1984000" />
     </task>
     <servers />
   </component>

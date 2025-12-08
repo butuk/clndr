@@ -1,6 +1,13 @@
 @use "../settings";
 
 //-----
+.switcher {
+  position: fixed;
+  top: 1vh;
+  right: 1vw;
+  z-index: 998;
+  cursor: pointer;
+}
 .button {
   cursor: pointer;
   &:active {
