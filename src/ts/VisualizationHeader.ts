@@ -58,34 +58,5 @@ export class VisualizationHeader {
         buttonReset.addClass("birka_hidden");
       }
     });
-
-    //Country
-    const files = import.meta.glob("../dictionaries/countries/*.json");
-
-    const fileNames = Object.keys(files)
-      .map((path) => path.split("/").pop()?.replace(".json", "") || "")
-      .filter((name) => name) // Убираем пустые имена, если что-то пошло не так
-      .sort(); // Сортируем, чтобы порядок был всегда одинаковым (например, алфавитным)
-
-    let currentIndex = 0; // Если файлов нет, используем "EN" как запасной вариант
-    const initialText = fileNames.length > 0 ? fileNames[0] : "EN";
-    const language = new Control(
-      document.body,
-      "div",
-      initialText,
-      "switcher",
-      "country",
-      (): void => {
-        if (fileNames.length === 0) return;
-
-        // Увеличиваем индекс и берем остаток от деления на длину массива,
-        // чтобы при достижении конца массива индекс сбрасывался на 0
-        currentIndex = (currentIndex + 1) % fileNames.length;
-        language.setText(fileNames[currentIndex]);
-
-        // Если нужно также обновлять стейт:
-        // state.set("country", fileNames[currentIndex]);
-      },
-    );
   }
 }

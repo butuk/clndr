@@ -2,9 +2,48 @@ import { createElement, intToRoman } from "./helpFunctions.ts";
 import State from "./State.ts";
 import { VisualizationHeader } from "./VisualizationHeader.ts";
 
+type CountryDictionary = {
+  "working-day": {
+    mon: boolean;
+    tue: boolean;
+    wed: boolean;
+    thu: boolean;
+    fri: boolean;
+    sat: boolean;
+    sun: boolean;
+  };
+  holidays?: Record<string, string>;
+};
+
+const countryDictLoaders = import.meta.glob(
+  "../dictionaries/countries/*.json",
+  { import: "default" },
+) as Record<string, () => Promise<CountryDictionary>>;
+
+async function loadCountryDictionary(
+  country: string,
+): Promise<CountryDictionary> {
+  const code = (country || "").toUpperCase();
+  const loader = countryDictLoaders[`../dictionaries/countries/${code}.json`];
+
+  if (!loader) {
+    throw new Error(`Country dictionary not found for: ${code}`);
+  }
+
+  return loader();
+}
+
+function dayKeyFromDate(date: Date): keyof CountryDictionary["working-day"] {
+  // JS: 0=Sun,1=Mon,...6=Sat
+  const keys = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"] as const;
+  return keys[date.getDay()];
+}
+
 export class Visualization {
   private state = State.getInstance();
   year: number;
+  country: string;
+  condition: boolean = false;
   slider: HTMLElement | SVGElement | null;
   slides: HTMLElement | SVGElement | null;
   container: HTMLElement;
@@ -17,10 +56,17 @@ export class Visualization {
   constructor(container: HTMLElement) {
     this.container = container;
 
+    this.country = this.state.get("country");
+
     // Year and subscription to year change
     this.year = this.state.get("year") ?? new Date().getFullYear();
     this.state.subscribeTo("year", (newYear: number) => {
       this.updateYear(newYear);
+    });
+
+    // Re-render on country change
+    this.state.subscribeTo("country", (newCountry: "string") => {
+      this.updateCountry(newCountry);
     });
 
     //"Window" for visible slide
@@ -37,7 +83,10 @@ export class Visualization {
     this.renderYear();
   }
 
-  private renderYear(): void {
+  private async renderYear(): Promise<void> {
+    this.country = this.state.get("country");
+    const dict = await loadCountryDictionary(this.country);
+
     //Slides
     for (let i: number = 0; i < 3; i++) {
       const slide: HTMLElement | SVGElement = createElement(
@@ -70,11 +119,14 @@ export class Visualization {
         cell.style.gridColumn = `${columnNum}`;
         cell.style.top = `${this.delta * columnNum}%`;
         cell.setAttribute("viewBox", "0 0 100 100");
-        //cell.setAttribute("preserveAspectRatio", "xMidYMid meet");
-        const day =
-          dayOfWeek !== 0 && dayOfWeek !== 6
-            ? createElement("circle", "working-day")
-            : createElement("rect", "special-day");
+
+        const dayKey = dayKeyFromDate(date);
+        const isWorkingDay = dict["working-day"][dayKey];
+
+        const day = isWorkingDay
+          ? createElement("circle", "working-day")
+          : createElement("rect", "special-day");
+
         cell.append(day);
         slide.append(cell);
         date.setDate(date.getDate() + 1);
@@ -112,14 +164,22 @@ export class Visualization {
 
   private updateYear(newYear: number): void {
     this.year = newYear;
+    this.clearYear();
+    this.renderYear();
+  }
 
+  private updateCountry(newCountry: string): void {
+    this.country = newCountry;
+    this.clearYear();
+    this.renderYear();
+  }
+
+  private clearYear() {
     //Clear old elements if any
     if (this.slides) {
       this.slides.style.left = "-100%";
       this.slides.innerHTML = "";
     }
-
-    this.renderYear();
   }
 
   //Date name
