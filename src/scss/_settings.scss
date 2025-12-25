@@ -3,7 +3,9 @@ $mobile-size: 640px;
 $headline-font: 2rem;
 
 @supports (font-variation-settings: normal) {
-  :root { font-family: InterVariable, sans-serif; }
+  :root {
+    font-family: InterVariable, sans-serif;
+  }
 }
 
 :root {
@@ -15,13 +17,15 @@ $headline-font: 2rem;
   --invert-accent: red;
 
   font-family: Inter, sans-serif;
-  font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+  font-feature-settings: 'liga' 1, 'calt' 1;
+  /* fix for Chrome */
   font-weight: normal;
   font-size: clamp(.8rem, 1.5vw + .25rem, 2rem);
   color: var(--main-color);
 
   %small-font {
     font-size: .4rem;
+
     @media screen and (max-width: $mobile-size) {
       font-size: .8rem;
     }
@@ -36,7 +40,7 @@ $headline-font: 2rem;
   height: $height;
 }
 
-@mixin cell-font ($size){
+@mixin cell-font ($size) {
   font-size: $size;
   color: var(--back-color);
 }
@@ -49,18 +53,21 @@ $headline-font: 2rem;
   aspect-ratio: 1/1;
   border-radius: 50%;
   background-color: $color;
+
   &::before {
     content: "";
     display: block;
   }
+
   cursor: none;
+
   @media screen and (orientation: portrait) {
     height: $size;
     width: auto;
   }
+
   @media screen and (orientation: landscape) {
     width: $size;
     height: auto;
   }
 }
-

@@ -39,6 +39,12 @@ function dayKeyFromDate(date: Date): keyof CountryDictionary["working-day"] {
   return keys[date.getDay()];
 }
 
+function monthDayFromDate(date: Date): string {
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${month}-${day}`;
+}
+
 export class Visualization {
   private state = State.getInstance();
   year: number;
@@ -109,19 +115,24 @@ export class Visualization {
 
       while (date.getFullYear() === this.year) {
         const columnNum: number = date.getDate() + 1;
-        const dayOfWeek: number = date.getDay();
         const cell: HTMLElement | SVGElement = createElement(
           "svg",
           "calendar-cell",
         );
         cell.setAttribute("data-date", date.toLocaleDateString("en-CA"));
+
         cell.style.gridRow = `${date.getMonth() + 3}`;
         cell.style.gridColumn = `${columnNum}`;
         cell.style.top = `${this.delta * columnNum}%`;
         cell.setAttribute("viewBox", "0 0 100 100");
 
         const dayKey = dayKeyFromDate(date);
-        const isWorkingDay = dict["working-day"][dayKey];
+
+        let isWorkingDay = dict["working-day"][dayKey];
+        if (Object.prototype.hasOwnProperty.call(dict.holidays, monthDayFromDate(date))) {
+          isWorkingDay = false
+          cell.setAttribute("special-day", dict.holidays[`${monthDayFromDate(date)}`])
+        };
 
         const day = isWorkingDay
           ? createElement("circle", "working-day")
@@ -174,8 +185,7 @@ export class Visualization {
     this.renderYear();
   }
 
-  private clearYear() {
-    //Clear old elements if any
+  private clearYear() {  //Clear old elements if any
     if (this.slides) {
       this.slides.style.left = "-100%";
       this.slides.innerHTML = "";

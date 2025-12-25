@@ -6,12 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="42e530b2-336a-427f-8d11-645dfdc78493" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaries/languages/eng.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/dictionaries/languages/eng.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dictionaries/languages/pol.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/dictionaries/languages/pol.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dictionaries/countries/PL.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/dictionaries/countries/PL.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dictionaries/countries/UA.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/dictionaries/countries/UA.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scss/_settings.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/_settings.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ts/Visualization.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ts/Visualization.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ts/VisualizationHeader.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/ts/VisualizationHeader.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,7 +267,11 @@
       <workItem from="1765187120454" duration="1165000" />
       <workItem from="1765188325293" duration="139000" />
       <workItem from="1765188471869" duration="2379000" />
-      <workItem from="1765969409642" duration="3193000" />
+      <workItem from="1765969409642" duration="3537000" />
+      <workItem from="1766358720948" duration="892000" />
+      <workItem from="1766444138067" duration="598000" />
+      <workItem from="1766568926835" duration="2923000" />
+      <workItem from="1766665274256" duration="2026000" />
     </task>
     <servers />
   </component>
@@ -395,12 +397,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/ts/Visualization.ts</url>
-          <line>273</line>
+          <line>285</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/ts/Visualization.ts</url>
-          <line>276</line>
+          <line>288</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -411,38 +413,37 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/ts/Visualization.ts</url>
           <line>39</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/ts/Visualization.ts</url>
-          <line>4</line>
-          <properties lambdaOrdinal="-1" />
+          <line>16</line>
           <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/ts/Visualization.ts</url>
-          <line>118</line>
-          <properties lambdaOrdinal="-1" />
+          <line>122</line>
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/ts/Visualization.ts</url>
-          <line>123</line>
-          <properties lambdaOrdinal="-1" />
+          <line>128</line>
           <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/ts/Visualization.ts</url>
-          <line>83</line>
-          <properties lambdaOrdinal="-1" />
+          <line>87</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/ts/Visualization.ts</url>
-          <line>82</line>
-          <properties lambdaOrdinal="-1" />
+          <line>86</line>
           <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/ts/Visualization.ts</url>
+          <line>112</line>
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
