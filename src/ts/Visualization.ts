@@ -2,17 +2,18 @@ import { createElement, intToRoman } from "./helpFunctions.ts";
 import State from "./State.ts";
 import { VisualizationHeader } from "./VisualizationHeader.ts";
 
+/*
+type LanguageDictionary = {
+  "month": Record<string, string>;
+  "changes": Record<string, string>;
+  "holidays": Record<string, string>;
+  "weekdays": Record<string, string>;
+}
+  */
+
 type CountryDictionary = {
-  "working-day": {
-    mon: boolean;
-    tue: boolean;
-    wed: boolean;
-    thu: boolean;
-    fri: boolean;
-    sat: boolean;
-    sun: boolean;
-  };
-  holidays?: Record<string, string>;
+  "working-day": Record<string, boolean>;
+  "holidays"?: Record<string, string>;
 };
 
 const countryDictLoaders = import.meta.glob(
@@ -23,7 +24,7 @@ const countryDictLoaders = import.meta.glob(
 async function loadCountryDictionary(
   country: string,
 ): Promise<CountryDictionary> {
-  const code = (country || "").toUpperCase();
+  const code = (country || "");
   const loader = countryDictLoaders[`../dictionaries/countries/${code}.json`];
 
   if (!loader) {
@@ -129,6 +130,7 @@ export class Visualization {
         const dayKey = dayKeyFromDate(date);
 
         let isWorkingDay = dict["working-day"][dayKey];
+        cell.setAttribute('weekday', dayKey);
         if (Object.prototype.hasOwnProperty.call(dict.holidays, monthDayFromDate(date))) {
           isWorkingDay = false
           cell.setAttribute("special-day", dict.holidays[`${monthDayFromDate(date)}`])
@@ -137,6 +139,20 @@ export class Visualization {
         const day = isWorkingDay
           ? createElement("circle", "working-day")
           : createElement("rect", "special-day");
+
+        // Safari doesn't reliably apply SVG geometry via CSS.
+        if (day instanceof SVGElement) {
+          if (isWorkingDay) {
+            day.setAttribute("cx", "50");
+            day.setAttribute("cy", "50");
+            day.setAttribute("r", "3");
+          } else {
+            day.setAttribute("x", "50");
+            day.setAttribute("y", "60");
+            day.setAttribute("width", "12%");
+            day.setAttribute("height", "12%");
+          }
+        }
 
         cell.append(day);
         slide.append(cell);
@@ -162,6 +178,11 @@ export class Visualization {
           "circle",
           "current-date",
         );
+        if (outline instanceof SVGElement) {
+          outline.setAttribute("cx", "50");
+          outline.setAttribute("cy", "50");
+          outline.setAttribute("r", "40");
+        }
         e.append(outline);
       });
     }
