@@ -300,7 +300,6 @@ export class Visualization {
 
   private handleWheelEvent = (event: WheelEvent): void => {
     const windowWidth: number = document.documentElement.clientWidth,
-      deltaY: number = event.deltaY,
       deltaX: number = event.deltaX;
 
     if (this.slides) {
@@ -311,11 +310,12 @@ export class Visualization {
         this.slides.style.left = -windowWidth + "px";
         left = -windowWidth;
       }
-      this.slides.style.left = left - deltaY - deltaX + "px";
+      // Only horizontal scrolling
+      this.slides.style.left = left - deltaX + "px";
 
       // Отправляем событие для анимации canvas
       const scrollEvent = new CustomEvent("scrollAnimation", {
-        detail: { deltaY, deltaX },
+        detail: { deltaY: 0, deltaX },
       });
       document.dispatchEvent(scrollEvent);
     } else {
@@ -335,7 +335,9 @@ export class Visualization {
       throw new Error("Calendar slides not found");
     }
 
-    document.addEventListener("touchmove", this.handleTouchMove);
+    document.addEventListener("touchmove", this.handleTouchMove, {
+      passive: false,
+    });
     document.addEventListener("touchend", this.handleTouchEnd);
   };
 
@@ -357,6 +359,7 @@ export class Visualization {
   };
 
   private handleTouchMove = (event: TouchEvent): void => {
+    event.preventDefault();
     const window: number = document.documentElement.clientWidth;
 
     if (this.slides) {

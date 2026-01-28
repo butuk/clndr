@@ -29,10 +29,12 @@ footer, header, hgroup, menu, nav, section {
 }
 html {
   cursor: grab;
+  overflow-y: hidden;
 }
 body {
   background: var(--extra-back-color);
   line-height: 1;
+  overflow-y: hidden;
 }
 ol, ul {
   list-style: none;

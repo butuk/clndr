@@ -8,29 +8,36 @@
   z-index: 998;
   cursor: pointer;
 }
+
 .button {
   cursor: pointer;
+
   &:active {
     cursor: grabbing;
   }
 }
+
 .birka {
   @include settings.flex-block(center, center, 100vw);
   position: fixed;
   @extend %small-font;
   cursor: pointer;
+
   &_hidden {
     display: none;
   }
+
   &_top {
-    top:1vh;
+    top: 1vh;
   }
+
   &_bottom {
     top: 7vh;
   }
 }
 
 .indicator {
+  display: flex;
   position: fixed;
   left: 0;
   top: 10px;
@@ -47,8 +54,9 @@ canvas {
 #animation {
   position: relative;
   z-index: 1000;
-  pointer-events: all;
+  //pointer-events: all;
 }
+
 //-----
 
 header {
@@ -66,10 +74,12 @@ header {
   .headline {
     padding-left: .5rem;
     color: var(--accent-color);
+
     @media screen and (max-width: settings.$mobile-size) {
       font-size: settings.$headline-font;
     }
-  //----
+
+    //----
 
   }
 
@@ -78,7 +88,8 @@ header {
     color: var(--additionl-color);
     margin-left: .5em;
   }
-/*
+
+  /*
   .button {
     background: url('./icons/burger.svg') no-repeat center;
     @include settings.flex-block(center, center, 2rem, 2rem);
